@@ -6,6 +6,7 @@
 package com.rainsoft;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,13 +17,12 @@ public class Orgamica extends javax.swing.JFrame {
     // Lista que contem as matérias que serão renderizadas
     // na parte das materias.
     private DefaultListModel<Materia> materias;
-    
+
     /**
      * Creates new form Orgamica
      */
     public Orgamica() {
         materias = new DefaultListModel<>();
-        addMateria("<html>Programação orientada à objetos");
         initComponents();
     }
 
@@ -44,6 +44,7 @@ public class Orgamica extends javax.swing.JFrame {
         jLabelMateriais = new javax.swing.JLabel();
         jLabelAnotacoes = new javax.swing.JLabel();
         jPanelBarraAzul = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Orgamica - Organizador Acadêmico");
@@ -86,21 +87,37 @@ public class Orgamica extends javax.swing.JFrame {
 
         jPanelBarraAzul.setBackground(new java.awt.Color(51, 153, 255));
 
+        jButton1.setText("+");
+        jButton1.setToolTipText("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelBarraAzulLayout = new javax.swing.GroupLayout(jPanelBarraAzul);
         jPanelBarraAzul.setLayout(jPanelBarraAzulLayout);
         jPanelBarraAzulLayout.setHorizontalGroup(
             jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1250, Short.MAX_VALUE)
+            .addGroup(jPanelBarraAzulLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addContainerGap(1197, Short.MAX_VALUE))
         );
         jPanelBarraAzulLayout.setVerticalGroup(
             jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanelBarraAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String materia = JOptionPane.showInputDialog("Nome da matéria");
+        addMateria(materia);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,6 +160,7 @@ public class Orgamica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabelAba1;
     private javax.swing.JLabel jLabelAba2;
     private javax.swing.JLabel jLabelAba3;

@@ -19,21 +19,22 @@ public class MateriaPanel extends javax.swing.JPanel {
     public MateriaPanel() {
         initComponents();
     }
-    
+
     public MateriaPanel(String text) {
         initComponents();
         jLabelTitulo.setText(text);
     }
-    
+
     public void setText(String text) {
         jLabelTitulo.setText(text);
     }
-    
+
     public String getText() {
         return jLabelTitulo.getText();
     }
-    
-    /*public void setImage(String path) {
+
+    // Função de adicionar imagem à matéria
+    /*public void setImage(String imagem) {
     jLabelTitulo.setIcon(icon);
     }*/
 
@@ -67,8 +68,11 @@ public class MateriaPanel extends javax.swing.JPanel {
         jLabelTitulo.setToolTipText("");
         jLabelTitulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jLabelTitulo.setMaximumSize(new java.awt.Dimension(20, 21));
+        jLabelTitulo.setMinimumSize(new java.awt.Dimension(20, 21));
+        jLabelTitulo.setPreferredSize(new java.awt.Dimension(20, 21));
         jLabelTitulo.setVerifyInputWhenFocusTarget(false);
-        add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 27, 180, 70));
+        add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 17, 180, 80));
 
         jLabelBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Aba.png"))); // NOI18N
         jLabelBackground.setMaximumSize(new java.awt.Dimension(271, 110));
