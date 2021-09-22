@@ -43,13 +43,14 @@ public class Orgamica extends javax.swing.JFrame {
         jListMaterias = new javax.swing.JList<>();
         jLabelMateriais = new javax.swing.JLabel();
         jLabelAnotacoes = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         menu = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        Materia = new javax.swing.JMenu();
+        Anotacoes = new javax.swing.JMenu();
+        Config = new javax.swing.JMenu();
+        MenuCor = new javax.swing.JMenuItem();
+        MenuFundo = new javax.swing.JMenuItem();
+        MenuOpcoes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Orgamica - Organizador Acadêmico");
@@ -88,37 +89,52 @@ public class Orgamica extends javax.swing.JFrame {
         jLabelAnotacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Anotações.png"))); // NOI18N
         jPanelMenuBarra.add(jLabelAnotacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
+        jDesktopPane1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanelMenuBarra.add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1260, 700));
+
         getContentPane().add(jPanelMenuBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 670));
 
         menu.setBorder(null);
         menu.setPreferredSize(new java.awt.Dimension(56, 43));
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/add_materia.png"))); // NOI18N
-        jMenu1.setText("Adicionar Matéria");
-        menu.add(jMenu1);
+        Materia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/add_materia.png"))); // NOI18N
+        Materia.setText("Adicionar Matéria");
+        Materia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MateriaActionPerformed(evt);
+            }
+        });
+        menu.add(Materia);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/add_anotacao.png"))); // NOI18N
-        jMenu2.setText("Adicionar Anotações");
-        menu.add(jMenu2);
+        Anotacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/add_anotacao.png"))); // NOI18N
+        Anotacoes.setText("Adicionar Anotações");
+        menu.add(Anotacoes);
 
-        jMenu3.setText("Preferências");
+        Config.setText("Preferências");
 
-        jMenuItem1.setText("Mudar Cor");
-        jMenu3.add(jMenuItem1);
+        MenuCor.setText("Mudar Cor");
+        Config.add(MenuCor);
 
-        jMenuItem2.setText("Mudar Plano de Fundo");
-        jMenu3.add(jMenuItem2);
+        MenuFundo.setText("Mudar Plano de Fundo");
+        Config.add(MenuFundo);
 
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/opcoes.png"))); // NOI18N
-        jMenuItem3.setText("Opções");
-        jMenu3.add(jMenuItem3);
+        MenuOpcoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/opcoes.png"))); // NOI18N
+        MenuOpcoes.setText("Opções");
+        Config.add(MenuOpcoes);
 
-        menu.add(jMenu3);
+        menu.add(Config);
 
         setJMenuBar(menu);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void MateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MateriaActionPerformed
+        CriarMateria m = new CriarMateria();
+        Materia.add(m);
+        m.setVisible(true);
+        
+    }//GEN-LAST:event_MateriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,18 +177,19 @@ public class Orgamica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Anotacoes;
+    private javax.swing.JMenu Config;
+    private javax.swing.JMenu Materia;
+    private javax.swing.JMenuItem MenuCor;
+    private javax.swing.JMenuItem MenuFundo;
+    private javax.swing.JMenuItem MenuOpcoes;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabelAba1;
     private javax.swing.JLabel jLabelAba2;
     private javax.swing.JLabel jLabelAba3;
     private javax.swing.JLabel jLabelAnotacoes;
     private javax.swing.JLabel jLabelMateriais;
     private javax.swing.JList<Materia> jListMaterias;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanelMenuBarra;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar menu;
