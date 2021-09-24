@@ -1,31 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.rainsoft;
 
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author jonas
- */
 public class Materia {
-    private String nome;
+    private String titulo;
+    private ArrayList<String> anotacoes;
     private ImageIcon icon;
-    
+
     public Materia(){}
-    public Materia(String nome) {
-        this.nome = nome;
+    public Materia(String titulo) {
+        this.titulo = titulo;
+        this.anotacoes = new ArrayList<String>();
+    }
+    public Materia(String titulo, ArrayList<String> anotacoes) {
+        this.titulo = titulo;
+        this.anotacoes = anotacoes;
+    }
+    
+    public void addAnotacao(String anotacao) {
+        anotacoes.add(anotacao);
     }
 
-    public String getNome() {
-        return nome;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public ImageIcon getIcon() {
@@ -35,6 +37,4 @@ public class Materia {
     public void setIcon(ImageIcon icon) {
         this.icon = icon;
     }
-    
-    
 }

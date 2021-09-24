@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.rainsoft;
 
 import sas.swing.MultiLineLabel;
 
-/**
- *
- * @author jonas
- */
 public class MateriaPanel extends javax.swing.JPanel {
 
     /**
@@ -51,15 +42,16 @@ public class MateriaPanel extends javax.swing.JPanel {
         jLabelTitulo = new MultiLineLabel();
         jLabelBackground = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(271, 110));
-        setMinimumSize(new java.awt.Dimension(271, 110));
-        setPreferredSize(new java.awt.Dimension(271, 110));
+        setMaximumSize(new java.awt.Dimension(275, 102));
+        setMinimumSize(new java.awt.Dimension(275, 102));
+        setOpaque(false);
+        setPreferredSize(new java.awt.Dimension(275, 102));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelImagem.setBackground(new java.awt.Color(255, 51, 0));
         jLabelImagem.setToolTipText("");
         jLabelImagem.setOpaque(true);
-        add(jLabelImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 87, 87));
+        add(jLabelImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 87, 87));
 
         jLabelTitulo.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(102, 102, 102));
@@ -72,9 +64,9 @@ public class MateriaPanel extends javax.swing.JPanel {
         jLabelTitulo.setMinimumSize(new java.awt.Dimension(20, 21));
         jLabelTitulo.setPreferredSize(new java.awt.Dimension(20, 21));
         jLabelTitulo.setVerifyInputWhenFocusTarget(false);
-        add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 17, 180, 80));
+        add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 180, 90));
 
-        jLabelBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Aba.png"))); // NOI18N
+        jLabelBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Nota.png"))); // NOI18N
         jLabelBackground.setMaximumSize(new java.awt.Dimension(271, 110));
         jLabelBackground.setMinimumSize(new java.awt.Dimension(271, 110));
         jLabelBackground.setPreferredSize(new java.awt.Dimension(271, 110));
