@@ -45,6 +45,7 @@ public class Orgamica extends javax.swing.JFrame {
         jLabelAnotacoes = new javax.swing.JLabel();
         jPanelBarraAzul = new javax.swing.JPanel();
         jButtonAddMateria = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Orgamica - Organizador Acadêmico");
@@ -54,6 +55,7 @@ public class Orgamica extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelMenuBarra.setBackground(new java.awt.Color(218, 218, 218));
+        jPanelMenuBarra.setFocusCycleRoot(true);
         jPanelMenuBarra.setPreferredSize(new java.awt.Dimension(970, 541));
         jPanelMenuBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -87,15 +89,36 @@ public class Orgamica extends javax.swing.JFrame {
         jLabelAnotacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Anotações.png"))); // NOI18N
         jPanelMenuBarra.add(jLabelAnotacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
-        getContentPane().add(jPanelMenuBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1250, 670));
+        getContentPane().add(jPanelMenuBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1250, 670));
 
         jPanelBarraAzul.setBackground(new java.awt.Color(51, 153, 255));
 
-        jButtonAddMateria.setText("+");
+        jButtonAddMateria.setBackground(new java.awt.Color(51, 153, 255));
+        jButtonAddMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/materia.png"))); // NOI18N
+        jButtonAddMateria.setText("Adicionar Matéria");
         jButtonAddMateria.setToolTipText("");
+        jButtonAddMateria.setBorder(null);
+        jButtonAddMateria.setContentAreaFilled(false);
+        jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAddMateria.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jButtonAddMateria.setFocusCycleRoot(true);
+        jButtonAddMateria.setFocusable(false);
+        jButtonAddMateria.setVerifyInputWhenFocusTarget(false);
         jButtonAddMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAddMateriaActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(0, 153, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/notas.png"))); // NOI18N
+        jButton1.setText("Criar Anotação");
+        jButton1.setBorder(null);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -104,16 +127,19 @@ public class Orgamica extends javax.swing.JFrame {
         jPanelBarraAzulLayout.setHorizontalGroup(
             jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelBarraAzulLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButtonAddMateria)
-                .addContainerGap(1197, Short.MAX_VALUE))
+                .addComponent(jButtonAddMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 953, Short.MAX_VALUE))
         );
         jPanelBarraAzulLayout.setVerticalGroup(
             jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonAddMateria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+            .addGroup(jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jButtonAddMateria, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                .addComponent(jButton1))
         );
 
-        getContentPane().add(jPanelBarraAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, -1));
+        getContentPane().add(jPanelBarraAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -126,6 +152,10 @@ public class Orgamica extends javax.swing.JFrame {
         String titulo = JOptionPane.showInputDialog("Nome da nova materia: ");
         g.addMateria(titulo);
     }//GEN-LAST:event_jButtonAddMateriaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -161,6 +191,7 @@ public class Orgamica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAddMateria;
     private javax.swing.JLabel jLabelAba1;
     private javax.swing.JLabel jLabelAba2;
