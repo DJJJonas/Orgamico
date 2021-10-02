@@ -45,7 +45,7 @@ public class Orgamica extends javax.swing.JFrame {
         jLabelAnotacoes = new javax.swing.JLabel();
         jPanelBarraAzul = new javax.swing.JPanel();
         jButtonAddMateria = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButtonCriarAnotacao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Orgamica - Organizador Acadêmico");
@@ -110,15 +110,15 @@ public class Orgamica extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/notas.png"))); // NOI18N
-        jButton1.setText("Criar Anotação");
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCriarAnotacao.setBackground(new java.awt.Color(0, 153, 255));
+        jButtonCriarAnotacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/notas.png"))); // NOI18N
+        jButtonCriarAnotacao.setText("Criar Anotação");
+        jButtonCriarAnotacao.setBorder(null);
+        jButtonCriarAnotacao.setContentAreaFilled(false);
+        jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCriarAnotacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonCriarAnotacaoActionPerformed(evt);
             }
         });
 
@@ -129,14 +129,14 @@ public class Orgamica extends javax.swing.JFrame {
             .addGroup(jPanelBarraAzulLayout.createSequentialGroup()
                 .addComponent(jButtonAddMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonCriarAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 953, Short.MAX_VALUE))
         );
         jPanelBarraAzulLayout.setVerticalGroup(
             jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jButtonAddMateria, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                .addComponent(jButton1))
+                .addComponent(jButtonCriarAnotacao))
         );
 
         getContentPane().add(jPanelBarraAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 40));
@@ -153,9 +153,9 @@ public class Orgamica extends javax.swing.JFrame {
         g.addMateria(titulo);
     }//GEN-LAST:event_jButtonAddMateriaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonCriarAnotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCriarAnotacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonCriarAnotacaoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -191,8 +191,8 @@ public class Orgamica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAddMateria;
+    private javax.swing.JButton jButtonCriarAnotacao;
     private javax.swing.JLabel jLabelAba1;
     private javax.swing.JLabel jLabelAba2;
     private javax.swing.JLabel jLabelAba3;
