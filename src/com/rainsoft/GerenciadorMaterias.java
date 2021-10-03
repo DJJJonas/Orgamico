@@ -1,7 +1,7 @@
 package com.rainsoft;
 
-import static com.rainsoft.Orgamica.MATERIAS_JSON_PATH;
-import static com.rainsoft.Orgamica.ORGAMICADATA_PATH;
+import static com.rainsoft.Orgamico.MATERIAS_JSON_PATH;
+import static com.rainsoft.Orgamico.ORGAMICODATA_PATH;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -120,7 +120,7 @@ public class GerenciadorMaterias {
         // Cria um objeto
         File jsonFile = new File(MATERIAS_JSON_PATH);
         // Cria todo o caminho de pastas que conterá o arquivo .json
-        new File(ORGAMICADATA_PATH).mkdirs();
+        new File(ORGAMICODATA_PATH).mkdirs();
         try {
             // Cria um arquivo na pasta
             jsonFile.createNewFile();

@@ -7,19 +7,19 @@ import javax.swing.JOptionPane;
  *
  * @author Rainsoft
  */
-public class Orgamica extends javax.swing.JFrame {
+public class Orgamico extends javax.swing.JFrame {
 
     public GerenciadorMaterias g;
     // Lista que contem as matérias que serão renderizadas
     // na área das materias.
     public static String MATERIAS_JSON_PATH;
-    public static String ORGAMICADATA_PATH;
+    public static String ORGAMICODATA_PATH;
 
     // Creates new form Orgamica
-    public Orgamica() {
+    public Orgamico() {
         // Caminho do arquivo que contem as materias salvas
-        ORGAMICADATA_PATH = System.getenv("APPDATA") + "\\OrgamicaData";
-        MATERIAS_JSON_PATH = ORGAMICADATA_PATH + "\\materias.json";
+        ORGAMICODATA_PATH = System.getenv("APPDATA") + "\\OrgamicaData";
+        MATERIAS_JSON_PATH = ORGAMICODATA_PATH + "\\materias.json";
 
         // Cria uma classe que contem todas as funções relacionadas à area
         // de matérias.
@@ -171,20 +171,20 @@ public class Orgamica extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Orgamica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Orgamico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Orgamica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Orgamico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Orgamica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Orgamico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Orgamica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Orgamico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Orgamica().setVisible(true);
+                new Orgamico().setVisible(true);
             }
         });
 
