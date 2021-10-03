@@ -36,7 +36,7 @@ public class AddMateria extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextNomeMat = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -59,27 +59,27 @@ public class AddMateria extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(132, 132, 132));
-        jTextField1.setText("Nome da Matéria");
-        jTextField1.setActionCommand("<Not Set>");
-        jTextField1.setBorder(null);
-        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField1.setOpaque(false);
-        jTextField1.addCaretListener(new javax.swing.event.CaretListener() {
+        jTextNomeMat.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jTextNomeMat.setForeground(new java.awt.Color(132, 132, 132));
+        jTextNomeMat.setText("Nome da Matéria");
+        jTextNomeMat.setActionCommand("<Not Set>");
+        jTextNomeMat.setBorder(null);
+        jTextNomeMat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextNomeMat.setOpaque(false);
+        jTextNomeMat.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                jTextField1CaretUpdate(evt);
+                jTextNomeMatCaretUpdate(evt);
             }
         });
-        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+        jTextNomeMat.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField1FocusGained(evt);
+                jTextNomeMatFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField1FocusLost(evt);
+                jTextNomeMatFocusLost(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 766, -1));
+        jPanel1.add(jTextNomeMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 766, -1));
 
         jSeparator1.setForeground(new java.awt.Color(54, 54, 54));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 750, 10));
@@ -101,7 +101,6 @@ public class AddMateria extends javax.swing.JFrame {
         jButtonAdicionar.setBorder(null);
         jButtonAdicionar.setContentAreaFilled(false);
         jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAdicionar.setOpaque(false);
         jButtonAdicionar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jButtonAdicionarMouseEntered(evt);
@@ -113,7 +112,6 @@ public class AddMateria extends javax.swing.JFrame {
         jButtonCancelar.setBorder(null);
         jButtonCancelar.setContentAreaFilled(false);
         jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonCancelar.setOpaque(false);
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
@@ -142,6 +140,9 @@ public class AddMateria extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextDescFocusGained(evt);
             }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextDescFocusLost(evt);
+            }
         });
         jScrollPane1.setViewportView(jTextDesc);
 
@@ -157,24 +158,31 @@ public class AddMateria extends javax.swing.JFrame {
         jPanel1.add(jLabelAnexos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, 172));
 
         jLabelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/TelaMat.png"))); // NOI18N
-        jPanel1.add(jLabelFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jLabelFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-        jTextField1.setText("");
-    }//GEN-LAST:event_jTextField1FocusGained
+    private void jTextNomeMatFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextNomeMatFocusGained
+        if (jTextNomeMat.getText().equals("Nome da Matéria")){
+            jTextNomeMat.setText("");
+            jTextNomeMat.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_jTextNomeMatFocusGained
 
-    private void jTextField1CaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_jTextField1CaretUpdate
+    private void jTextNomeMatCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_jTextNomeMatCaretUpdate
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1CaretUpdate
+    }//GEN-LAST:event_jTextNomeMatCaretUpdate
 
     private void jTextDescFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextDescFocusGained
         // TODO add your handling code here:
-        jTextDesc.setText("");
+        if (jTextDesc.getText().equals("Ex: Data e Hora das Aulas\n" +
+"")){
+            jTextDesc.setText("");
+            jTextDesc.setForeground(new Color(0,0,0));
+        }
     }//GEN-LAST:event_jTextDescFocusGained
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
@@ -186,10 +194,20 @@ public class AddMateria extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAdicionarMouseEntered
 
-    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
-        jTextField1.setText("");
+    private void jTextNomeMatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextNomeMatFocusLost
+        if (jTextNomeMat.getText().equals("")){
+            jTextNomeMat.setText("Nome da Matéria");
+            jTextNomeMat.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_jTextNomeMatFocusLost
 
-    }//GEN-LAST:event_jTextField1FocusLost
+    private void jTextDescFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextDescFocusLost
+        if (jTextDesc.getText().equals("")){
+            jTextDesc.setText("Ex: Data e Hora das Aulas\n" +
+"");
+            jTextDesc.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_jTextDescFocusLost
 
     /**
      * @param args the command line arguments
@@ -241,7 +259,7 @@ public class AddMateria extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextArea jTextDesc;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextNomeMat;
     // End of variables declaration//GEN-END:variables
 
 }
