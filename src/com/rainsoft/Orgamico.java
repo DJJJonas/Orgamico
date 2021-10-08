@@ -9,16 +9,15 @@ import javax.swing.JOptionPane;
  */
 public class Orgamico extends javax.swing.JFrame {
 
-    public GerenciadorMaterias g;
-    // Lista que contem as matérias que serão renderizadas
-    // na área das materias.
+    public static GerenciadorMaterias g;
     public static String MATERIAS_JSON_PATH;
     public static String ORGAMICODATA_PATH;
+    public AddMateria addMateriaPanel = new AddMateria();
 
     // Creates new form Orgamica
     public Orgamico() {
         // Caminho do arquivo que contem as materias salvas
-        ORGAMICODATA_PATH = System.getenv("APPDATA") + "\\OrgamicaData";
+        ORGAMICODATA_PATH = System.getenv("APPDATA") + "\\OrgamicoData";
         MATERIAS_JSON_PATH = ORGAMICODATA_PATH + "\\materias.json";
 
         // Cria uma classe que contem todas as funções relacionadas à area
@@ -28,24 +27,24 @@ public class Orgamico extends javax.swing.JFrame {
         g = new GerenciadorMaterias();
 
         initComponents();
-
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanelMenuBarra = new javax.swing.JPanel();
+        jButtonAddMateria = new javax.swing.JButton();
+        jButtonCriarAnotacao = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListMaterias = new javax.swing.JList<>();
         jLabelAba1 = new javax.swing.JLabel();
         jLabelAba2 = new javax.swing.JLabel();
         jLabelAba3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jListMaterias = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         jLabelMateriais = new javax.swing.JLabel();
         jLabelAnotacoes = new javax.swing.JLabel();
         jPanelBarraAzul = new javax.swing.JPanel();
-        jButtonAddMateria = new javax.swing.JButton();
-        jButtonCriarAnotacao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Orgamica - Organizador Acadêmico");
@@ -59,43 +58,8 @@ public class Orgamico extends javax.swing.JFrame {
         jPanelMenuBarra.setPreferredSize(new java.awt.Dimension(970, 541));
         jPanelMenuBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelAba1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Aba.png"))); // NOI18N
-        jLabelAba1.setToolTipText("");
-        jPanelMenuBarra.add(jLabelAba1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 230, -1, -1));
-
-        jLabelAba2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Aba.png"))); // NOI18N
-        jLabelAba2.setToolTipText("");
-        jPanelMenuBarra.add(jLabelAba2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 450, -1, -1));
-
-        jLabelAba3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Aba.png"))); // NOI18N
-        jLabelAba3.setToolTipText("");
-        jPanelMenuBarra.add(jLabelAba3, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, -1, -1));
-
-        jScrollPane1.setBackground(new java.awt.Color(249, 249, 249));
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-        jListMaterias.setBackground(new java.awt.Color(249, 249, 249));
-        jListMaterias.setModel(g.getMaterias());
-        jListMaterias.setCellRenderer(new RendererMaterias());
-        jScrollPane1.setViewportView(jListMaterias);
-
-        jPanelMenuBarra.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 290, 580));
-
-        jLabelMateriais.setBackground(new java.awt.Color(0, 0, 0));
-        jLabelMateriais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Materias.png"))); // NOI18N
-        jPanelMenuBarra.add(jLabelMateriais, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 310, -1));
-
-        jLabelAnotacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Anotações.png"))); // NOI18N
-        jPanelMenuBarra.add(jLabelAnotacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
-
-        getContentPane().add(jPanelMenuBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1250, 670));
-
-        jPanelBarraAzul.setBackground(new java.awt.Color(51, 153, 255));
-
         jButtonAddMateria.setBackground(new java.awt.Color(51, 153, 255));
         jButtonAddMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/materia.png"))); // NOI18N
-        jButtonAddMateria.setText("Adicionar Matéria");
         jButtonAddMateria.setToolTipText("");
         jButtonAddMateria.setBorder(null);
         jButtonAddMateria.setContentAreaFilled(false);
@@ -109,10 +73,10 @@ public class Orgamico extends javax.swing.JFrame {
                 jButtonAddMateriaActionPerformed(evt);
             }
         });
+        jPanelMenuBarra.add(jButtonAddMateria, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 40, 40));
 
         jButtonCriarAnotacao.setBackground(new java.awt.Color(0, 153, 255));
         jButtonCriarAnotacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/notas.png"))); // NOI18N
-        jButtonCriarAnotacao.setText("Criar Anotação");
         jButtonCriarAnotacao.setBorder(null);
         jButtonCriarAnotacao.setContentAreaFilled(false);
         jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -121,22 +85,65 @@ public class Orgamico extends javax.swing.JFrame {
                 jButtonCriarAnotacaoActionPerformed(evt);
             }
         });
+        jPanelMenuBarra.add(jButtonCriarAnotacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 30, 40, 40));
+
+        jScrollPane1.setBackground(new java.awt.Color(249, 249, 249));
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jListMaterias.setBackground(new java.awt.Color(249, 249, 249));
+        jListMaterias.setModel(g.getMaterias());
+        jListMaterias.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListMaterias.setCellRenderer(new RendererMaterias());
+        jListMaterias.setSelectedIndex(1);
+        jScrollPane1.setViewportView(jListMaterias);
+
+        jPanelMenuBarra.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 300, 580));
+
+        jLabelAba1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Aba.png"))); // NOI18N
+        jLabelAba1.setToolTipText("");
+        jPanelMenuBarra.add(jLabelAba1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 230, -1, -1));
+
+        jLabelAba2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Aba.png"))); // NOI18N
+        jLabelAba2.setToolTipText("");
+        jPanelMenuBarra.add(jLabelAba2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 450, -1, -1));
+
+        jLabelAba3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Aba.png"))); // NOI18N
+        jLabelAba3.setToolTipText("");
+        jPanelMenuBarra.add(jLabelAba3, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, -1, -1));
+
+        jScrollPane2.setBackground(new java.awt.Color(249, 249, 249));
+        jScrollPane2.setBorder(null);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jList1.setBackground(new java.awt.Color(249, 249, 249));
+        jList1.setModel(g.getModelAnotacoes());
+        jList1.setCellRenderer(new RendererAnotacoes());
+        jScrollPane2.setViewportView(jList1);
+
+        jPanelMenuBarra.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 72, 550, 580));
+
+        jLabelMateriais.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelMateriais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Materias.png"))); // NOI18N
+        jPanelMenuBarra.add(jLabelMateriais, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 320, -1));
+
+        jLabelAnotacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Anotações.png"))); // NOI18N
+        jPanelMenuBarra.add(jLabelAnotacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
+
+        getContentPane().add(jPanelMenuBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1250, 670));
+
+        jPanelBarraAzul.setBackground(new java.awt.Color(51, 153, 255));
 
         javax.swing.GroupLayout jPanelBarraAzulLayout = new javax.swing.GroupLayout(jPanelBarraAzul);
         jPanelBarraAzul.setLayout(jPanelBarraAzulLayout);
         jPanelBarraAzulLayout.setHorizontalGroup(
             jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBarraAzulLayout.createSequentialGroup()
-                .addComponent(jButtonAddMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonCriarAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 953, Short.MAX_VALUE))
+            .addGap(0, 1250, Short.MAX_VALUE)
         );
         jPanelBarraAzulLayout.setVerticalGroup(
             jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jButtonAddMateria, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                .addComponent(jButtonCriarAnotacao))
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanelBarraAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 40));
@@ -145,16 +152,14 @@ public class Orgamico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // FUNÇÃO PARA O BOTÃO DE ADICIONAR MATÉRIA
-    // 
+    // Ao clicar, a tela de nova matéria ficará visível.
     private void jButtonAddMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddMateriaActionPerformed
-        // g.addMateria("Teste: Adicionar nova matéria");
-        // TODO: Criar tela de adição de matéria
-        String titulo = JOptionPane.showInputDialog("Nome da nova materia: ");
-        g.addMateria(titulo);
+        addMateriaPanel.setVisible(true);
     }//GEN-LAST:event_jButtonAddMateriaActionPerformed
 
     private void jButtonCriarAnotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCriarAnotacaoActionPerformed
-        // TODO add your handling code here:
+        String anotacao = JOptionPane.showInputDialog(null, "Nova anotação: (Janela temporária) (Bug já conhecido: Ao digitar a anotação e clicar em cancelar, a anotação é adicionada)");
+        g.addAnotacao(anotacao);
     }//GEN-LAST:event_jButtonCriarAnotacaoActionPerformed
 
     public static void main(String args[]) {
@@ -198,10 +203,12 @@ public class Orgamico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAba3;
     private javax.swing.JLabel jLabelAnotacoes;
     private javax.swing.JLabel jLabelMateriais;
-    private javax.swing.JList<Materia> jListMaterias;
+    public static javax.swing.JList<String> jList1;
+    public static javax.swing.JList<Materia> jListMaterias;
     private javax.swing.JPanel jPanelBarraAzul;
     private javax.swing.JPanel jPanelMenuBarra;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
 }
