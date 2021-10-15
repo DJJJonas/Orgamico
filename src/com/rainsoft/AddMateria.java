@@ -27,7 +27,7 @@ public class AddMateria extends javax.swing.JFrame {
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -59,13 +59,12 @@ public class AddMateria extends javax.swing.JFrame {
         jTextNomeMat.setText("Nome da Matéria");
         jTextNomeMat.setActionCommand("<Not Set>");
         jTextNomeMat.setBorder(null);
-        jTextNomeMat.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextNomeMat.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextNomeMat.setOpaque(false);
         jTextNomeMat.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextNomeMatFocusGained(evt);
             }
-
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jTextNomeMatFocusLost(evt);
             }
@@ -88,11 +87,10 @@ public class AddMateria extends javax.swing.JFrame {
         jLabelDescText.setText("Descrição (Opcional)");
         jPanel1.add(jLabelDescText, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
-        jButtonAdicionar
-                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/adicionar.png"))); // NOI18N
+        jButtonAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/adicionar.png"))); // NOI18N
         jButtonAdicionar.setBorder(null);
         jButtonAdicionar.setContentAreaFilled(false);
-        jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAdicionarActionPerformed(evt);
@@ -103,7 +101,7 @@ public class AddMateria extends javax.swing.JFrame {
         jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/cancelar.png"))); // NOI18N
         jButtonCancelar.setBorder(null);
         jButtonCancelar.setContentAreaFilled(false);
-        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
@@ -132,7 +130,6 @@ public class AddMateria extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextDescFocusGained(evt);
             }
-
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jTextDescFocusLost(evt);
             }
@@ -141,8 +138,7 @@ public class AddMateria extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 740, 80));
 
-        jLabelCabecalho
-                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/cabeçalho.png"))); // NOI18N
+        jLabelCabecalho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/cabeçalho.png"))); // NOI18N
         jPanel1.add(jLabelCabecalho, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         jLabelDesc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/des.png"))); // NOI18N

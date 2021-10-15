@@ -13,6 +13,7 @@ public class Orgamico extends javax.swing.JFrame {
     public static String MATERIAS_JSON_PATH;
     public static String ORGAMICODATA_PATH;
     public AddMateria addMateriaPanel = new AddMateria();
+    public MostrarMat visualizar = new MostrarMat();
 
     // Creates new form Orgamica
     public Orgamico() {
@@ -60,7 +61,7 @@ public class Orgamico extends javax.swing.JFrame {
 
         jButtonAddMateria.setBackground(new java.awt.Color(51, 153, 255));
         jButtonAddMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/materia.png"))); // NOI18N
-        jButtonAddMateria.setToolTipText("");
+        jButtonAddMateria.setToolTipText("Nova Matéria");
         jButtonAddMateria.setBorder(null);
         jButtonAddMateria.setContentAreaFilled(false);
         jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -77,6 +78,7 @@ public class Orgamico extends javax.swing.JFrame {
 
         jButtonCriarAnotacao.setBackground(new java.awt.Color(0, 153, 255));
         jButtonCriarAnotacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/notas.png"))); // NOI18N
+        jButtonCriarAnotacao.setToolTipText("Nova Anotação");
         jButtonCriarAnotacao.setBorder(null);
         jButtonCriarAnotacao.setContentAreaFilled(false);
         jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -96,7 +98,13 @@ public class Orgamico extends javax.swing.JFrame {
         jListMaterias.setModel(g.getMaterias());
         jListMaterias.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jListMaterias.setCellRenderer(new RendererMaterias());
+        jListMaterias.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jListMaterias.setSelectedIndex(1);
+        jListMaterias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListMateriasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jListMaterias);
 
         jPanelMenuBarra.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 300, 580));
@@ -161,6 +169,17 @@ public class Orgamico extends javax.swing.JFrame {
         String anotacao = JOptionPane.showInputDialog(null, "Nova anotação: (Janela temporária) (Bug já conhecido: Ao digitar a anotação e clicar em cancelar, a anotação é adicionada)");
         g.addAnotacao(anotacao);
     }//GEN-LAST:event_jButtonCriarAnotacaoActionPerformed
+
+    private void jListMateriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListMateriasMouseClicked
+        int t = jListMaterias.getSelectedIndex();
+        switch(t){
+            case 0:
+               visualizar.setVisible(true);
+            break;
+        }
+       
+        
+    }//GEN-LAST:event_jListMateriasMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

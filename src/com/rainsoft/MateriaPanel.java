@@ -9,7 +9,7 @@ public class MateriaPanel extends javax.swing.JPanel {
      * Creates new form Materia
      */
     public int index;
-    
+
     public void setIndex(int i) {
         index = i;
     }
@@ -57,7 +57,7 @@ public class MateriaPanel extends javax.swing.JPanel {
         jLabelBackground = new javax.swing.JLabel();
 
         setToolTipText("Lorem Ipsum");
-        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(275, 102));
         setMinimumSize(new java.awt.Dimension(275, 102));
         setOpaque(false);
@@ -75,12 +75,18 @@ public class MateriaPanel extends javax.swing.JPanel {
         jLabelTitulo.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
         jLabelTitulo.setToolTipText("");
         jLabelTitulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabelTitulo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jLabelTitulo.setMaximumSize(new java.awt.Dimension(20, 21));
         jLabelTitulo.setMinimumSize(new java.awt.Dimension(20, 21));
         jLabelTitulo.setPreferredSize(new java.awt.Dimension(20, 21));
         jLabelTitulo.setVerifyInputWhenFocusTarget(false);
-        add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 270, 80));
+        jLabelTitulo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelTituloMouseClicked(evt);
+            }
+        });
+        add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 250, 70));
 
         jLabelBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Nota.png"))); // NOI18N
         jLabelBackground.setMaximumSize(new java.awt.Dimension(271, 110));
@@ -88,6 +94,10 @@ public class MateriaPanel extends javax.swing.JPanel {
         jLabelBackground.setPreferredSize(new java.awt.Dimension(271, 110));
         add(jLabelBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 110));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabelTituloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTituloMouseClicked
+
+    }//GEN-LAST:event_jLabelTituloMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
