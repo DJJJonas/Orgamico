@@ -69,6 +69,11 @@ public class AddMateria extends javax.swing.JFrame {
                 jTextNomeMatFocusLost(evt);
             }
         });
+        jTextNomeMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNomeMatActionPerformed(evt);
+            }
+        });
         jPanel1.add(jTextNomeMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 766, -1));
 
         jSeparator1.setForeground(new java.awt.Color(54, 54, 54));
@@ -76,11 +81,11 @@ public class AddMateria extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(91, 91, 91));
-        jLabel5.setText("Adiconar Anexo");
+        jLabel5.setText("Adicionar Anexo");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
         jSeparator2.setForeground(new java.awt.Color(79, 79, 79));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 200, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 210, 10));
 
         jLabelDescText.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 20)); // NOI18N
         jLabelDescText.setForeground(new java.awt.Color(133, 133, 133));
@@ -88,9 +93,10 @@ public class AddMateria extends javax.swing.JFrame {
         jPanel1.add(jLabelDescText, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         jButtonAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/adicionar.png"))); // NOI18N
+        jButtonAdicionar.setToolTipText("Salvar");
         jButtonAdicionar.setBorder(null);
         jButtonAdicionar.setContentAreaFilled(false);
-        jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAdicionarActionPerformed(evt);
@@ -99,17 +105,19 @@ public class AddMateria extends javax.swing.JFrame {
         jPanel1.add(jButtonAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 420, 60, 50));
 
         jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/cancelar.png"))); // NOI18N
+        jButtonCancelar.setToolTipText("Cancelar e Sair");
         jButtonCancelar.setBorder(null);
         jButtonCancelar.setContentAreaFilled(false);
-        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 420, 60, 50));
+        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, 60, 50));
 
         jButtonAnexo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/addanexo.png"))); // NOI18N
+        jButtonAnexo.setToolTipText("Adicionar Anexo");
         jButtonAnexo.setBorder(null);
         jButtonAnexo.setContentAreaFilled(false);
         jButtonAnexo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -154,6 +162,10 @@ public class AddMateria extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextNomeMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNomeMatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNomeMatActionPerformed
 
     private void jTextNomeMatFocusGained(java.awt.event.FocusEvent evt) {// GEN-FIRST:event_jTextNomeMatFocusGained
         if (jTextNomeMat.getText().equals("Nome da Matéria")) {

@@ -61,8 +61,9 @@ public class GerenciadorMaterias {
     // Adiciona uma matéria à lista e ao arquivo JSON
     public void addMateria(Materia materia) {
         // Se a materia não tem nome, ela não será adicionada
-        if (materia.getTitulo().strip() == "")
+        if (materia.getTitulo().strip() == "") {
             return;
+        }
         // ADICIONA uma NOVA MATERIA na ultima posição
         materias.add(materias.size(), materia);
         // Adiciona ao arquivo JSON
@@ -136,8 +137,9 @@ public class GerenciadorMaterias {
         ArrayList<String> anotacoes = new ArrayList<>();
         JSONArray anotacoesjson = materia.getJSONArray("anotacoes");
 
-        for (int i = 0; i < anotacoesjson.length(); i++)
+        for (int i = 0; i < anotacoesjson.length(); i++) {
             anotacoes.add(anotacoesjson.getString(i));
+        }
 
         return anotacoes;
     }
@@ -178,7 +180,7 @@ public class GerenciadorMaterias {
 
     private void escreverArquivo(File jsonFile, String texto) {
         try (FileWriter writer = new FileWriter(jsonFile) // Objeto escritor
-        ) {
+                ) {
             // Adiciona um lista vazia de matérias ao arquivo
             writer.write(texto);
         } catch (IOException ex) {
@@ -231,8 +233,9 @@ public class GerenciadorMaterias {
     // Função que adiciona uma anotação à matéria selecionada
     public void addAnotacao(String anotacao) {
         // Se a anotação estiver vazia, ela não será adicionada
-        if (anotacao.strip() == "")
+        if (anotacao.strip() == "") {
             return;
+        }
         // ADICIONA uma NOVA ANOTAÇÃO na ultima posição
         getSelectedMateria().addAnotacao(anotacao);
         // ADICIONA ao arquivo JSON

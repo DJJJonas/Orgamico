@@ -25,7 +25,10 @@ public class MostrarMat extends javax.swing.JFrame {
         this.setBackground(new Color(0, 0, 0, 0));
         jPanel1.setBackground(new Color(0, 0, 0, 0));
     }
-    
+
+    public void mostrar(Materia m){
+        jTextTitulo.setText(m.getTitulo());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,6 +40,11 @@ public class MostrarMat extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jTextTitulo = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -50,12 +58,37 @@ public class MostrarMat extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextTitulo.setEditable(false);
-        jTextTitulo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        jTextTitulo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 26)); // NOI18N
         jTextTitulo.setForeground(new java.awt.Color(77, 73, 73));
-        jTextTitulo.setText("TESTANDO 123.....");
+        jTextTitulo.setText("Aqui Vai o Titulo da Matéria");
         jTextTitulo.setBorder(null);
         jTextTitulo.setOpaque(false);
-        jPanel1.add(jTextTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 530, 40));
+        jPanel1.add(jTextTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 640, 40));
+
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setText("Anexos:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 130, 30));
+
+        jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 17)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Descrição:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 130, 30));
+
+        jScrollPane1.setBorder(null);
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Texto Exemplo\n\n");
+        jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 650, 100));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/anexo2.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, 150));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/edit.png"))); // NOI18N
         jButton1.setToolTipText("Editar");
@@ -64,7 +97,7 @@ public class MostrarMat extends javax.swing.JFrame {
         jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setFocusable(false);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 410, 50, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, 50, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/remover.png"))); // NOI18N
         jButton2.setToolTipText("Excluir Matéria");
@@ -72,7 +105,7 @@ public class MostrarMat extends javax.swing.JFrame {
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 410, -1, 50));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, -1, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/visualizarmat.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 750, -1));
@@ -116,13 +149,20 @@ public class MostrarMat extends javax.swing.JFrame {
                 new MostrarMat().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextTitulo;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -14,6 +14,7 @@ public class Orgamico extends javax.swing.JFrame {
     public static String ORGAMICODATA_PATH;
     public AddMateria addMateriaPanel = new AddMateria();
     public MostrarMat visualizar = new MostrarMat();
+    public Materia m = new Materia();
 
     // Creates new form Orgamica
     public Orgamico() {
@@ -139,7 +140,7 @@ public class Orgamico extends javax.swing.JFrame {
         jLabelAnotacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Anotações.png"))); // NOI18N
         jPanelMenuBarra.add(jLabelAnotacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
-        getContentPane().add(jPanelMenuBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1250, 670));
+        getContentPane().add(jPanelMenuBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1240, 660));
 
         jPanelBarraAzul.setBackground(new java.awt.Color(51, 153, 255));
 
@@ -147,14 +148,14 @@ public class Orgamico extends javax.swing.JFrame {
         jPanelBarraAzul.setLayout(jPanelBarraAzulLayout);
         jPanelBarraAzulLayout.setHorizontalGroup(
             jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1250, Short.MAX_VALUE)
+            .addGap(0, 1240, Short.MAX_VALUE)
         );
         jPanelBarraAzulLayout.setVerticalGroup(
             jPanelBarraAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanelBarraAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 40));
+        getContentPane().add(jPanelBarraAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -171,14 +172,9 @@ public class Orgamico extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCriarAnotacaoActionPerformed
 
     private void jListMateriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListMateriasMouseClicked
-        int t = jListMaterias.getSelectedIndex();
-        switch(t){
-            case 0:
-               visualizar.setVisible(true);
-            break;
-        }
-       
-        
+        g.getMateriaSelecionada();
+        visualizar.mostrar(m);
+        visualizar.setVisible(true);
     }//GEN-LAST:event_jListMateriasMouseClicked
 
     public static void main(String args[]) {
