@@ -35,10 +35,6 @@ public class MateriaPanel extends javax.swing.JPanel {
         return jLabelTitulo.getText();
     }
 
-    public void setDescricao(String text) {
-        this.setToolTipText(text);
-    }
-
     public void setColor(int r, int g, int b) {
         this.jLabelImagem.setBackground(new Color(r, g, b));
     }

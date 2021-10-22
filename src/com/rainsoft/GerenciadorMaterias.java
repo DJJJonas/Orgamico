@@ -73,7 +73,7 @@ public class GerenciadorMaterias {
     }
 
     // Funções que remove a materia da posição especificada matéria
-    public void removeMateria(int pos) {
+    public void removerMateriaIndex(int pos) {
         // REMOVE a MATERIA da posição pos
         materias.remove(pos);
         // Remove do arquivo JSON;
@@ -82,7 +82,18 @@ public class GerenciadorMaterias {
         salvarMaterias();
     }
 
-    public int getMateriaSelecionada() {
+    public void removerMateria(Materia materia) {
+        for (int i = 0; i < materias.size(); i++) {
+            if (materias.get(i) == materia)
+                removerMateriaIndex(i);
+        }
+    }
+
+    public void removerMateriaSelecionada() {
+        removerMateriaIndex(getMateriaSelecionadaIndex());
+    }
+
+    public int getMateriaSelecionadaIndex() {
         return Orgamico.jListMaterias.getSelectedIndex();
     }
 
@@ -206,7 +217,7 @@ public class GerenciadorMaterias {
         return Orgamico.jListMaterias.getSelectedIndex();
     }
 
-    public Materia getSelectedMateria() {
+    public Materia getMateriaSelecionada() {
         return materias.get(getSelectedIndex());
     }
 
@@ -237,7 +248,7 @@ public class GerenciadorMaterias {
             return;
         }
         // ADICIONA uma NOVA ANOTAÇÃO na ultima posição
-        getSelectedMateria().addAnotacao(anotacao);
+        getMateriaSelecionada().addAnotacao(anotacao);
         // ADICIONA ao arquivo JSON
         addAnotacaoJSON(anotacao);
         // Salva para o arquivo

@@ -1,5 +1,8 @@
 package com.rainsoft;
 
+import com.rainsoft.renderers.RendererMaterias;
+
+import com.rainsoft.renderers.RendererAnotacoes;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,10 +15,11 @@ public class Orgamico extends javax.swing.JFrame {
     public static GerenciadorMaterias g;
     public static String MATERIAS_JSON_PATH;
     public static String ORGAMICODATA_PATH;
-    public AddMateria addMateriaPanel = new AddMateria();
-    public MostrarMat visualizar = new MostrarMat();
-    public Materia m = new Materia();
-
+    public static AddMateria addMateriaPanel = new AddMateria();
+    public static MostrarMateria mostrarMateria = new MostrarMateria();
+    public static MostrarAnotacao mostrarAnotacao = new MostrarAnotacao();
+    public static EditarMateria editar = new EditarMateria();
+    
     // Creates new form Orgamica
     public Orgamico() {
         // Caminho do arquivo que contem as materias salvas
@@ -43,7 +47,7 @@ public class Orgamico extends javax.swing.JFrame {
         jLabelAba2 = new javax.swing.JLabel();
         jLabelAba3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jListAnotacoes = new javax.swing.JList<>();
         jLabelMateriais = new javax.swing.JLabel();
         jLabelAnotacoes = new javax.swing.JLabel();
         jPanelBarraAzul = new javax.swing.JPanel();
@@ -65,7 +69,7 @@ public class Orgamico extends javax.swing.JFrame {
         jButtonAddMateria.setToolTipText("Nova Matéria");
         jButtonAddMateria.setBorder(null);
         jButtonAddMateria.setContentAreaFilled(false);
-        jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAddMateria.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButtonAddMateria.setFocusCycleRoot(true);
         jButtonAddMateria.setFocusable(false);
@@ -82,7 +86,7 @@ public class Orgamico extends javax.swing.JFrame {
         jButtonCriarAnotacao.setToolTipText("Nova Anotação");
         jButtonCriarAnotacao.setBorder(null);
         jButtonCriarAnotacao.setContentAreaFilled(false);
-        jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonCriarAnotacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCriarAnotacaoActionPerformed(evt);
@@ -99,7 +103,7 @@ public class Orgamico extends javax.swing.JFrame {
         jListMaterias.setModel(g.getMaterias());
         jListMaterias.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jListMaterias.setCellRenderer(new RendererMaterias());
-        jListMaterias.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jListMaterias.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jListMaterias.setSelectedIndex(1);
         jListMaterias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -126,10 +130,15 @@ public class Orgamico extends javax.swing.JFrame {
         jScrollPane2.setBorder(null);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jList1.setBackground(new java.awt.Color(249, 249, 249));
-        jList1.setModel(g.getModelAnotacoes());
-        jList1.setCellRenderer(new RendererAnotacoes());
-        jScrollPane2.setViewportView(jList1);
+        jListAnotacoes.setBackground(new java.awt.Color(249, 249, 249));
+        jListAnotacoes.setModel(g.getModelAnotacoes());
+        jListAnotacoes.setCellRenderer(new RendererAnotacoes());
+        jListAnotacoes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListAnotacoesMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jListAnotacoes);
 
         jPanelMenuBarra.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 72, 550, 580));
 
@@ -172,10 +181,30 @@ public class Orgamico extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCriarAnotacaoActionPerformed
 
     private void jListMateriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListMateriasMouseClicked
-        g.getMateriaSelecionada();
-        visualizar.mostrar(m);
-        visualizar.setVisible(true);
+        // Se não houver matérias, não faça nada
+        try {
+            g.getMateriaSelecionada();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            return;
+        }
+
+        // Se apertou o botão direito
+        if (evt.getButton() == 3) {
+            mostrarMateria.mostrarMateria(g.getMateriaSelecionada());
+        }
     }//GEN-LAST:event_jListMateriasMouseClicked
+
+    private void jListAnotacoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListAnotacoesMouseClicked
+        // Se não houver anotações, não faça nada
+        try {
+            jListAnotacoes.getSelectedValue();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            return;
+        }
+
+        mostrarAnotacao.mostrarAnotacao(jListAnotacoes.getSelectedValue());
+
+    }//GEN-LAST:event_jListAnotacoesMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -218,7 +247,7 @@ public class Orgamico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAba3;
     private javax.swing.JLabel jLabelAnotacoes;
     private javax.swing.JLabel jLabelMateriais;
-    public static javax.swing.JList<String> jList1;
+    public static javax.swing.JList<String> jListAnotacoes;
     public static javax.swing.JList<Materia> jListMaterias;
     private javax.swing.JPanel jPanelBarraAzul;
     private javax.swing.JPanel jPanelMenuBarra;

@@ -1,5 +1,6 @@
-package com.rainsoft;
+package com.rainsoft.renderers;
 
+import com.rainsoft.AnotacaoPanel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 

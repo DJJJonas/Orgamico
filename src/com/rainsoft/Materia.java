@@ -7,6 +7,8 @@ import javax.swing.ImageIcon;
 public class Materia {
     private String titulo;
     private String descricao;
+    private int maxTitulo = 64;
+    private int maxDescricao = 128;
     private ArrayList<String> anotacoes;
     private ImageIcon icon;
 
@@ -14,12 +16,22 @@ public class Materia {
         this.titulo = "";
         this.descricao = "";
         this.anotacoes = new ArrayList<String>();
+        
+        if (this.titulo.length() > maxTitulo)
+            this.titulo = this.titulo.substring(0, maxTitulo);
+        if (this.descricao.length() > maxDescricao)
+            this.descricao = this.descricao.substring(0, maxDescricao);
     }
 
     public Materia(String titulo) {
         this.titulo = titulo;
         this.descricao = "";
         this.anotacoes = new ArrayList<String>();
+        
+        if (this.titulo.length() > maxTitulo)
+            this.titulo = this.titulo.substring(0, maxTitulo);
+        if (this.descricao.length() > maxDescricao)
+            this.descricao = this.descricao.substring(0, maxDescricao);
     }
 
     public Materia(String titulo, String descricao) {
@@ -29,12 +41,22 @@ public class Materia {
         else
             this.descricao = descricao;
         this.anotacoes = new ArrayList<String>();
+        
+        if (this.titulo.length() > maxTitulo)
+            this.titulo = this.titulo.substring(0, maxTitulo);
+        if (this.descricao.length() > maxDescricao)
+            this.descricao = this.descricao.substring(0, maxDescricao);
     }
 
     public Materia(String titulo, ArrayList<String> anotacoes) {
         this.titulo = titulo;
         this.descricao = "";
         this.anotacoes = anotacoes;
+        
+        if (this.titulo.length() > maxTitulo)
+            this.titulo = this.titulo.substring(0, maxTitulo);
+        if (this.descricao.length() > maxDescricao)
+            this.descricao = this.descricao.substring(0, maxDescricao);
     }
 
     public Materia(String titulo, String descricao, ArrayList<String> anotacoes) {
@@ -44,6 +66,11 @@ public class Materia {
         else
             this.descricao = descricao;
         this.anotacoes = anotacoes;
+        
+        if (this.titulo.length() > maxTitulo)
+            this.titulo = this.titulo.substring(0, maxTitulo);
+        if (this.descricao.length() > maxDescricao)
+            this.descricao = this.descricao.substring(0, maxDescricao);
     }
 
     public void addAnotacao(String anotacao) {
@@ -64,6 +91,8 @@ public class Materia {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+        if (this.titulo.length() > maxTitulo)
+            this.titulo = this.titulo.substring(0, maxTitulo);
     }
 
     public String getDescricao() {
@@ -72,6 +101,8 @@ public class Materia {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+        if (this.descricao.length() > maxDescricao)
+            this.descricao = this.descricao.substring(0, maxDescricao);
     }
 
     public ImageIcon getIcon() {
