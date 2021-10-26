@@ -17,7 +17,7 @@ public class Orgamico extends javax.swing.JFrame {
     public static String ORGAMICODATA_PATH;
     public static AddMateria addMateriaPanel = new AddMateria();
     public static MostrarMateria mostrarMateria = new MostrarMateria();
-    public static MostrarAnotacao mostrarAnotacao = new MostrarAnotacao();
+    public static AddAnotacao mostrarAnotacao = new AddAnotacao();
     public static EditarMateria editar = new EditarMateria();
     
     // Creates new form Orgamica
@@ -69,7 +69,7 @@ public class Orgamico extends javax.swing.JFrame {
         jButtonAddMateria.setToolTipText("Nova Matéria");
         jButtonAddMateria.setBorder(null);
         jButtonAddMateria.setContentAreaFilled(false);
-        jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonAddMateria.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButtonAddMateria.setFocusCycleRoot(true);
         jButtonAddMateria.setFocusable(false);
@@ -86,7 +86,7 @@ public class Orgamico extends javax.swing.JFrame {
         jButtonCriarAnotacao.setToolTipText("Nova Anotação");
         jButtonCriarAnotacao.setBorder(null);
         jButtonCriarAnotacao.setContentAreaFilled(false);
-        jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCriarAnotacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCriarAnotacaoActionPerformed(evt);

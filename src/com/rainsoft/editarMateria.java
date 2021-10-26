@@ -95,7 +95,7 @@ public class EditarMateria extends javax.swing.JFrame {
         jButton1.setFocusPainted(false);
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 50, -1));
 
-        jButtonConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/adicionar.png"))); // NOI18N
+        jButtonConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Salvar.png"))); // NOI18N
         jButtonConfirmar.setToolTipText("Salvar");
         jButtonConfirmar.setBorder(null);
         jButtonConfirmar.setContentAreaFilled(false);

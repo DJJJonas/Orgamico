@@ -51,6 +51,7 @@ public class MostrarMateria extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButtonEditar = new javax.swing.JButton();
         jButtonDeletar = new javax.swing.JButton();
+        jButtonVoltar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -121,6 +122,17 @@ public class MostrarMateria extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, -1, 50));
 
+        jButtonVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/voltar.png"))); // NOI18N
+        jButtonVoltar.setToolTipText("Voltar");
+        jButtonVoltar.setBorder(null);
+        jButtonVoltar.setContentAreaFilled(false);
+        jButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/visualizarmat.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 750, -1));
 
@@ -139,6 +151,11 @@ public class MostrarMateria extends javax.swing.JFrame {
         Orgamico.editar.editar(materia);
         setVisible(false);
     }//GEN-LAST:event_jButtonEditarActionPerformed
+
+    private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButtonVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,6 +199,7 @@ public class MostrarMateria extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDeletar;
     private javax.swing.JButton jButtonEditar;
+    private javax.swing.JButton jButtonVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
