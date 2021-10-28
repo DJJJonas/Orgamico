@@ -66,8 +66,8 @@ public class GerenciadorMaterias {
         }
         // ADICIONA uma NOVA MATERIA na ultima posição
         materias.add(materias.size(), materia);
-        // Adiciona ao arquivo JSON
-        addMateriaJSON(materia);
+        // // Adiciona ao arquivo JSON
+        // addMateriaJSON(materia);
         // Salva para o arquivo
         salvarMaterias();
     }
@@ -93,8 +93,16 @@ public class GerenciadorMaterias {
         removerMateriaIndex(getMateriaSelecionadaIndex());
     }
 
+    public void removerAnotacaoIndex() {
+
+    }
+
     public int getMateriaSelecionadaIndex() {
         return Orgamico.jListMaterias.getSelectedIndex();
+    }
+
+    public int getAnotacaoSelecionadaIndex() {
+        return Orgamico.jListAnotacoes.getSelectedIndex();
     }
 
     public void setAnotacoes(int index) {
@@ -109,6 +117,18 @@ public class GerenciadorMaterias {
     // Salva o conteúdo da variavel json para o arquivo materias.json
     public void salvarMaterias() {
         File jsonFile = new File(MATERIAS_JSON_PATH);
+        json = "{\"materias\":[]}";
+
+        for (int i = 0; i < Orgamico.jListMaterias.getModel().getSize(); i++) {
+            Materia materia = materias.get(i);
+            addMateriaJSON( materia );
+            ArrayList<String> anotacoes = materia.getAnotacoes();
+
+            for (int j = 0; j < anotacoes.size(); j++) {
+                addAnotacaoJSON(i, anotacoes.get(j) );
+            }
+        }
+
         escreverArquivo(jsonFile, json);
     }
 
@@ -134,12 +154,27 @@ public class GerenciadorMaterias {
         json = materiasjson.toString(4);
     }
 
+    public void removeAnotacao(int mpos, int pos) {
+        Materia materia = materias.get(mpos);
+        materia.removeAnotacao(Orgamico.g.getAnotacaoSelecionadaIndex());
+        removeAnotacaoJSON(mpos, pos);
+    }
+
+    public void removeAnotacaoJSON(int mpos, int pos) {
+        // Lista de materias
+        JSONObject materiasjson = new JSONObject(json);
+        // Remove a anotação da matéria na posição
+        materiasjson.getJSONArray("materias").getJSONObject(mpos).getJSONArray("anotacoes").remove(pos);
+        // Atualiza a variavel que contem o conteudo do arquivo json
+        // O 4 simboliza a indentação do arquivo (4 espaços)
+        json = materiasjson.toString(4);
+    }
+
     private JSONObject criarMateriaJSONObject(String titulo, String descricao) {
         JSONObject materiaobj = new JSONObject();
         materiaobj.put("titulo", titulo);
         materiaobj.put("descricao", descricao);
         materiaobj.put("anotacoes", new JSONArray());
-        System.out.println(materiaobj.toString(4));
 
         return materiaobj;
     }
@@ -191,7 +226,7 @@ public class GerenciadorMaterias {
 
     private void escreverArquivo(File jsonFile, String texto) {
         try (FileWriter writer = new FileWriter(jsonFile) // Objeto escritor
-                ) {
+        ) {
             // Adiciona um lista vazia de matérias ao arquivo
             writer.write(texto);
         } catch (IOException ex) {
@@ -213,12 +248,8 @@ public class GerenciadorMaterias {
         return conteudo;
     }
 
-    public int getSelectedIndex() {
-        return Orgamico.jListMaterias.getSelectedIndex();
-    }
-
     public Materia getMateriaSelecionada() {
-        return materias.get(getSelectedIndex());
+        return materias.get(getMateriaSelecionadaIndex());
     }
 
     public ListModel<Materia> getMaterias() {
@@ -250,18 +281,30 @@ public class GerenciadorMaterias {
         // ADICIONA uma NOVA ANOTAÇÃO na ultima posição
         getMateriaSelecionada().addAnotacao(anotacao);
         // ADICIONA ao arquivo JSON
-        addAnotacaoJSON(anotacao);
+        addAnotacaoJSON(getMateriaSelecionadaIndex(), anotacao);
+        // Atualiza todas as anotações
+        Orgamico.g.setAnotacoes(getMateriaSelecionadaIndex());
+        // Salva para o arquivo
+        salvarMaterias();
+    }
+    
+    // Função que adiciona uma anotação à matéria selecionada
+    public void editarAnotacao(int pos, String anotacao) {
+        // ADICIONA uma NOVA ANOTAÇÃO na ultima posição
+        getMateriaSelecionada().addAnotacao(anotacao);
+        // ADICIONA ao arquivo JSON
+        addAnotacaoJSON(getMateriaSelecionadaIndex() ,anotacao);
         // Salva para o arquivo
         salvarMaterias();
         // Atualiza todas as anotações
-        Orgamico.g.setAnotacoes(getSelectedIndex());
+        Orgamico.g.setAnotacoes(getMateriaSelecionadaIndex());
     }
 
-    private void addAnotacaoJSON(String anotacao) {
+    private void addAnotacaoJSON(int pos, String anotacao) {
         // Lista de materias
         JSONObject materiasjson = new JSONObject(json);
         // Adicionar anotação
-        materiasjson.getJSONArray("materias").getJSONObject(getSelectedIndex()).getJSONArray("anotacoes").put(anotacao);
+        materiasjson.getJSONArray("materias").getJSONObject(pos).getJSONArray("anotacoes").put(anotacao);
         System.out.println("Anotação adicionada: " + anotacao);
         // Atualiza a variavel que contem o conteudo do arquivo json
         // O 4 simboliza a indentação do arquivo (4 espaços)

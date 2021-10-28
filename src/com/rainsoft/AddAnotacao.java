@@ -58,6 +58,7 @@ public class AddAnotacao extends javax.swing.JFrame {
         jButtonCancelar.setToolTipText("Cancelar");
         jButtonCancelar.setBorder(null);
         jButtonCancelar.setContentAreaFilled(false);
+        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
@@ -69,6 +70,12 @@ public class AddAnotacao extends javax.swing.JFrame {
         jButtonAdicionar.setToolTipText("Adicionar");
         jButtonAdicionar.setBorder(null);
         jButtonAdicionar.setContentAreaFilled(false);
+        jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAdicionarActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButtonAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, 40));
 
         jScrollPane2.setBorder(null);
@@ -92,52 +99,12 @@ public class AddAnotacao extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
-    public void mostrarAnotacao(String anotacao) {
-        jTextAnotacao.setText(anotacao);
-        setVisible(true);
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddAnotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddAnotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddAnotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddAnotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AddAnotacao().setVisible(true);
-            }
-        });
-    }
+    private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
+        String novaAnotacao = jTextAnotacao.getText();
+        if (novaAnotacao.length() > 4096) novaAnotacao.substring(0, 4095);
+        Orgamico.g.addAnotacao(novaAnotacao);
+        setVisible(false);
+    }//GEN-LAST:event_jButtonAdicionarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionar;
@@ -146,6 +113,6 @@ public class AddAnotacao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextAnotacao;
+    public javax.swing.JTextArea jTextAnotacao;
     // End of variables declaration//GEN-END:variables
 }

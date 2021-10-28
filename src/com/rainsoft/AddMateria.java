@@ -199,6 +199,7 @@ public class AddMateria extends javax.swing.JFrame {
         descricao = jTextDesc.getText();
         Orgamico.g.addMateria(new Materia(titulo, descricao));
 
+        Orgamico.mostrarMateria.mostrarMateria(Orgamico.g.getMateriaSelecionada());
         setVisible(false);
     }// GEN-LAST:event_jButtonAdicionarActionPerformed
 

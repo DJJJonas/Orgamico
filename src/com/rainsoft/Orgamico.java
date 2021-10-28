@@ -1,9 +1,7 @@
 package com.rainsoft;
 
-import com.rainsoft.renderers.RendererMaterias;
-
 import com.rainsoft.renderers.RendererAnotacoes;
-import javax.swing.JOptionPane;
+import com.rainsoft.renderers.RendererMaterias;
 
 /**
  * Classe principal. As funções e atributos principais estão aqui.
@@ -17,9 +15,11 @@ public class Orgamico extends javax.swing.JFrame {
     public static String ORGAMICODATA_PATH;
     public static AddMateria addMateriaPanel = new AddMateria();
     public static MostrarMateria mostrarMateria = new MostrarMateria();
-    public static AddAnotacao mostrarAnotacao = new AddAnotacao();
-    public static EditarMateria editar = new EditarMateria();
-    
+    public static EditarMateria editarMateria = new EditarMateria();
+    public static AddAnotacao addAnotacao = new AddAnotacao();
+    public static EditarAnotacao editarAnotacao = new EditarAnotacao();
+    public static MostrarAnotacao mostrarAnotacao = new MostrarAnotacao();
+
     // Creates new form Orgamica
     public Orgamico() {
         // Caminho do arquivo que contem as materias salvas
@@ -35,6 +35,7 @@ public class Orgamico extends javax.swing.JFrame {
         initComponents();
     }
 
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -95,7 +96,6 @@ public class Orgamico extends javax.swing.JFrame {
         jPanelMenuBarra.add(jButtonCriarAnotacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 30, 40, 40));
 
         jScrollPane1.setBackground(new java.awt.Color(249, 249, 249));
-        jScrollPane1.setBorder(null);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -171,16 +171,17 @@ public class Orgamico extends javax.swing.JFrame {
 
     // FUNÇÃO PARA O BOTÃO DE ADICIONAR MATÉRIA
     // Ao clicar, a tela de nova matéria ficará visível.
-    private void jButtonAddMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddMateriaActionPerformed
+    private void jButtonAddMateriaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonAddMateriaActionPerformed
         addMateriaPanel.setVisible(true);
-    }//GEN-LAST:event_jButtonAddMateriaActionPerformed
+    }// GEN-LAST:event_jButtonAddMateriaActionPerformed
 
-    private void jButtonCriarAnotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCriarAnotacaoActionPerformed
-        String anotacao = JOptionPane.showInputDialog(null, "Nova anotação: (Janela temporária) (Bug já conhecido: Ao digitar a anotação e clicar em cancelar, a anotação é adicionada)");
-        g.addAnotacao(anotacao);
-    }//GEN-LAST:event_jButtonCriarAnotacaoActionPerformed
+    private void jButtonCriarAnotacaoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonCriarAnotacaoActionPerformed
+        addAnotacao.jTextAnotacao.setText("");
+        addAnotacao.setVisible(true);
+        // g.addAnotacao(anotacao);
+    }// GEN-LAST:event_jButtonCriarAnotacaoActionPerformed
 
-    private void jListMateriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListMateriasMouseClicked
+    private void jListMateriasMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jListMateriasMouseClicked
         // Se não houver matérias, não faça nada
         try {
             g.getMateriaSelecionada();
@@ -192,25 +193,31 @@ public class Orgamico extends javax.swing.JFrame {
         if (evt.getButton() == 3) {
             mostrarMateria.mostrarMateria(g.getMateriaSelecionada());
         }
-    }//GEN-LAST:event_jListMateriasMouseClicked
+    }// GEN-LAST:event_jListMateriasMouseClicked
 
-    private void jListAnotacoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListAnotacoesMouseClicked
+    private void jListAnotacoesMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jListAnotacoesMouseClicked
         // Se não houver anotações, não faça nada
         try {
             jListAnotacoes.getSelectedValue();
         } catch (ArrayIndexOutOfBoundsException e) {
             return;
         }
+        // Se não houver uma anotação selecionada, não faça nada
+        if (jListAnotacoes.getSelectedIndex() < 0)
+            return;
 
-        mostrarAnotacao.mostrarAnotacao(jListAnotacoes.getSelectedValue());
+        mostrarAnotacao.mostrarAnotacao(g.getMateriaSelecionada(), jListAnotacoes.getSelectedIndex());
 
-    }//GEN-LAST:event_jListAnotacoesMouseClicked
+    }// GEN-LAST:event_jListAnotacoesMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel. For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -228,7 +235,7 @@ public class Orgamico extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Orgamico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -66,7 +66,7 @@ public class Materia {
         else
             this.descricao = descricao;
         this.anotacoes = anotacoes;
-        
+
         if (this.titulo.length() > maxTitulo)
             this.titulo = this.titulo.substring(0, maxTitulo);
         if (this.descricao.length() > maxDescricao)

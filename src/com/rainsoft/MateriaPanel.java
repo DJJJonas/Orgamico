@@ -52,7 +52,7 @@ public class MateriaPanel extends javax.swing.JPanel {
         jLabelTitulo = new MultiLineLabel();
         jLabelBackground = new javax.swing.JLabel();
 
-        setToolTipText("Lorem Ipsum");
+        setToolTipText("");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(275, 102));
         setMinimumSize(new java.awt.Dimension(275, 102));
