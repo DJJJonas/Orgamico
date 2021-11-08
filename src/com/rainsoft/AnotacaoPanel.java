@@ -30,7 +30,7 @@ public class AnotacaoPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(249, 249, 249));
-        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(530, 45));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

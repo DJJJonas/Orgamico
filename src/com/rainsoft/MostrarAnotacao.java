@@ -34,10 +34,10 @@ public class MostrarAnotacao extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        jButtonFechar = new javax.swing.JButton();
+        jButtonEditar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaAnotacao = new javax.swing.JTextArea();
-        jButtonEditar = new javax.swing.JButton();
-        jButtonVoltar = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
@@ -47,59 +47,59 @@ public class MostrarAnotacao extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButtonFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/FecharAba.png"))); // NOI18N
+        jButtonFechar.setToolTipText("Fechar");
+        jButtonFechar.setBorder(null);
+        jButtonFechar.setContentAreaFilled(false);
+        jButtonFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFecharActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButtonFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, 30, 40));
+
+        jButtonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/edit_1.png"))); // NOI18N
+        jButtonEditar.setToolTipText("Editar");
+        jButtonEditar.setBorder(null);
+        jButtonEditar.setContentAreaFilled(false);
+        jButtonEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 40));
+
         jScrollPane1.setBorder(null);
 
         jTextAreaAnotacao.setColumns(20);
         jTextAreaAnotacao.setRows(5);
         jScrollPane1.setViewportView(jTextAreaAnotacao);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 750, 430));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 750, 480));
 
-        jButtonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/edit.png"))); // NOI18N
-        jButtonEditar.setToolTipText("Editar");
-        jButtonEditar.setBorder(null);
-        jButtonEditar.setContentAreaFilled(false);
-        jButtonEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEditarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, 60, 50));
-
-        jButtonVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/voltar.png"))); // NOI18N
-        jButtonVoltar.setToolTipText("Voltar");
-        jButtonVoltar.setBorder(null);
-        jButtonVoltar.setContentAreaFilled(false);
-        jButtonVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVoltarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 60, 40));
-
-        jButtonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/remover.png"))); // NOI18N
+        jButtonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/apagar.png"))); // NOI18N
         jButtonExcluir.setToolTipText("Excluir");
         jButtonExcluir.setBorder(null);
         jButtonExcluir.setContentAreaFilled(false);
-        jButtonExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExcluirActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, 70, 50));
+        jPanel2.add(jButtonExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 50, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/visualizarAnota.png"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, -1, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/AnotacaoAdd.png"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 510));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonVoltarActionPerformed
+    private void jButtonFecharActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonVoltarActionPerformed
         setVisible(false);
     }// GEN-LAST:event_jButtonVoltarActionPerformed
 
@@ -121,7 +121,7 @@ public class MostrarAnotacao extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonExcluir;
-    private javax.swing.JButton jButtonVoltar;
+    private javax.swing.JButton jButtonFechar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

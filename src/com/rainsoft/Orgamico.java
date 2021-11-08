@@ -2,6 +2,10 @@ package com.rainsoft;
 
 import com.rainsoft.renderers.RendererAnotacoes;
 import com.rainsoft.renderers.RendererMaterias;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Calendar;
+import javax.swing.Timer;
 
 /**
  * Classe principal. As funções e atributos principais estão aqui.
@@ -19,6 +23,7 @@ public class Orgamico extends javax.swing.JFrame {
     public static AddAnotacao addAnotacao = new AddAnotacao();
     public static EditarAnotacao editarAnotacao = new EditarAnotacao();
     public static MostrarAnotacao mostrarAnotacao = new MostrarAnotacao();
+    public static GerenciaLembretes gerenciar = new GerenciaLembretes();
 
     // Creates new form Orgamica
     public Orgamico() {
@@ -44,12 +49,14 @@ public class Orgamico extends javax.swing.JFrame {
         jButtonCriarAnotacao = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListMaterias = new javax.swing.JList<>();
-        jLabelAba1 = new javax.swing.JLabel();
-        jLabelAba2 = new javax.swing.JLabel();
-        jLabelAba3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListAnotacoes = new javax.swing.JList<>();
-        jLabelMateriais = new javax.swing.JLabel();
+        jLabelLembrete = new javax.swing.JLabel();
+        jLabelCalendario = new javax.swing.JLabel();
+        jLabelHora = new javax.swing.JLabel();
+        jLabelMaterias = new javax.swing.JLabel();
         jLabelAnotacoes = new javax.swing.JLabel();
         jPanelBarraAzul = new javax.swing.JPanel();
 
@@ -58,6 +65,11 @@ public class Orgamico extends javax.swing.JFrame {
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/icon.png")).getImage());
         setMinimumSize(new java.awt.Dimension(1250, 730));
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelMenuBarra.setBackground(new java.awt.Color(218, 218, 218));
@@ -70,7 +82,7 @@ public class Orgamico extends javax.swing.JFrame {
         jButtonAddMateria.setToolTipText("Nova Matéria");
         jButtonAddMateria.setBorder(null);
         jButtonAddMateria.setContentAreaFilled(false);
-        jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAddMateria.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButtonAddMateria.setFocusCycleRoot(true);
         jButtonAddMateria.setFocusable(false);
@@ -87,7 +99,7 @@ public class Orgamico extends javax.swing.JFrame {
         jButtonCriarAnotacao.setToolTipText("Nova Anotação");
         jButtonCriarAnotacao.setBorder(null);
         jButtonCriarAnotacao.setContentAreaFilled(false);
-        jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonCriarAnotacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCriarAnotacaoActionPerformed(evt);
@@ -114,17 +126,21 @@ public class Orgamico extends javax.swing.JFrame {
 
         jPanelMenuBarra.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 300, 580));
 
-        jLabelAba1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Aba.png"))); // NOI18N
-        jLabelAba1.setToolTipText("");
-        jPanelMenuBarra.add(jLabelAba1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 230, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(73, 73, 73));
+        jLabel1.setText("Lembretes");
+        jPanelMenuBarra.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, -1, -1));
 
-        jLabelAba2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Aba.png"))); // NOI18N
-        jLabelAba2.setToolTipText("");
-        jPanelMenuBarra.add(jLabelAba2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 450, -1, -1));
-
-        jLabelAba3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Aba.png"))); // NOI18N
-        jLabelAba3.setToolTipText("");
-        jPanelMenuBarra.add(jLabelAba3, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, -1, -1));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/botaog.png"))); // NOI18N
+        jButton1.setToolTipText("Gerenciar Lembretes");
+        jButton1.setBorder(null);
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, 150, 50));
 
         jScrollPane2.setBackground(new java.awt.Color(249, 249, 249));
         jScrollPane2.setBorder(null);
@@ -142,9 +158,21 @@ public class Orgamico extends javax.swing.JFrame {
 
         jPanelMenuBarra.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 72, 550, 580));
 
-        jLabelMateriais.setBackground(new java.awt.Color(0, 0, 0));
-        jLabelMateriais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Materias.png"))); // NOI18N
-        jPanelMenuBarra.add(jLabelMateriais, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 320, -1));
+        jLabelLembrete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/lembretes.png"))); // NOI18N
+        jLabelLembrete.setToolTipText("");
+        jPanelMenuBarra.add(jLabelLembrete, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, -1, -1));
+
+        jLabelCalendario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Abas.png"))); // NOI18N
+        jLabelCalendario.setToolTipText("");
+        jPanelMenuBarra.add(jLabelCalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 230, -1, -1));
+
+        jLabelHora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Abas.png"))); // NOI18N
+        jLabelHora.setToolTipText("");
+        jPanelMenuBarra.add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 450, -1, -1));
+
+        jLabelMaterias.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelMaterias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Materias.png"))); // NOI18N
+        jPanelMenuBarra.add(jLabelMaterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 320, -1));
 
         jLabelAnotacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Anotações.png"))); // NOI18N
         jPanelMenuBarra.add(jLabelAnotacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
@@ -168,6 +196,15 @@ public class Orgamico extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        gerenciar.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowOpened
 
     // FUNÇÃO PARA O BOTÃO DE ADICIONAR MATÉRIA
     // Ao clicar, a tela de nova matéria ficará visível.
@@ -203,8 +240,9 @@ public class Orgamico extends javax.swing.JFrame {
             return;
         }
         // Se não houver uma anotação selecionada, não faça nada
-        if (jListAnotacoes.getSelectedIndex() < 0)
+        if (jListAnotacoes.getSelectedIndex() < 0) {
             return;
+        }
 
         mostrarAnotacao.mostrarAnotacao(g.getMateriaSelecionada(), jListAnotacoes.getSelectedIndex());
 
@@ -247,13 +285,15 @@ public class Orgamico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAddMateria;
     private javax.swing.JButton jButtonCriarAnotacao;
-    private javax.swing.JLabel jLabelAba1;
-    private javax.swing.JLabel jLabelAba2;
-    private javax.swing.JLabel jLabelAba3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelAnotacoes;
-    private javax.swing.JLabel jLabelMateriais;
+    private javax.swing.JLabel jLabelCalendario;
+    private javax.swing.JLabel jLabelHora;
+    private javax.swing.JLabel jLabelLembrete;
+    private javax.swing.JLabel jLabelMaterias;
     public static javax.swing.JList<String> jListAnotacoes;
     public static javax.swing.JList<Materia> jListMaterias;
     private javax.swing.JPanel jPanelBarraAzul;

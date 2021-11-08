@@ -51,7 +51,7 @@ public class MostrarMateria extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButtonEditar = new javax.swing.JButton();
         jButtonDeletar = new javax.swing.JButton();
-        jButtonVoltar = new javax.swing.JButton();
+        jButtonFechar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,7 +68,7 @@ public class MostrarMateria extends javax.swing.JFrame {
         jTextTitulo.setText("Aqui Vai o Titulo da Matéria");
         jTextTitulo.setBorder(null);
         jTextTitulo.setOpaque(false);
-        jPanel1.add(jTextTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 640, 40));
+        jPanel1.add(jTextTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 370, 40));
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 17)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
@@ -100,7 +100,7 @@ public class MostrarMateria extends javax.swing.JFrame {
         jButtonEditar.setBorder(null);
         jButtonEditar.setBorderPainted(false);
         jButtonEditar.setContentAreaFilled(false);
-        jButtonEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonEditar.setFocusable(false);
         jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +114,7 @@ public class MostrarMateria extends javax.swing.JFrame {
         jButtonDeletar.setBorder(null);
         jButtonDeletar.setBorderPainted(false);
         jButtonDeletar.setContentAreaFilled(false);
-        jButtonDeletar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonDeletar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDeletarActionPerformed(evt);
@@ -122,17 +122,17 @@ public class MostrarMateria extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, -1, 50));
 
-        jButtonVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/voltar.png"))); // NOI18N
-        jButtonVoltar.setToolTipText("Voltar");
-        jButtonVoltar.setBorder(null);
-        jButtonVoltar.setContentAreaFilled(false);
-        jButtonVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/FecharAba.png"))); // NOI18N
+        jButtonFechar.setToolTipText("Fechar");
+        jButtonFechar.setBorder(null);
+        jButtonFechar.setContentAreaFilled(false);
+        jButtonFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVoltarActionPerformed(evt);
+                jButtonFecharActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
+        jPanel1.add(jButtonFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 40, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/visualizarmat.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 750, -1));
@@ -153,14 +153,14 @@ public class MostrarMateria extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_jButtonEditarActionPerformed
 
-    private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
+    private void jButtonFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFecharActionPerformed
         setVisible(false);
-    }//GEN-LAST:event_jButtonVoltarActionPerformed
+    }//GEN-LAST:event_jButtonFecharActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDeletar;
     private javax.swing.JButton jButtonEditar;
-    private javax.swing.JButton jButtonVoltar;
+    private javax.swing.JButton jButtonFechar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
