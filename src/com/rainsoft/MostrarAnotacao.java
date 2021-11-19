@@ -51,7 +51,7 @@ public class MostrarAnotacao extends javax.swing.JFrame {
         jButtonFechar.setToolTipText("Fechar");
         jButtonFechar.setBorder(null);
         jButtonFechar.setContentAreaFilled(false);
-        jButtonFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonFecharActionPerformed(evt);
@@ -63,7 +63,7 @@ public class MostrarAnotacao extends javax.swing.JFrame {
         jButtonEditar.setToolTipText("Editar");
         jButtonEditar.setBorder(null);
         jButtonEditar.setContentAreaFilled(false);
-        jButtonEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEditarActionPerformed(evt);
@@ -83,7 +83,7 @@ public class MostrarAnotacao extends javax.swing.JFrame {
         jButtonExcluir.setToolTipText("Excluir");
         jButtonExcluir.setBorder(null);
         jButtonExcluir.setContentAreaFilled(false);
-        jButtonExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExcluirActionPerformed(evt);

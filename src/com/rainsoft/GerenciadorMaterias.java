@@ -3,12 +3,13 @@ package com.rainsoft;
 import static com.rainsoft.Orgamico.MATERIAS_JSON_PATH;
 import static com.rainsoft.Orgamico.ORGAMICODATA_PATH;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,7 +23,7 @@ public class GerenciadorMaterias {
 
     private final DefaultListModel<Materia> materias;
     private DefaultListModel<String> anotacoes;
-    private String json;
+    private String json = "{}";
 
     public GerenciadorMaterias() {
         // Inicia uma nova lista vazia de materias
@@ -236,16 +237,23 @@ public class GerenciadorMaterias {
 
     // Retorna o texto de um arquivo
     private String lerArquivo(String path) {
-        String conteudo = "";
-        try (Scanner scanner = new Scanner(new File(path))) {
-            while (scanner.hasNextLine()) {
-                conteudo += scanner.nextLine() + "\n";
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(GerenciadorMaterias.class.getName()).log(Level.SEVERE, null, ex);
+        String content = "";
+        File file = new File(path);
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(file));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+        String st;
 
-        return conteudo;
+        try {
+            while ((st = br.readLine()) != null)
+                content += st;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return content;
     }
 
     public Materia getMateriaSelecionada() {

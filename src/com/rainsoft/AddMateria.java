@@ -91,7 +91,7 @@ public class AddMateria extends javax.swing.JFrame {
         jButtonAdicionar.setToolTipText("Salvar");
         jButtonAdicionar.setBorder(null);
         jButtonAdicionar.setContentAreaFilled(false);
-        jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAdicionarActionPerformed(evt);
@@ -103,7 +103,7 @@ public class AddMateria extends javax.swing.JFrame {
         jButtonCancelar.setToolTipText("Cancelar e Sair");
         jButtonCancelar.setBorder(null);
         jButtonCancelar.setContentAreaFilled(false);
-        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
@@ -198,8 +198,7 @@ public class AddMateria extends javax.swing.JFrame {
             return;
         descricao = jTextDesc.getText();
         Orgamico.g.addMateria(new Materia(titulo, descricao));
-        
-        Orgamico.mostrarMateria.mostrarMateria(Orgamico.g.getMateriaSelecionada());
+
         setVisible(false);
     }// GEN-LAST:event_jButtonAdicionarActionPerformed
 

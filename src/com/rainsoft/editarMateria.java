@@ -99,7 +99,7 @@ public class EditarMateria extends javax.swing.JFrame {
         jButtonConfirmar.setToolTipText("Salvar");
         jButtonConfirmar.setBorder(null);
         jButtonConfirmar.setContentAreaFilled(false);
-        jButtonConfirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonConfirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonConfirmar.setFocusPainted(false);
         jButtonConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +112,7 @@ public class EditarMateria extends javax.swing.JFrame {
         jButtonCancelar.setToolTipText("Cancelar");
         jButtonCancelar.setBorder(null);
         jButtonCancelar.setContentAreaFilled(false);
-        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCancelar.setFocusPainted(false);
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

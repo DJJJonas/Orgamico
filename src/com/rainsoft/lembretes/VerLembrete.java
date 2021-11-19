@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.rainsoft;
+package com.rainsoft.lembretes;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -102,18 +102,20 @@ public class VerLembrete extends javax.swing.JFrame {
         jButtonEdita.setToolTipText("Editar");
         jButtonEdita.setBorder(null);
         jButtonEdita.setContentAreaFilled(false);
+        jButtonEdita.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jButtonEdita, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 50, 50));
 
         jButtonDeleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/remover.png"))); // NOI18N
         jButtonDeleta.setToolTipText("Apagar");
         jButtonDeleta.setBorder(null);
-        jButtonDeleta.setContentAreaFilled(false);
+        jButtonDeleta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jButtonDeleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 50, 50));
 
         jButtonFecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/FecharAba.png"))); // NOI18N
         jButtonFecha.setToolTipText("Fechar");
         jButtonFecha.setBorder(null);
         jButtonFecha.setContentAreaFilled(false);
+        jButtonFecha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonFechaActionPerformed(evt);
