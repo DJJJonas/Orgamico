@@ -91,7 +91,7 @@ public class AddMateria extends javax.swing.JFrame {
         jButtonAdicionar.setToolTipText("Salvar");
         jButtonAdicionar.setBorder(null);
         jButtonAdicionar.setContentAreaFilled(false);
-        jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAdicionarActionPerformed(evt);
@@ -103,7 +103,15 @@ public class AddMateria extends javax.swing.JFrame {
         jButtonCancelar.setToolTipText("Cancelar e Sair");
         jButtonCancelar.setBorder(null);
         jButtonCancelar.setContentAreaFilled(false);
-        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonCancelarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButtonCancelarMouseExited(evt);
+            }
+        });
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
@@ -157,6 +165,14 @@ public class AddMateria extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonCancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCancelarMouseEntered
+       // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCancelarMouseEntered
+
+    private void jButtonCancelarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCancelarMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCancelarMouseExited
 
     private void jTextNomeMatFocusGained(java.awt.event.FocusEvent evt) {// GEN-FIRST:event_jTextNomeMatFocusGained
         if (jTextNomeMat.getText().equals("Nome da Matéria")) {
