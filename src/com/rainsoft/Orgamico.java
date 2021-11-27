@@ -1,5 +1,7 @@
 package com.rainsoft;
 
+import com.rainsoft.calendario.AnotacaoCalendario;
+import com.rainsoft.calendario.JSONCalendario;
 import com.rainsoft.lembretes.GerenciaLembretes;
 import com.rainsoft.renderers.RendererAnotacoes;
 import com.rainsoft.renderers.RendererMaterias;
@@ -13,6 +15,7 @@ public class Orgamico extends javax.swing.JFrame {
 
     public static final String ORGAMICODATA_PATH = System.getenv("APPDATA") + "\\OrgamicoData";
     public static final String MATERIAS_JSON_PATH = ORGAMICODATA_PATH + "\\materias.json";
+    public static final String CALENDARIO_JSON_PATH = ORGAMICODATA_PATH + "\\calendario.json";
     public static final GerenciadorMaterias g = new GerenciadorMaterias();
     public static final AddMateria addMateriaPanel = new AddMateria();
     public static final MostrarMateria mostrarMateria = new MostrarMateria();
@@ -762,6 +765,9 @@ public class Orgamico extends javax.swing.JFrame {
 
     //        Inicializacao do calendario
     public void iniciacalendario() {
+        // {Jonas}: Cria o arquivo JSON caso não exista
+        JSONCalendario.criarJSONCalendario();
+        
         SimpleDateFormat Ano = new SimpleDateFormat("YYYY");
         SimpleDateFormat Mes = new SimpleDateFormat("MM");
         SimpleDateFormat Dia = new SimpleDateFormat("dd");
@@ -1568,7 +1574,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                anotacaocalendario.setVisible(true);
+                // {Jonas}: essa função substring serve pra limitar a quantidade de caracteres
+                // sem ela, Hudson vai salvar 3GB de texto no arquivo JSON.¯\_(ツ)_/¯
+                String dia = d2.getText().substring(0, 1024);
+                String mes = (String)SelecionaMes.getSelectedItem();
+                String ano = String.valueOf( SelecionaAno.getSelectedItem() );
+                // {Jonas}: Essa função faz a janela de anotação aparecer com a anotação desse dia
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
         
@@ -1585,7 +1597,7 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                
             }
         });
 
