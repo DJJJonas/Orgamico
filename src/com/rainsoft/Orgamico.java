@@ -27,11 +27,10 @@ public class Orgamico extends javax.swing.JFrame {
     public static final AnotacaoCalendario anotacaocalendario = new AnotacaoCalendario();
 
     // Declaração das Variáveis do Calendário
-    
     int AnoFixo = 0, MesFixo = 0, DiaFixo = 0;
     int AnoAltera = 0, MesAltera = 0, DiaAltera = 0;
     int valorselecao = 0;
-    
+
     // Creates new form Orgamica
     public Orgamico() {
         initComponents();
@@ -691,7 +690,7 @@ public class Orgamico extends javax.swing.JFrame {
         });
 
     }
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> SelecionaAno;
@@ -767,7 +766,7 @@ public class Orgamico extends javax.swing.JFrame {
     public void iniciacalendario() {
         // {Jonas}: Cria o arquivo JSON caso não exista
         JSONCalendario.criarJSONCalendario();
-        
+
         SimpleDateFormat Ano = new SimpleDateFormat("YYYY");
         SimpleDateFormat Mes = new SimpleDateFormat("MM");
         SimpleDateFormat Dia = new SimpleDateFormat("dd");
@@ -824,7 +823,7 @@ public class Orgamico extends javax.swing.JFrame {
                 break;
         }
     }
-    
+
     //    Organização dos dias do Calendário
     /**
      *
@@ -1541,7 +1540,7 @@ public class Orgamico extends javax.swing.JFrame {
             d42.setOpaque(false);
         }
     }
-    
+
     //    evento nos dias do mes
     public void Calendario_evt() {
         d1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1557,10 +1556,16 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                
+                String dia = d1.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
-        
+
         d2.addMouseListener(new java.awt.event.MouseAdapter() {
 
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1574,16 +1579,18 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+                String dia = d2.getText();
                 // {Jonas}: essa função substring serve pra limitar a quantidade de caracteres
                 // sem ela, Hudson vai salvar 3GB de texto no arquivo JSON.¯\_(ツ)_/¯
-                String dia = d2.getText().substring(0, 1024);
-                String mes = (String)SelecionaMes.getSelectedItem();
-                String ano = String.valueOf( SelecionaAno.getSelectedItem() );
-                // {Jonas}: Essa função faz a janela de anotação aparecer com a anotação desse dia
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
                 anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
-        
+
         d3.addMouseListener(new java.awt.event.MouseAdapter() {
 
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1597,7 +1604,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                
+                String dia = d3.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1614,7 +1627,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d4.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1631,7 +1650,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d5.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1648,7 +1673,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d6.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1665,7 +1696,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d7.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1682,7 +1719,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d8.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1699,7 +1742,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d9.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1716,10 +1765,16 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d10.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
-        
+
         d11.addMouseListener(new java.awt.event.MouseAdapter() {
 
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1733,10 +1788,16 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d11.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
-        
+
         d12.addMouseListener(new java.awt.event.MouseAdapter() {
 
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1750,10 +1811,16 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d12.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
-        
+
         d13.addMouseListener(new java.awt.event.MouseAdapter() {
 
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1767,7 +1834,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d13.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1784,7 +1857,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d14.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1801,7 +1880,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d15.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1818,7 +1903,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d16.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1835,7 +1926,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d17.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1852,7 +1949,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d18.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1869,7 +1972,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d19.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1886,10 +1995,16 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d20.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
-        
+
         d21.addMouseListener(new java.awt.event.MouseAdapter() {
 
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1903,10 +2018,16 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d21.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
-        
+
         d22.addMouseListener(new java.awt.event.MouseAdapter() {
 
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1920,10 +2041,16 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d22.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
-        
+
         d23.addMouseListener(new java.awt.event.MouseAdapter() {
 
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1937,7 +2064,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d23.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1954,7 +2087,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d24.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1971,7 +2110,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d25.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -1988,7 +2133,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d26.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2005,7 +2156,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d27.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2022,7 +2179,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d28.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2039,7 +2202,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d29.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2056,7 +2225,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d30.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2073,10 +2248,16 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d31.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
-        
+
         d32.addMouseListener(new java.awt.event.MouseAdapter() {
 
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -2090,10 +2271,16 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d32.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
-        
+
         d33.addMouseListener(new java.awt.event.MouseAdapter() {
 
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -2107,7 +2294,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d33.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2124,7 +2317,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d34.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2141,7 +2340,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d35.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2158,7 +2363,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d36.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2175,7 +2386,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d37.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2192,7 +2409,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d38.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2209,7 +2432,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d39.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2226,7 +2455,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d40.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2243,7 +2478,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d41.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 
@@ -2260,7 +2501,13 @@ public class Orgamico extends javax.swing.JFrame {
             }
 
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                String dia = d42.getText();
+                if (dia.length() > 1024) {
+                    dia = dia.substring(0, 1023);
+                }
+                String mes = (String) SelecionaMes.getSelectedItem();
+                String ano = String.valueOf(SelecionaAno.getSelectedItem());
+                anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
 

@@ -19,7 +19,9 @@ public class AnotacaoCalendario extends javax.swing.JFrame {
         this.mes = mes;
         this.ano = ano;
         String anotacao = JSONCalendario.getMensagem(dia, mes, ano);
-        if (anotacao != null)
+        if (anotacao == null)
+            this.anotacao.setText("");
+        else
             this.anotacao.setText(anotacao);
         setVisible(true);
     }

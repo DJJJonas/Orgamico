@@ -47,9 +47,8 @@ public class JSONCalendario {
         JSONArray anotacoes = json.getJSONArray("anotacoes");
         for (int i = 0; i < anotacoes.length(); i++) {
             JSONObject a = anotacoes.getJSONObject(i);
-            if (a.getString("dia").equals(dia) && a.getString("mes").equals(mes) && a.getString("ano").equals(ano)) {                
+            if (a.getString("dia").equals(dia) && a.getString("mes").equals(mes) && a.getString("ano").equals(ano))
                 return a.getString("anotacao");
-            }
         }
         return null;
     }
