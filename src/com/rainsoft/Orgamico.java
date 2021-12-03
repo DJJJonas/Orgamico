@@ -27,13 +27,14 @@ public class Orgamico extends javax.swing.JFrame {
     public static final AnotacaoCalendario anotacaocalendario = new AnotacaoCalendario();
 
     // Declaração das Variáveis do Calendário
-    int AnoFixo = 0, MesFixo = 0, DiaFixo = 0;
-    int AnoAltera = 0, MesAltera = 0, DiaAltera = 0;
-    int valorselecao = 0;
+    static int AnoFixo = 0, MesFixo = 0, DiaFixo = 0;
+    static int AnoAltera = 0, MesAltera = 0, DiaAltera = 0;
+    static int valorselecao = 0;
 
     // Creates new form Orgamica
     public Orgamico() {
         initComponents();
+        jldias = new javax.swing.JLabel[]{d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31, d32, d33, d34, d35, d36, d37, d38, d39, d40, d41, d42};
         iniciacalendario();
         organizaCalendario();
         Calendario_evt();
@@ -158,7 +159,6 @@ public class Orgamico extends javax.swing.JFrame {
         jPanelMenuBarra.add(jButtonCriarAnotacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 30, 40, 40));
 
         jScrollPane1.setBackground(new java.awt.Color(249, 249, 249));
-        jScrollPane1.setBorder(null);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -186,7 +186,7 @@ public class Orgamico extends javax.swing.JFrame {
         jButton1.setToolTipText("Gerenciar Lembretes");
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -693,54 +693,54 @@ public class Orgamico extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> SelecionaAno;
-    private javax.swing.JComboBox<String> SelecionaMes;
-    private javax.swing.JLabel d1;
-    private javax.swing.JLabel d10;
-    private javax.swing.JLabel d11;
-    private javax.swing.JLabel d12;
-    private javax.swing.JLabel d13;
-    private javax.swing.JLabel d14;
-    private javax.swing.JLabel d15;
-    private javax.swing.JLabel d16;
-    private javax.swing.JLabel d17;
-    private javax.swing.JLabel d18;
-    private javax.swing.JLabel d19;
-    private javax.swing.JLabel d2;
-    private javax.swing.JLabel d20;
-    private javax.swing.JLabel d21;
-    private javax.swing.JLabel d22;
-    private javax.swing.JLabel d23;
-    private javax.swing.JLabel d24;
-    private javax.swing.JLabel d25;
-    private javax.swing.JLabel d26;
-    private javax.swing.JLabel d27;
-    private javax.swing.JLabel d28;
-    private javax.swing.JLabel d29;
-    private javax.swing.JLabel d3;
-    private javax.swing.JLabel d30;
-    private javax.swing.JLabel d31;
-    private javax.swing.JLabel d32;
-    private javax.swing.JLabel d33;
-    private javax.swing.JLabel d34;
-    private javax.swing.JLabel d35;
-    private javax.swing.JLabel d36;
-    private javax.swing.JLabel d37;
-    private javax.swing.JLabel d38;
-    private javax.swing.JLabel d39;
-    private javax.swing.JLabel d4;
-    private javax.swing.JLabel d40;
-    private javax.swing.JLabel d41;
-    private javax.swing.JLabel d42;
-    private javax.swing.JLabel d5;
-    private javax.swing.JLabel d6;
-    private javax.swing.JLabel d7;
-    private javax.swing.JLabel d8;
-    private javax.swing.JLabel d9;
+    private static javax.swing.JComboBox<String> SelecionaAno;
+    private static javax.swing.JComboBox<String> SelecionaMes;
+    private static javax.swing.JLabel d1;
+    private static javax.swing.JLabel d10;
+    private static javax.swing.JLabel d11;
+    private static javax.swing.JLabel d12;
+    private static javax.swing.JLabel d13;
+    private static javax.swing.JLabel d14;
+    private static javax.swing.JLabel d15;
+    private static javax.swing.JLabel d16;
+    private static javax.swing.JLabel d17;
+    private static javax.swing.JLabel d18;
+    private static javax.swing.JLabel d19;
+    private static javax.swing.JLabel d2;
+    private static javax.swing.JLabel d20;
+    private static javax.swing.JLabel d21;
+    private static javax.swing.JLabel d22;
+    private static javax.swing.JLabel d23;
+    private static javax.swing.JLabel d24;
+    private static javax.swing.JLabel d25;
+    private static javax.swing.JLabel d26;
+    private static javax.swing.JLabel d27;
+    private static javax.swing.JLabel d28;
+    private static javax.swing.JLabel d29;
+    private static javax.swing.JLabel d3;
+    private static javax.swing.JLabel d30;
+    private static javax.swing.JLabel d31;
+    private static javax.swing.JLabel d32;
+    private static javax.swing.JLabel d33;
+    private static javax.swing.JLabel d34;
+    private static javax.swing.JLabel d35;
+    private static javax.swing.JLabel d36;
+    private static javax.swing.JLabel d37;
+    private static javax.swing.JLabel d38;
+    private static javax.swing.JLabel d39;
+    private static javax.swing.JLabel d4;
+    private static javax.swing.JLabel d40;
+    private static javax.swing.JLabel d41;
+    private static javax.swing.JLabel d42;
+    private static javax.swing.JLabel d5;
+    private static javax.swing.JLabel d6;
+    private static javax.swing.JLabel d7;
+    private static javax.swing.JLabel d8;
+    private static javax.swing.JLabel d9;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAddMateria;
     private javax.swing.JButton jButtonCriarAnotacao;
-    private javax.swing.JLabel jDom;
+    private static javax.swing.JLabel jDom;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelAnotacoes;
@@ -751,16 +751,17 @@ public class Orgamico extends javax.swing.JFrame {
     public static javax.swing.JList<Materia> jListMaterias;
     private javax.swing.JPanel jPanelBarraAzul;
     private javax.swing.JPanel jPanelMenuBarra;
-    private javax.swing.JLabel jQua;
-    private javax.swing.JLabel jQui;
-    private javax.swing.JLabel jSab;
+    private static javax.swing.JLabel jQua;
+    private static javax.swing.JLabel jQui;
+    private static javax.swing.JLabel jSab;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel jSeg;
-    private javax.swing.JLabel jSex;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JLabel jTer;
+    private static javax.swing.JLabel jSeg;
+    private static javax.swing.JLabel jSex;
+    private static javax.swing.JSpinner jSpinner1;
+    private static javax.swing.JLabel jTer;
     // End of variables declaration//GEN-END:variables
+    private static javax.swing.JLabel[] jldias;
 
     //        Inicializacao do calendario
     public void iniciacalendario() {
@@ -828,7 +829,7 @@ public class Orgamico extends javax.swing.JFrame {
     /**
      *
      */
-    public void organizaCalendario() {
+    public static void organizaCalendario() {
         d1.setText("");
         d2.setText("");
         d3.setText("");
@@ -1539,6 +1540,7 @@ public class Orgamico extends javax.swing.JFrame {
         } else {
             d42.setOpaque(false);
         }
+        checarDias();
     }
 
     //    evento nos dias do mes
@@ -2510,6 +2512,17 @@ public class Orgamico extends javax.swing.JFrame {
                 anotacaocalendario.visualizarAnotacao(dia, mes, ano);
             }
         });
+    }
 
+    public static void checarDias() {
+        String mes = (String) SelecionaMes.getSelectedItem();
+        String ano = String.valueOf(SelecionaAno.getSelectedItem());
+        for (javax.swing.JLabel l : jldias) {
+            if (JSONCalendario.getMensagem(l.getText(), mes, ano) == null) {
+                l.setBackground(new Color(255, 255, 255));
+            } else {
+                l.setBackground(new Color(31, 208, 222));
+            }
+        }
     }
 }

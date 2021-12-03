@@ -44,11 +44,9 @@ public class MostrarMateria extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jTextTitulo = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaDescricao = new javax.swing.JTextArea();
-        jLabel4 = new javax.swing.JLabel();
         jButtonEditar = new javax.swing.JButton();
         jButtonDeletar = new javax.swing.JButton();
         jButtonFechar = new javax.swing.JButton();
@@ -70,11 +68,6 @@ public class MostrarMateria extends javax.swing.JFrame {
         jTextTitulo.setOpaque(false);
         jPanel1.add(jTextTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 370, 40));
 
-        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 17)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("Anexos:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 130, 30));
-
         jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 17)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Descrição:");
@@ -90,17 +83,14 @@ public class MostrarMateria extends javax.swing.JFrame {
         jTextAreaDescricao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jTextAreaDescricao);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 650, 100));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/anexo2.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, 150));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 650, 290));
 
         jButtonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/edit.png"))); // NOI18N
         jButtonEditar.setToolTipText("Editar");
         jButtonEditar.setBorder(null);
         jButtonEditar.setBorderPainted(false);
         jButtonEditar.setContentAreaFilled(false);
-        jButtonEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonEditar.setFocusable(false);
         jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +104,7 @@ public class MostrarMateria extends javax.swing.JFrame {
         jButtonDeletar.setBorder(null);
         jButtonDeletar.setBorderPainted(false);
         jButtonDeletar.setContentAreaFilled(false);
-        jButtonDeletar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonDeletar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDeletarActionPerformed(evt);
@@ -126,7 +116,7 @@ public class MostrarMateria extends javax.swing.JFrame {
         jButtonFechar.setToolTipText("Fechar");
         jButtonFechar.setBorder(null);
         jButtonFechar.setContentAreaFilled(false);
-        jButtonFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonFecharActionPerformed(evt);
@@ -161,10 +151,8 @@ public class MostrarMateria extends javax.swing.JFrame {
     private javax.swing.JButton jButtonDeletar;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonFechar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaDescricao;

@@ -1,23 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.rainsoft;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
-/**
- *
- * @author cicer
- */
 public class EditarAnotacao extends javax.swing.JFrame {
-
-    /**
-     * Creates new form EditarAnotacao
-     */
     private Materia materia;
     private int pos;
     public EditarAnotacao() {
@@ -89,6 +76,7 @@ public class EditarAnotacao extends javax.swing.JFrame {
         jTextAreaAnotacao.setColumns(20);
         jTextAreaAnotacao.setRows(5);
         jTextAreaAnotacao.setBorder(null);
+        jTextAreaAnotacao.setInheritsPopupMenu(true);
         jScrollPane1.setViewportView(jTextAreaAnotacao);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 750, 480));
@@ -110,6 +98,7 @@ public class EditarAnotacao extends javax.swing.JFrame {
         if (novaAnotacao.length() > 4096) novaAnotacao.substring(0, 4095);
         materia.getAnotacoes().set(pos, novaAnotacao);
         setVisible(false);
+        Orgamico.jListMaterias.updateUI();
         Orgamico.g.salvarMaterias();
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 

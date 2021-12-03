@@ -1,5 +1,6 @@
 package com.rainsoft.calendario;
 
+import com.rainsoft.Orgamico;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -89,12 +90,14 @@ public class AnotacaoCalendario extends javax.swing.JFrame {
 
     private void fecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fecharActionPerformed
         setVisible(false);
+        Orgamico.checarDias();
     }//GEN-LAST:event_fecharActionPerformed
 
     private void adicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarActionPerformed
         // Essa função também edita a anotação caso ela já exista.
         JSONCalendario.salvar(anotacao.getText(), dia, mes, ano);
         setVisible(false);
+        Orgamico.checarDias();
     }//GEN-LAST:event_adicionarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

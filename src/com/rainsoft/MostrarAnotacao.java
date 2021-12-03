@@ -75,6 +75,8 @@ public class MostrarAnotacao extends javax.swing.JFrame {
 
         jTextAreaAnotacao.setColumns(20);
         jTextAreaAnotacao.setRows(5);
+        jTextAreaAnotacao.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextAreaAnotacao.setEnabled(false);
         jScrollPane1.setViewportView(jTextAreaAnotacao);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 750, 480));

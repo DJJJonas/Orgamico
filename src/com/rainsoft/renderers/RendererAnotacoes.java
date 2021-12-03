@@ -10,6 +10,11 @@ public class RendererAnotacoes extends AnotacaoPanel implements ListCellRenderer
     public java.awt.Component getListCellRendererComponent(JList<? extends String> list, String anotacao, int index,
             boolean isSelected, boolean cellHasFocus) {
         setText(anotacao);
+        if (isSelected) {
+            setColor(190, 133, 212);
+        } else {
+            setColor(180, 180, 180);
+        }
         return this;
     }
 }

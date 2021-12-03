@@ -13,10 +13,10 @@ public class RendererMaterias extends MateriaPanel implements ListCellRenderer<M
         setText(materia.getTitulo());
         setIndex(index);
         if (isSelected) {
-            setColor(255,155,150);
+            setColor(231,133,133);
             Orgamico.g.setAnotacoes(index);
         }
-        else setColor(171, 158, 157);
+        else setColor(180, 180, 180);
         return this;
     }
 }

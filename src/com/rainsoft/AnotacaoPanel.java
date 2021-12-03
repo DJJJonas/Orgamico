@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.rainsoft;
 
-/**
- *
- * @author jonas
- */
+import java.awt.Color;
+
 public class AnotacaoPanel extends javax.swing.JPanel {
 
     public AnotacaoPanel() {
@@ -22,17 +15,25 @@ public class AnotacaoPanel extends javax.swing.JPanel {
     public String getText() {
         return jLabelAnotacao.getText();
     }
-
+    
+    public void setColor(int r, int g, int b) {
+        this.jLabelSelecionado.setBackground(new Color(r, g, b));
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelSelecionado = new javax.swing.JLabel();
         jLabelAnotacao = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        gap = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(249, 249, 249));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(530, 45));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelSelecionado.setBackground(new java.awt.Color(0, 255, 255));
+        jLabelSelecionado.setOpaque(true);
+        add(jLabelSelecionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(524, 0, 10, 40));
 
         jLabelAnotacao.setBackground(new java.awt.Color(204, 204, 204));
         jLabelAnotacao.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
@@ -41,25 +42,26 @@ public class AnotacaoPanel extends javax.swing.JPanel {
         jLabelAnotacao.setOpaque(true);
         add(jLabelAnotacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 40));
 
-        jPanel1.setBackground(new java.awt.Color(249, 249, 249));
+        gap.setBackground(new java.awt.Color(249, 249, 249));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout gapLayout = new javax.swing.GroupLayout(gap);
+        gap.setLayout(gapLayout);
+        gapLayout.setHorizontalGroup(
+            gapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 530, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        gapLayout.setVerticalGroup(
+            gapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 10, Short.MAX_VALUE)
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 530, 10));
+        add(gap, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 530, 10));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel gap;
     private javax.swing.JLabel jLabelAnotacao;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabelSelecionado;
     // End of variables declaration//GEN-END:variables
 }
