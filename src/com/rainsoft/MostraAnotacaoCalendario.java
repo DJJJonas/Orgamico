@@ -49,6 +49,7 @@ public class MostraAnotacaoCalendario extends javax.swing.JFrame {
         jFechar.setToolTipText("Fechar");
         jFechar.setBorder(null);
         jFechar.setContentAreaFilled(false);
+        jFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFecharActionPerformed(evt);
@@ -60,6 +61,7 @@ public class MostraAnotacaoCalendario extends javax.swing.JFrame {
         jSalvar.setToolTipText("Salvar");
         jSalvar.setBorder(null);
         jSalvar.setContentAreaFilled(false);
+        jSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSalvarActionPerformed(evt);
@@ -71,6 +73,7 @@ public class MostraAnotacaoCalendario extends javax.swing.JFrame {
         jDelete1.setToolTipText("Limpar");
         jDelete1.setBorder(null);
         jDelete1.setContentAreaFilled(false);
+        jDelete1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jDelete1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDelete1ActionPerformed(evt);

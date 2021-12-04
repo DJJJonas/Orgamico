@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import com.fathzer.soft.javaluator.DoubleEvaluator;
 import javax.swing.JOptionPane;
 
 public class Orgamico extends javax.swing.JFrame {
@@ -44,6 +45,26 @@ public class Orgamico extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelMenuBarra = new javax.swing.JPanel();
+        calculo = new javax.swing.JTextField();
+        calc1 = new javax.swing.JButton();
+        calc2 = new javax.swing.JButton();
+        calc3 = new javax.swing.JButton();
+        calc4 = new javax.swing.JButton();
+        calc5 = new javax.swing.JButton();
+        calc6 = new javax.swing.JButton();
+        calc7 = new javax.swing.JButton();
+        calc8 = new javax.swing.JButton();
+        calc9 = new javax.swing.JButton();
+        calc0 = new javax.swing.JButton();
+        calcsoma = new javax.swing.JButton();
+        calcsubtrai = new javax.swing.JButton();
+        calcmultiplica = new javax.swing.JButton();
+        calcdivide = new javax.swing.JButton();
+        calcabrepar = new javax.swing.JButton();
+        calcfechapar = new javax.swing.JButton();
+        calcigual = new javax.swing.JButton();
+        calclimpar = new javax.swing.JButton();
+        calcapagarultimo = new javax.swing.JButton();
         jButtonAddMateria = new javax.swing.JButton();
         jButtonCriarAnotacao = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -128,12 +149,180 @@ public class Orgamico extends javax.swing.JFrame {
         jPanelMenuBarra.setPreferredSize(new java.awt.Dimension(970, 541));
         jPanelMenuBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        calculo.setFont(new java.awt.Font("DejaVu Sans Mono", 0, 18)); // NOI18N
+        calculo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        calculo.setEnabled(false);
+        jPanelMenuBarra.add(calculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 460, 240, 30));
+
+        calc1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        calc1.setText("1");
+        calc1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calc1ActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 510, 40, 30));
+
+        calc2.setText("2");
+        calc2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calc2ActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calc2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 510, 40, 30));
+
+        calc3.setText("3");
+        calc3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calc3ActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calc3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 510, 40, 30));
+
+        calc4.setText("4");
+        calc4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calc4ActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calc4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 540, 40, 30));
+
+        calc5.setText("5");
+        calc5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calc5ActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calc5, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 540, 40, 30));
+
+        calc6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        calc6.setText("6");
+        calc6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calc6ActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 540, 40, 30));
+
+        calc7.setText("7");
+        calc7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calc7ActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 570, 40, 30));
+
+        calc8.setText("8");
+        calc8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calc8ActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calc8, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 570, 40, 30));
+
+        calc9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        calc9.setText("9");
+        calc9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calc9ActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calc9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 570, 40, 30));
+
+        calc0.setText("0");
+        calc0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calc0ActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calc0, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 600, 40, 30));
+
+        calcsoma.setText("+");
+        calcsoma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcsomaActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calcsoma, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 510, 50, 40));
+
+        calcsubtrai.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        calcsubtrai.setText("-");
+        calcsubtrai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcsubtraiActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calcsubtrai, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 550, 50, 40));
+
+        calcmultiplica.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        calcmultiplica.setText("*");
+        calcmultiplica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcmultiplicaActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calcmultiplica, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 510, 50, 40));
+
+        calcdivide.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        calcdivide.setText("/");
+        calcdivide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcdivideActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calcdivide, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 550, 50, 40));
+
+        calcabrepar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        calcabrepar.setText("(");
+        calcabrepar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcabreparActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calcabrepar, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 600, 40, 30));
+
+        calcfechapar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        calcfechapar.setText(")");
+        calcfechapar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcfechaparActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calcfechapar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 600, 40, 30));
+
+        calcigual.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        calcigual.setText("=");
+        calcigual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcigualActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calcigual, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 590, 140, 40));
+
+        calclimpar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        calclimpar.setText("C");
+        calclimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calclimparActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calclimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 510, 40, 80));
+
+        calcapagarultimo.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        calcapagarultimo.setText("←");
+        calcapagarultimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcapagarultimoActionPerformed(evt);
+            }
+        });
+        jPanelMenuBarra.add(calcapagarultimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 460, 50, 30));
+
         jButtonAddMateria.setBackground(new java.awt.Color(51, 153, 255));
         jButtonAddMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/materia.png"))); // NOI18N
         jButtonAddMateria.setToolTipText("Nova Matéria");
         jButtonAddMateria.setBorder(null);
         jButtonAddMateria.setContentAreaFilled(false);
-        jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonAddMateria.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButtonAddMateria.setFocusCycleRoot(true);
         jButtonAddMateria.setFocusable(false);
@@ -150,7 +339,7 @@ public class Orgamico extends javax.swing.JFrame {
         jButtonCriarAnotacao.setToolTipText("Nova Anotação");
         jButtonCriarAnotacao.setBorder(null);
         jButtonCriarAnotacao.setContentAreaFilled(false);
-        jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCriarAnotacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCriarAnotacaoActionPerformed(evt);
@@ -159,6 +348,7 @@ public class Orgamico extends javax.swing.JFrame {
         jPanelMenuBarra.add(jButtonCriarAnotacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 30, 40, 40));
 
         jScrollPane1.setBackground(new java.awt.Color(249, 249, 249));
+        jScrollPane1.setBorder(null);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -214,7 +404,7 @@ public class Orgamico extends javax.swing.JFrame {
         jLabelLembrete.setToolTipText("");
         jPanelMenuBarra.add(jLabelLembrete, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, -1, -1));
 
-        jLabelHora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Abas.png"))); // NOI18N
+        jLabelHora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/AbaCalculadora.png"))); // NOI18N
         jLabelHora.setToolTipText("");
         jPanelMenuBarra.add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 450, -1, -1));
 
@@ -621,6 +811,110 @@ public class Orgamico extends javax.swing.JFrame {
         jSpinner1.setValue(0);
     }//GEN-LAST:event_jSpinner1StateChanged
 
+    private void calc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calc1ActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calc1ActionPerformed
+
+    private void calc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calc2ActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calc2ActionPerformed
+
+    private void calc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calc3ActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calc3ActionPerformed
+
+    private void calc4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calc4ActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calc4ActionPerformed
+
+    private void calc5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calc5ActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calc5ActionPerformed
+
+    private void calc6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calc6ActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calc6ActionPerformed
+
+    private void calc7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calc7ActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calc7ActionPerformed
+
+    private void calc0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calc0ActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calc0ActionPerformed
+
+    private void calc9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calc9ActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calc9ActionPerformed
+
+    private void calcsomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcsomaActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calcsomaActionPerformed
+
+    private void calcsubtraiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcsubtraiActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calcsubtraiActionPerformed
+
+    private void calcmultiplicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcmultiplicaActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calcmultiplicaActionPerformed
+
+    private void calcdivideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcdivideActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calcdivideActionPerformed
+
+    private void calcabreparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcabreparActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calcabreparActionPerformed
+
+    private void calcfechaparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcfechaparActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calcfechaparActionPerformed
+
+    private void calcigualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcigualActionPerformed
+        try {
+            String resultado = "" + new DoubleEvaluator().evaluate(calculo.getText());
+            if (resultado.equals("Infinity")) resultado = "infinito";
+            else if (resultado.equals("NaN")) resultado = "erro";
+            calculo.setText(resultado);
+        } catch (Exception e) {
+            calculo.setText("erro");
+        }
+    }//GEN-LAST:event_calcigualActionPerformed
+
+    private void calclimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calclimparActionPerformed
+        calculo.setText("");
+    }//GEN-LAST:event_calclimparActionPerformed
+
+    private void calc8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calc8ActionPerformed
+        String text = ((javax.swing.JButton)evt.getSource()).getText();
+        calculo.setText(calculo.getText() + text);
+    }//GEN-LAST:event_calc8ActionPerformed
+
+    private void calcapagarultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcapagarultimoActionPerformed
+        if (calculo.getText().length() == 0) return;
+        if (calculo.getText().length() == 1) {
+            calculo.setText("");
+            return;
+        }
+        calculo.setText(calculo.getText().substring(0, calculo.getText().length()-1));
+    }//GEN-LAST:event_calcapagarultimoActionPerformed
+
     // FUNÇÃO PARA O BOTÃO DE ADICIONAR MATÉRIA
     // Ao clicar, a tela de nova matéria ficará visível.
     private void jButtonAddMateriaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonAddMateriaActionPerformed
@@ -695,6 +989,26 @@ public class Orgamico extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JComboBox<String> SelecionaAno;
     private static javax.swing.JComboBox<String> SelecionaMes;
+    private javax.swing.JButton calc0;
+    private javax.swing.JButton calc1;
+    private javax.swing.JButton calc2;
+    private javax.swing.JButton calc3;
+    private javax.swing.JButton calc4;
+    private javax.swing.JButton calc5;
+    private javax.swing.JButton calc6;
+    private javax.swing.JButton calc7;
+    private javax.swing.JButton calc8;
+    private javax.swing.JButton calc9;
+    private javax.swing.JButton calcabrepar;
+    private javax.swing.JButton calcapagarultimo;
+    private javax.swing.JButton calcdivide;
+    private javax.swing.JButton calcfechapar;
+    private javax.swing.JButton calcigual;
+    private javax.swing.JButton calclimpar;
+    private javax.swing.JButton calcmultiplica;
+    private javax.swing.JButton calcsoma;
+    private javax.swing.JButton calcsubtrai;
+    private javax.swing.JTextField calculo;
     private static javax.swing.JLabel d1;
     private static javax.swing.JLabel d10;
     private static javax.swing.JLabel d11;

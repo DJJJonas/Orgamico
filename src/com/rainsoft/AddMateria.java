@@ -33,17 +33,13 @@ public class AddMateria extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jTextNomeMat = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel5 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
         jLabelDescText = new javax.swing.JLabel();
         jButtonAdicionar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
-        jButtonAnexo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextDesc = new javax.swing.JTextArea();
         jLabelCabecalho = new javax.swing.JLabel();
         jLabelDesc = new javax.swing.JLabel();
-        jLabelAnexos = new javax.swing.JLabel();
         jLabelFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,14 +69,6 @@ public class AddMateria extends javax.swing.JFrame {
 
         jSeparator1.setForeground(new java.awt.Color(54, 54, 54));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 750, 10));
-
-        jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 20)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(91, 91, 91));
-        jLabel5.setText("Adicionar Anexo");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
-
-        jSeparator2.setForeground(new java.awt.Color(79, 79, 79));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 210, 10));
 
         jLabelDescText.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 20)); // NOI18N
         jLabelDescText.setForeground(new java.awt.Color(133, 133, 133));
@@ -119,13 +107,6 @@ public class AddMateria extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, 60, 50));
 
-        jButtonAnexo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/addanexo.png"))); // NOI18N
-        jButtonAnexo.setToolTipText("Adicionar Anexo");
-        jButtonAnexo.setBorder(null);
-        jButtonAnexo.setContentAreaFilled(false);
-        jButtonAnexo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(jButtonAnexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 30, 30));
-
         jScrollPane1.setBorder(null);
         jScrollPane1.setAutoscrolls(true);
         jScrollPane1.setWheelScrollingEnabled(false);
@@ -154,9 +135,6 @@ public class AddMateria extends javax.swing.JFrame {
 
         jLabelDesc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/des.png"))); // NOI18N
         jPanel1.add(jLabelDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, 120));
-
-        jLabelAnexos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Anexo.png"))); // NOI18N
-        jPanel1.add(jLabelAnexos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, 172));
 
         jLabelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/TelaMat.png"))); // NOI18N
         jPanel1.add(jLabelFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, -1));
@@ -220,10 +198,7 @@ public class AddMateria extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionar;
-    private javax.swing.JButton jButtonAnexo;
     private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabelAnexos;
     private javax.swing.JLabel jLabelCabecalho;
     private javax.swing.JLabel jLabelDesc;
     private javax.swing.JLabel jLabelDescText;
@@ -231,7 +206,6 @@ public class AddMateria extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextArea jTextDesc;
     private javax.swing.JTextField jTextNomeMat;
     // End of variables declaration//GEN-END:variables
