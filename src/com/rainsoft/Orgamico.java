@@ -41,723 +41,723 @@ public class Orgamico extends javax.swing.JFrame {
         Calendario_evt();
     }
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
-
-        jPanelMenuBarra = new javax.swing.JPanel();
-        calculo = new javax.swing.JTextField();
-        calc1 = new javax.swing.JButton();
-        calc2 = new javax.swing.JButton();
-        calc3 = new javax.swing.JButton();
-        calc4 = new javax.swing.JButton();
-        calc5 = new javax.swing.JButton();
-        calc6 = new javax.swing.JButton();
-        calc7 = new javax.swing.JButton();
-        calc8 = new javax.swing.JButton();
-        calc9 = new javax.swing.JButton();
-        calc0 = new javax.swing.JButton();
-        calcsoma = new javax.swing.JButton();
-        calcsubtrai = new javax.swing.JButton();
-        calcmultiplica = new javax.swing.JButton();
-        calcdivide = new javax.swing.JButton();
-        calcabrepar = new javax.swing.JButton();
-        calcfechapar = new javax.swing.JButton();
-        calcigual = new javax.swing.JButton();
-        calclimpar = new javax.swing.JButton();
-        calcapagarultimo = new javax.swing.JButton();
-        jButtonAddMateria = new javax.swing.JButton();
-        jButtonCriarAnotacao = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jListMaterias = new javax.swing.JList<>();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jListAnotacoes = new javax.swing.JList<>();
-        jLabelLembrete = new javax.swing.JLabel();
-        jLabelHora = new javax.swing.JLabel();
-        jLabelMaterias = new javax.swing.JLabel();
-        jLabelAnotacoes = new javax.swing.JLabel();
-        SelecionaMes = new javax.swing.JComboBox<>();
-        SelecionaAno = new javax.swing.JComboBox<>();
-        jSpinner1 = new javax.swing.JSpinner();
-        jDom = new javax.swing.JLabel();
-        d8 = new javax.swing.JLabel();
-        d15 = new javax.swing.JLabel();
-        d36 = new javax.swing.JLabel();
-        d9 = new javax.swing.JLabel();
-        jSeg = new javax.swing.JLabel();
-        d1 = new javax.swing.JLabel();
-        d2 = new javax.swing.JLabel();
-        d29 = new javax.swing.JLabel();
-        d22 = new javax.swing.JLabel();
-        d37 = new javax.swing.JLabel();
-        jTer = new javax.swing.JLabel();
-        d3 = new javax.swing.JLabel();
-        d10 = new javax.swing.JLabel();
-        d16 = new javax.swing.JLabel();
-        d23 = new javax.swing.JLabel();
-        d30 = new javax.swing.JLabel();
-        d17 = new javax.swing.JLabel();
-        d11 = new javax.swing.JLabel();
-        d39 = new javax.swing.JLabel();
-        d32 = new javax.swing.JLabel();
-        d31 = new javax.swing.JLabel();
-        d18 = new javax.swing.JLabel();
-        jQui = new javax.swing.JLabel();
-        d40 = new javax.swing.JLabel();
-        jQua = new javax.swing.JLabel();
-        d24 = new javax.swing.JLabel();
-        d25 = new javax.swing.JLabel();
-        d4 = new javax.swing.JLabel();
-        d38 = new javax.swing.JLabel();
-        d26 = new javax.swing.JLabel();
-        d5 = new javax.swing.JLabel();
-        d33 = new javax.swing.JLabel();
-        d21 = new javax.swing.JLabel();
-        jSex = new javax.swing.JLabel();
-        d19 = new javax.swing.JLabel();
-        d35 = new javax.swing.JLabel();
-        d14 = new javax.swing.JLabel();
-        jSab = new javax.swing.JLabel();
-        d41 = new javax.swing.JLabel();
-        d13 = new javax.swing.JLabel();
-        d28 = new javax.swing.JLabel();
-        d34 = new javax.swing.JLabel();
-        d27 = new javax.swing.JLabel();
-        d7 = new javax.swing.JLabel();
-        d42 = new javax.swing.JLabel();
-        d6 = new javax.swing.JLabel();
-        d12 = new javax.swing.JLabel();
-        d20 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanelBarraAzul = new javax.swing.JPanel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Orgamica - Organizador Acadêmico");
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/icon.png")).getImage());
-        setMinimumSize(new java.awt.Dimension(1250, 730));
-        setResizable(false);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanelMenuBarra.setBackground(new java.awt.Color(218, 218, 218));
-        jPanelMenuBarra.setFocusCycleRoot(true);
-        jPanelMenuBarra.setPreferredSize(new java.awt.Dimension(970, 541));
-        jPanelMenuBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        calculo.setFont(new java.awt.Font("DejaVu Sans Mono", 0, 18)); // NOI18N
-        calculo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        calculo.setEnabled(false);
-        jPanelMenuBarra.add(calculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 460, 240, 30));
-
-        calc1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        calc1.setText("1");
-        calc1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calc1ActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 510, 40, 30));
-
-        calc2.setText("2");
-        calc2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calc2ActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calc2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 510, 40, 30));
-
-        calc3.setText("3");
-        calc3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calc3ActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calc3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 510, 40, 30));
-
-        calc4.setText("4");
-        calc4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calc4ActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calc4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 540, 40, 30));
-
-        calc5.setText("5");
-        calc5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calc5ActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calc5, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 540, 40, 30));
-
-        calc6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        calc6.setText("6");
-        calc6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calc6ActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 540, 40, 30));
-
-        calc7.setText("7");
-        calc7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calc7ActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 570, 40, 30));
-
-        calc8.setText("8");
-        calc8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calc8ActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calc8, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 570, 40, 30));
-
-        calc9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        calc9.setText("9");
-        calc9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calc9ActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calc9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 570, 40, 30));
-
-        calc0.setText("0");
-        calc0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calc0ActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calc0, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 600, 40, 30));
-
-        calcsoma.setText("+");
-        calcsoma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcsomaActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calcsoma, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 510, 50, 40));
-
-        calcsubtrai.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        calcsubtrai.setText("-");
-        calcsubtrai.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcsubtraiActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calcsubtrai, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 550, 50, 40));
-
-        calcmultiplica.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        calcmultiplica.setText("*");
-        calcmultiplica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcmultiplicaActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calcmultiplica, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 510, 50, 40));
-
-        calcdivide.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        calcdivide.setText("/");
-        calcdivide.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcdivideActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calcdivide, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 550, 50, 40));
-
-        calcabrepar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        calcabrepar.setText("(");
-        calcabrepar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcabreparActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calcabrepar, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 600, 40, 30));
-
-        calcfechapar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        calcfechapar.setText(")");
-        calcfechapar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcfechaparActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calcfechapar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 600, 40, 30));
-
-        calcigual.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        calcigual.setText("=");
-        calcigual.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcigualActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calcigual, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 590, 140, 40));
-
-        calclimpar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        calclimpar.setText("C");
-        calclimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calclimparActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calclimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 510, 40, 80));
-
-        calcapagarultimo.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        calcapagarultimo.setText("←");
-        calcapagarultimo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcapagarultimoActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(calcapagarultimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 460, 50, 30));
-
-        jButtonAddMateria.setBackground(new java.awt.Color(51, 153, 255));
-        jButtonAddMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/materia.png"))); // NOI18N
-        jButtonAddMateria.setToolTipText("Nova Matéria");
-        jButtonAddMateria.setBorder(null);
-        jButtonAddMateria.setContentAreaFilled(false);
-        jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAddMateria.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        jButtonAddMateria.setFocusCycleRoot(true);
-        jButtonAddMateria.setFocusable(false);
-        jButtonAddMateria.setVerifyInputWhenFocusTarget(false);
-        jButtonAddMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddMateriaActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(jButtonAddMateria, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 40, 40));
-
-        jButtonCriarAnotacao.setBackground(new java.awt.Color(0, 153, 255));
-        jButtonCriarAnotacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/notas.png"))); // NOI18N
-        jButtonCriarAnotacao.setToolTipText("Nova Anotação");
-        jButtonCriarAnotacao.setBorder(null);
-        jButtonCriarAnotacao.setContentAreaFilled(false);
-        jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonCriarAnotacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCriarAnotacaoActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(jButtonCriarAnotacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 30, 40, 40));
-
-        jScrollPane1.setBackground(new java.awt.Color(249, 249, 249));
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jListMaterias.setBackground(new java.awt.Color(249, 249, 249));
-        jListMaterias.setModel(g.getMaterias());
-        jListMaterias.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jListMaterias.setCellRenderer(new RendererMaterias());
-        jListMaterias.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jListMaterias.setSelectedIndex(1);
-        jListMaterias.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListMateriasMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jListMaterias);
-
-        jPanelMenuBarra.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 300, 580));
-
-        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(73, 73, 73));
-        jLabel1.setText("Lembretes");
-        jPanelMenuBarra.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, -1, -1));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/botaog.png"))); // NOI18N
-        jButton1.setToolTipText("Gerenciar Lembretes");
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, 150, 50));
-
-        jScrollPane2.setBackground(new java.awt.Color(249, 249, 249));
-        jScrollPane2.setBorder(null);
-        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-        jListAnotacoes.setBackground(new java.awt.Color(249, 249, 249));
-        jListAnotacoes.setModel(g.getModelAnotacoes());
-        jListAnotacoes.setCellRenderer(new RendererAnotacoes());
-        jListAnotacoes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListAnotacoesMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(jListAnotacoes);
-
-        jPanelMenuBarra.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 72, 550, 580));
-
-        jLabelLembrete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/lembretes.png"))); // NOI18N
-        jLabelLembrete.setToolTipText("");
-        jPanelMenuBarra.add(jLabelLembrete, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, -1, -1));
-
-        jLabelHora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/AbaCalculadora.png"))); // NOI18N
-        jLabelHora.setToolTipText("");
-        jPanelMenuBarra.add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 450, -1, -1));
-
-        jLabelMaterias.setBackground(new java.awt.Color(0, 0, 0));
-        jLabelMaterias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Materias.png"))); // NOI18N
-        jPanelMenuBarra.add(jLabelMaterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 320, -1));
-
-        jLabelAnotacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Anotações.png"))); // NOI18N
-        jPanelMenuBarra.add(jLabelAnotacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
-
-        SelecionaMes.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        SelecionaMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
-        SelecionaMes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SelecionaMesActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(SelecionaMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 230, 130, 30));
-
-        SelecionaAno.setEditable(true);
-        SelecionaAno.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        SelecionaAno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SelecionaAnoActionPerformed(evt);
-            }
-        });
-        jPanelMenuBarra.add(SelecionaAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 230, 120, 30));
-
-        jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSpinner1StateChanged(evt);
-            }
-        });
-        jPanelMenuBarra.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 230, 20, 30));
-
-        jDom.setBackground(new java.awt.Color(255, 255, 255));
-        jDom.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
-        jDom.setForeground(new java.awt.Color(45, 43, 43));
-        jDom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jDom.setText("Dom");
-        jPanelMenuBarra.add(jDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 260, 30, -1));
-
-        d8.setBackground(new java.awt.Color(255, 255, 255));
-        d8.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d8.setForeground(new java.awt.Color(255, 0, 0));
-        d8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d8.setText("0");
-        jPanelMenuBarra.add(d8, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 310, 30, -1));
-
-        d15.setBackground(new java.awt.Color(255, 255, 255));
-        d15.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d15.setForeground(new java.awt.Color(255, 0, 0));
-        d15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d15.setText("0");
-        jPanelMenuBarra.add(d15, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 330, 30, -1));
-
-        d36.setBackground(new java.awt.Color(255, 255, 255));
-        d36.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d36.setForeground(new java.awt.Color(255, 0, 0));
-        d36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d36.setText("0");
-        jPanelMenuBarra.add(d36, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 390, 30, -1));
-
-        d9.setBackground(new java.awt.Color(255, 255, 255));
-        d9.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d9.setText("0");
-        jPanelMenuBarra.add(d9, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 310, 30, -1));
-
-        jSeg.setBackground(new java.awt.Color(255, 255, 255));
-        jSeg.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
-        jSeg.setForeground(new java.awt.Color(45, 43, 43));
-        jSeg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jSeg.setText("Seg");
-        jPanelMenuBarra.add(jSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 260, 30, -1));
-
-        d1.setBackground(new java.awt.Color(255, 255, 255));
-        d1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d1.setForeground(new java.awt.Color(255, 0, 0));
-        d1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d1.setText("0");
-        jPanelMenuBarra.add(d1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 290, 30, -1));
-
-        d2.setBackground(new java.awt.Color(255, 255, 255));
-        d2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d2.setText("0");
-        jPanelMenuBarra.add(d2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 290, 30, -1));
-
-        d29.setBackground(new java.awt.Color(255, 255, 255));
-        d29.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d29.setForeground(new java.awt.Color(255, 0, 0));
-        d29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d29.setText("0");
-        jPanelMenuBarra.add(d29, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 370, 30, -1));
-
-        d22.setBackground(new java.awt.Color(255, 255, 255));
-        d22.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d22.setForeground(new java.awt.Color(255, 0, 0));
-        d22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d22.setText("0");
-        jPanelMenuBarra.add(d22, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 350, 30, -1));
-
-        d37.setBackground(new java.awt.Color(255, 255, 255));
-        d37.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d37.setText("0");
-        jPanelMenuBarra.add(d37, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 390, 30, -1));
-
-        jTer.setBackground(new java.awt.Color(255, 255, 255));
-        jTer.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
-        jTer.setForeground(new java.awt.Color(45, 43, 43));
-        jTer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTer.setText("Ter");
-        jPanelMenuBarra.add(jTer, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 260, 30, -1));
-
-        d3.setBackground(new java.awt.Color(255, 255, 255));
-        d3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d3.setText("0");
-        jPanelMenuBarra.add(d3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 290, 30, -1));
-
-        d10.setBackground(new java.awt.Color(255, 255, 255));
-        d10.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d10.setText("0");
-        jPanelMenuBarra.add(d10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 310, 30, -1));
-
-        d16.setBackground(new java.awt.Color(255, 255, 255));
-        d16.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d16.setText("0");
-        jPanelMenuBarra.add(d16, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 330, 30, -1));
-
-        d23.setBackground(new java.awt.Color(255, 255, 255));
-        d23.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d23.setText("0");
-        jPanelMenuBarra.add(d23, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 350, 30, -1));
-
-        d30.setBackground(new java.awt.Color(255, 255, 255));
-        d30.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d30.setText("0");
-        jPanelMenuBarra.add(d30, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 370, 30, -1));
-
-        d17.setBackground(new java.awt.Color(255, 255, 255));
-        d17.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d17.setText("0");
-        jPanelMenuBarra.add(d17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 330, 30, -1));
-
-        d11.setBackground(new java.awt.Color(255, 255, 255));
-        d11.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d11.setText("0");
-        jPanelMenuBarra.add(d11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 310, 30, -1));
-
-        d39.setBackground(new java.awt.Color(255, 255, 255));
-        d39.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d39.setText("0");
-        jPanelMenuBarra.add(d39, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 390, 30, -1));
-
-        d32.setBackground(new java.awt.Color(255, 255, 255));
-        d32.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d32.setText("0");
-        jPanelMenuBarra.add(d32, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 370, 30, -1));
-
-        d31.setBackground(new java.awt.Color(255, 255, 255));
-        d31.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d31.setText("0");
-        jPanelMenuBarra.add(d31, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 370, 30, -1));
-
-        d18.setBackground(new java.awt.Color(255, 255, 255));
-        d18.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d18.setText("0");
-        jPanelMenuBarra.add(d18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 330, 30, -1));
-
-        jQui.setBackground(new java.awt.Color(255, 255, 255));
-        jQui.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
-        jQui.setForeground(new java.awt.Color(45, 43, 43));
-        jQui.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jQui.setText("Qui");
-        jPanelMenuBarra.add(jQui, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 260, 30, -1));
-
-        d40.setBackground(new java.awt.Color(255, 255, 255));
-        d40.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d40.setText("0");
-        jPanelMenuBarra.add(d40, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 390, 30, -1));
-
-        jQua.setBackground(new java.awt.Color(255, 255, 255));
-        jQua.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
-        jQua.setForeground(new java.awt.Color(45, 43, 43));
-        jQua.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jQua.setText("Qua");
-        jPanelMenuBarra.add(jQua, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 260, 30, -1));
-
-        d24.setBackground(new java.awt.Color(255, 255, 255));
-        d24.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d24.setText("0");
-        jPanelMenuBarra.add(d24, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 350, 30, -1));
-
-        d25.setBackground(new java.awt.Color(255, 255, 255));
-        d25.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d25.setText("0");
-        jPanelMenuBarra.add(d25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 350, 30, -1));
-
-        d4.setBackground(new java.awt.Color(255, 255, 255));
-        d4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d4.setText("0");
-        jPanelMenuBarra.add(d4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 290, 30, -1));
-
-        d38.setBackground(new java.awt.Color(255, 255, 255));
-        d38.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d38.setText("0");
-        jPanelMenuBarra.add(d38, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 390, 30, -1));
-
-        d26.setBackground(new java.awt.Color(255, 255, 255));
-        d26.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d26.setText("0");
-        jPanelMenuBarra.add(d26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 350, 30, -1));
-
-        d5.setBackground(new java.awt.Color(255, 255, 255));
-        d5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d5.setText("0");
-        jPanelMenuBarra.add(d5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 290, 30, -1));
-
-        d33.setBackground(new java.awt.Color(255, 255, 255));
-        d33.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d33.setText("0");
-        jPanelMenuBarra.add(d33, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 370, 30, -1));
-
-        d21.setBackground(new java.awt.Color(255, 255, 255));
-        d21.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d21.setText("0");
-        jPanelMenuBarra.add(d21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 330, 30, -1));
-
-        jSex.setBackground(new java.awt.Color(255, 255, 255));
-        jSex.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
-        jSex.setForeground(new java.awt.Color(45, 43, 43));
-        jSex.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jSex.setText("Sex");
-        jPanelMenuBarra.add(jSex, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 260, 30, -1));
-
-        d19.setBackground(new java.awt.Color(255, 255, 255));
-        d19.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d19.setText("0");
-        jPanelMenuBarra.add(d19, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 330, 30, -1));
-
-        d35.setBackground(new java.awt.Color(255, 255, 255));
-        d35.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d35.setText("0");
-        jPanelMenuBarra.add(d35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 370, 30, -1));
-
-        d14.setBackground(new java.awt.Color(255, 255, 255));
-        d14.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d14.setText("0");
-        jPanelMenuBarra.add(d14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 310, 30, -1));
-
-        jSab.setBackground(new java.awt.Color(255, 255, 255));
-        jSab.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
-        jSab.setForeground(new java.awt.Color(45, 43, 43));
-        jSab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jSab.setText("Sáb");
-        jPanelMenuBarra.add(jSab, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 260, 30, -1));
-
-        d41.setBackground(new java.awt.Color(255, 255, 255));
-        d41.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d41.setText("0");
-        jPanelMenuBarra.add(d41, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 390, 30, -1));
-
-        d13.setBackground(new java.awt.Color(255, 255, 255));
-        d13.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d13.setText("0");
-        jPanelMenuBarra.add(d13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 310, 30, -1));
-
-        d28.setBackground(new java.awt.Color(255, 255, 255));
-        d28.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d28.setText("0");
-        jPanelMenuBarra.add(d28, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 350, 30, -1));
-
-        d34.setBackground(new java.awt.Color(255, 255, 255));
-        d34.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d34.setText("0");
-        jPanelMenuBarra.add(d34, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 370, 30, -1));
-
-        d27.setBackground(new java.awt.Color(255, 255, 255));
-        d27.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d27.setText("0");
-        jPanelMenuBarra.add(d27, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 350, 30, -1));
-
-        d7.setBackground(new java.awt.Color(255, 255, 255));
-        d7.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d7.setText("0");
-        jPanelMenuBarra.add(d7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 290, 30, -1));
-
-        d42.setBackground(new java.awt.Color(255, 255, 255));
-        d42.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d42.setText("0");
-        jPanelMenuBarra.add(d42, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 390, 30, -1));
-
-        d6.setBackground(new java.awt.Color(255, 255, 255));
-        d6.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d6.setText("0");
-        jPanelMenuBarra.add(d6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 290, 30, -1));
-
-        d12.setBackground(new java.awt.Color(255, 255, 255));
-        d12.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d12.setText("0");
-        jPanelMenuBarra.add(d12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 310, 30, -1));
-
-        d20.setBackground(new java.awt.Color(255, 255, 255));
-        d20.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        d20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d20.setText("0");
-        jPanelMenuBarra.add(d20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 330, 30, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/abaCalendario.png"))); // NOI18N
-        jPanelMenuBarra.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, -1, 210));
-
-        getContentPane().add(jPanelMenuBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1240, 660));
-
-        jPanelBarraAzul.setBackground(new java.awt.Color(51, 153, 255));
-        jPanelBarraAzul.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanelBarraAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 40));
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+        // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+        private void initComponents() {
+
+                jPanelMenuBarra = new javax.swing.JPanel();
+                calculo = new javax.swing.JTextField();
+                calc1 = new javax.swing.JButton();
+                calc2 = new javax.swing.JButton();
+                calc3 = new javax.swing.JButton();
+                calc4 = new javax.swing.JButton();
+                calc5 = new javax.swing.JButton();
+                calc6 = new javax.swing.JButton();
+                calc7 = new javax.swing.JButton();
+                calc8 = new javax.swing.JButton();
+                calc9 = new javax.swing.JButton();
+                calc0 = new javax.swing.JButton();
+                calcsoma = new javax.swing.JButton();
+                calcsubtrai = new javax.swing.JButton();
+                calcmultiplica = new javax.swing.JButton();
+                calcdivide = new javax.swing.JButton();
+                calcabrepar = new javax.swing.JButton();
+                calcfechapar = new javax.swing.JButton();
+                calcigual = new javax.swing.JButton();
+                calclimpar = new javax.swing.JButton();
+                calcapagarultimo = new javax.swing.JButton();
+                jButtonAddMateria = new javax.swing.JButton();
+                jButtonCriarAnotacao = new javax.swing.JButton();
+                jScrollPane1 = new javax.swing.JScrollPane();
+                jListMaterias = new javax.swing.JList<>();
+                jLabel1 = new javax.swing.JLabel();
+                jButton1 = new javax.swing.JButton();
+                jScrollPane2 = new javax.swing.JScrollPane();
+                jListAnotacoes = new javax.swing.JList<>();
+                jLabelLembrete = new javax.swing.JLabel();
+                jLabelHora = new javax.swing.JLabel();
+                jLabelMaterias = new javax.swing.JLabel();
+                jLabelAnotacoes = new javax.swing.JLabel();
+                SelecionaMes = new javax.swing.JComboBox<>();
+                SelecionaAno = new javax.swing.JComboBox<>();
+                jSpinner1 = new javax.swing.JSpinner();
+                jDom = new javax.swing.JLabel();
+                d8 = new javax.swing.JLabel();
+                d15 = new javax.swing.JLabel();
+                d36 = new javax.swing.JLabel();
+                d9 = new javax.swing.JLabel();
+                jSeg = new javax.swing.JLabel();
+                d1 = new javax.swing.JLabel();
+                d2 = new javax.swing.JLabel();
+                d29 = new javax.swing.JLabel();
+                d22 = new javax.swing.JLabel();
+                d37 = new javax.swing.JLabel();
+                jTer = new javax.swing.JLabel();
+                d3 = new javax.swing.JLabel();
+                d10 = new javax.swing.JLabel();
+                d16 = new javax.swing.JLabel();
+                d23 = new javax.swing.JLabel();
+                d30 = new javax.swing.JLabel();
+                d17 = new javax.swing.JLabel();
+                d11 = new javax.swing.JLabel();
+                d39 = new javax.swing.JLabel();
+                d32 = new javax.swing.JLabel();
+                d31 = new javax.swing.JLabel();
+                d18 = new javax.swing.JLabel();
+                jQui = new javax.swing.JLabel();
+                d40 = new javax.swing.JLabel();
+                jQua = new javax.swing.JLabel();
+                d24 = new javax.swing.JLabel();
+                d25 = new javax.swing.JLabel();
+                d4 = new javax.swing.JLabel();
+                d38 = new javax.swing.JLabel();
+                d26 = new javax.swing.JLabel();
+                d5 = new javax.swing.JLabel();
+                d33 = new javax.swing.JLabel();
+                d21 = new javax.swing.JLabel();
+                jSex = new javax.swing.JLabel();
+                d19 = new javax.swing.JLabel();
+                d35 = new javax.swing.JLabel();
+                d14 = new javax.swing.JLabel();
+                jSab = new javax.swing.JLabel();
+                d41 = new javax.swing.JLabel();
+                d13 = new javax.swing.JLabel();
+                d28 = new javax.swing.JLabel();
+                d34 = new javax.swing.JLabel();
+                d27 = new javax.swing.JLabel();
+                d7 = new javax.swing.JLabel();
+                d42 = new javax.swing.JLabel();
+                d6 = new javax.swing.JLabel();
+                d12 = new javax.swing.JLabel();
+                d20 = new javax.swing.JLabel();
+                jLabel3 = new javax.swing.JLabel();
+                jPanelBarraAzul = new javax.swing.JPanel();
+
+                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                setTitle("Orgamica - Organizador Acadêmico");
+                setIconImage(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/icon.png")).getImage());
+                setMinimumSize(new java.awt.Dimension(1250, 730));
+                setResizable(false);
+                addWindowListener(new java.awt.event.WindowAdapter() {
+                        public void windowOpened(java.awt.event.WindowEvent evt) {
+                                formWindowOpened(evt);
+                        }
+                });
+                getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                jPanelMenuBarra.setBackground(new java.awt.Color(218, 218, 218));
+                jPanelMenuBarra.setFocusCycleRoot(true);
+                jPanelMenuBarra.setPreferredSize(new java.awt.Dimension(970, 541));
+                jPanelMenuBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                calculo.setFont(new java.awt.Font("DejaVu Sans Mono", 0, 18)); // NOI18N
+                calculo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+                calculo.setEnabled(false);
+                jPanelMenuBarra.add(calculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 460, 240, 30));
+
+                calc1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+                calc1.setText("1");
+                calc1.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calc1ActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 510, 40, 30));
+
+                calc2.setText("2");
+                calc2.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calc2ActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calc2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 510, 40, 30));
+
+                calc3.setText("3");
+                calc3.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calc3ActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calc3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 510, 40, 30));
+
+                calc4.setText("4");
+                calc4.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calc4ActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calc4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 540, 40, 30));
+
+                calc5.setText("5");
+                calc5.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calc5ActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calc5, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 540, 40, 30));
+
+                calc6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+                calc6.setText("6");
+                calc6.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calc6ActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 540, 40, 30));
+
+                calc7.setText("7");
+                calc7.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calc7ActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 570, 40, 30));
+
+                calc8.setText("8");
+                calc8.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calc8ActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calc8, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 570, 40, 30));
+
+                calc9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+                calc9.setText("9");
+                calc9.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calc9ActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calc9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 570, 40, 30));
+
+                calc0.setText("0");
+                calc0.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calc0ActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calc0, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 600, 40, 30));
+
+                calcsoma.setText("+");
+                calcsoma.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calcsomaActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calcsoma, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 510, 50, 40));
+
+                calcsubtrai.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+                calcsubtrai.setText("-");
+                calcsubtrai.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calcsubtraiActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calcsubtrai, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 550, 50, 40));
+
+                calcmultiplica.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+                calcmultiplica.setText("*");
+                calcmultiplica.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calcmultiplicaActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calcmultiplica, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 510, 50, 40));
+
+                calcdivide.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+                calcdivide.setText("/");
+                calcdivide.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calcdivideActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calcdivide, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 550, 50, 40));
+
+                calcabrepar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+                calcabrepar.setText("(");
+                calcabrepar.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calcabreparActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calcabrepar, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 600, 40, 30));
+
+                calcfechapar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+                calcfechapar.setText(")");
+                calcfechapar.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calcfechaparActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calcfechapar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 600, 40, 30));
+
+                calcigual.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+                calcigual.setText("=");
+                calcigual.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calcigualActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calcigual, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 590, 140, 40));
+
+                calclimpar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+                calclimpar.setText("C");
+                calclimpar.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calclimparActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calclimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 510, 40, 80));
+
+                calcapagarultimo.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+                calcapagarultimo.setText("←");
+                calcapagarultimo.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                calcapagarultimoActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(calcapagarultimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 460, 50, 30));
+
+                jButtonAddMateria.setBackground(new java.awt.Color(51, 153, 255));
+                jButtonAddMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/materia.png"))); // NOI18N
+                jButtonAddMateria.setToolTipText("Nova Matéria");
+                jButtonAddMateria.setBorder(null);
+                jButtonAddMateria.setContentAreaFilled(false);
+                jButtonAddMateria.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                jButtonAddMateria.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+                jButtonAddMateria.setFocusCycleRoot(true);
+                jButtonAddMateria.setFocusable(false);
+                jButtonAddMateria.setVerifyInputWhenFocusTarget(false);
+                jButtonAddMateria.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButtonAddMateriaActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(jButtonAddMateria, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 40, 40));
+
+                jButtonCriarAnotacao.setBackground(new java.awt.Color(0, 153, 255));
+                jButtonCriarAnotacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/notas.png"))); // NOI18N
+                jButtonCriarAnotacao.setToolTipText("Nova Anotação");
+                jButtonCriarAnotacao.setBorder(null);
+                jButtonCriarAnotacao.setContentAreaFilled(false);
+                jButtonCriarAnotacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                jButtonCriarAnotacao.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButtonCriarAnotacaoActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(jButtonCriarAnotacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 30, 40, 40));
+
+                jScrollPane1.setBackground(new java.awt.Color(249, 249, 249));
+                jScrollPane1.setBorder(null);
+                jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+                jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+                jListMaterias.setBackground(new java.awt.Color(249, 249, 249));
+                jListMaterias.setModel(g.getMaterias());
+                jListMaterias.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+                jListMaterias.setCellRenderer(new RendererMaterias());
+                jListMaterias.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                jListMaterias.setSelectedIndex(1);
+                jListMaterias.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                jListMateriasMouseClicked(evt);
+                        }
+                });
+                jScrollPane1.setViewportView(jListMaterias);
+
+                jPanelMenuBarra.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 310, 580));
+
+                jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+                jLabel1.setForeground(new java.awt.Color(73, 73, 73));
+                jLabel1.setText("Lembretes");
+                jPanelMenuBarra.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, -1, -1));
+
+                jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/botaog.png"))); // NOI18N
+                jButton1.setToolTipText("Gerenciar Lembretes");
+                jButton1.setBorder(null);
+                jButton1.setContentAreaFilled(false);
+                jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                jButton1.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton1ActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, 150, 50));
+
+                jScrollPane2.setBackground(new java.awt.Color(249, 249, 249));
+                jScrollPane2.setBorder(null);
+                jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+                jListAnotacoes.setBackground(new java.awt.Color(249, 249, 249));
+                jListAnotacoes.setModel(g.getModelAnotacoes());
+                jListAnotacoes.setCellRenderer(new RendererAnotacoes());
+                jListAnotacoes.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                jListAnotacoesMouseClicked(evt);
+                        }
+                });
+                jScrollPane2.setViewportView(jListAnotacoes);
+
+                jPanelMenuBarra.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 72, 550, 580));
+
+                jLabelLembrete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/lembretes.png"))); // NOI18N
+                jLabelLembrete.setToolTipText("");
+                jPanelMenuBarra.add(jLabelLembrete, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, -1, -1));
+
+                jLabelHora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/AbaCalculadora.png"))); // NOI18N
+                jLabelHora.setToolTipText("");
+                jPanelMenuBarra.add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 450, -1, -1));
+
+                jLabelMaterias.setBackground(new java.awt.Color(0, 0, 0));
+                jLabelMaterias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Materias.png"))); // NOI18N
+                jPanelMenuBarra.add(jLabelMaterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 320, -1));
+
+                jLabelAnotacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/Anotações.png"))); // NOI18N
+                jPanelMenuBarra.add(jLabelAnotacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
+
+                SelecionaMes.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+                SelecionaMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
+                SelecionaMes.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                SelecionaMesActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(SelecionaMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 230, 130, 30));
+
+                SelecionaAno.setEditable(true);
+                SelecionaAno.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+                SelecionaAno.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                SelecionaAnoActionPerformed(evt);
+                        }
+                });
+                jPanelMenuBarra.add(SelecionaAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 230, 120, 30));
+
+                jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
+                        public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                                jSpinner1StateChanged(evt);
+                        }
+                });
+                jPanelMenuBarra.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 230, 20, 30));
+
+                jDom.setBackground(new java.awt.Color(255, 255, 255));
+                jDom.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
+                jDom.setForeground(new java.awt.Color(45, 43, 43));
+                jDom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jDom.setText("Dom");
+                jPanelMenuBarra.add(jDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 260, 30, -1));
+
+                d8.setBackground(new java.awt.Color(255, 255, 255));
+                d8.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d8.setForeground(new java.awt.Color(255, 0, 0));
+                d8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d8.setText("0");
+                jPanelMenuBarra.add(d8, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 310, 30, -1));
+
+                d15.setBackground(new java.awt.Color(255, 255, 255));
+                d15.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d15.setForeground(new java.awt.Color(255, 0, 0));
+                d15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d15.setText("0");
+                jPanelMenuBarra.add(d15, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 330, 30, -1));
+
+                d36.setBackground(new java.awt.Color(255, 255, 255));
+                d36.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d36.setForeground(new java.awt.Color(255, 0, 0));
+                d36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d36.setText("0");
+                jPanelMenuBarra.add(d36, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 390, 30, -1));
+
+                d9.setBackground(new java.awt.Color(255, 255, 255));
+                d9.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d9.setText("0");
+                jPanelMenuBarra.add(d9, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 310, 30, -1));
+
+                jSeg.setBackground(new java.awt.Color(255, 255, 255));
+                jSeg.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
+                jSeg.setForeground(new java.awt.Color(45, 43, 43));
+                jSeg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jSeg.setText("Seg");
+                jPanelMenuBarra.add(jSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 260, 30, -1));
+
+                d1.setBackground(new java.awt.Color(255, 255, 255));
+                d1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d1.setForeground(new java.awt.Color(255, 0, 0));
+                d1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d1.setText("0");
+                jPanelMenuBarra.add(d1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 290, 30, -1));
+
+                d2.setBackground(new java.awt.Color(255, 255, 255));
+                d2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d2.setText("0");
+                jPanelMenuBarra.add(d2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 290, 30, -1));
+
+                d29.setBackground(new java.awt.Color(255, 255, 255));
+                d29.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d29.setForeground(new java.awt.Color(255, 0, 0));
+                d29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d29.setText("0");
+                jPanelMenuBarra.add(d29, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 370, 30, -1));
+
+                d22.setBackground(new java.awt.Color(255, 255, 255));
+                d22.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d22.setForeground(new java.awt.Color(255, 0, 0));
+                d22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d22.setText("0");
+                jPanelMenuBarra.add(d22, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 350, 30, -1));
+
+                d37.setBackground(new java.awt.Color(255, 255, 255));
+                d37.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d37.setText("0");
+                jPanelMenuBarra.add(d37, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 390, 30, -1));
+
+                jTer.setBackground(new java.awt.Color(255, 255, 255));
+                jTer.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
+                jTer.setForeground(new java.awt.Color(45, 43, 43));
+                jTer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jTer.setText("Ter");
+                jPanelMenuBarra.add(jTer, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 260, 30, -1));
+
+                d3.setBackground(new java.awt.Color(255, 255, 255));
+                d3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d3.setText("0");
+                jPanelMenuBarra.add(d3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 290, 30, -1));
+
+                d10.setBackground(new java.awt.Color(255, 255, 255));
+                d10.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d10.setText("0");
+                jPanelMenuBarra.add(d10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 310, 30, -1));
+
+                d16.setBackground(new java.awt.Color(255, 255, 255));
+                d16.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d16.setText("0");
+                jPanelMenuBarra.add(d16, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 330, 30, -1));
+
+                d23.setBackground(new java.awt.Color(255, 255, 255));
+                d23.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d23.setText("0");
+                jPanelMenuBarra.add(d23, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 350, 30, -1));
+
+                d30.setBackground(new java.awt.Color(255, 255, 255));
+                d30.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d30.setText("0");
+                jPanelMenuBarra.add(d30, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 370, 30, -1));
+
+                d17.setBackground(new java.awt.Color(255, 255, 255));
+                d17.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d17.setText("0");
+                jPanelMenuBarra.add(d17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 330, 30, -1));
+
+                d11.setBackground(new java.awt.Color(255, 255, 255));
+                d11.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d11.setText("0");
+                jPanelMenuBarra.add(d11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 310, 30, -1));
+
+                d39.setBackground(new java.awt.Color(255, 255, 255));
+                d39.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d39.setText("0");
+                jPanelMenuBarra.add(d39, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 390, 30, -1));
+
+                d32.setBackground(new java.awt.Color(255, 255, 255));
+                d32.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d32.setText("0");
+                jPanelMenuBarra.add(d32, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 370, 30, -1));
+
+                d31.setBackground(new java.awt.Color(255, 255, 255));
+                d31.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d31.setText("0");
+                jPanelMenuBarra.add(d31, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 370, 30, -1));
+
+                d18.setBackground(new java.awt.Color(255, 255, 255));
+                d18.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d18.setText("0");
+                jPanelMenuBarra.add(d18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 330, 30, -1));
+
+                jQui.setBackground(new java.awt.Color(255, 255, 255));
+                jQui.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
+                jQui.setForeground(new java.awt.Color(45, 43, 43));
+                jQui.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jQui.setText("Qui");
+                jPanelMenuBarra.add(jQui, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 260, 30, -1));
+
+                d40.setBackground(new java.awt.Color(255, 255, 255));
+                d40.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d40.setText("0");
+                jPanelMenuBarra.add(d40, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 390, 30, -1));
+
+                jQua.setBackground(new java.awt.Color(255, 255, 255));
+                jQua.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
+                jQua.setForeground(new java.awt.Color(45, 43, 43));
+                jQua.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jQua.setText("Qua");
+                jPanelMenuBarra.add(jQua, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 260, 30, -1));
+
+                d24.setBackground(new java.awt.Color(255, 255, 255));
+                d24.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d24.setText("0");
+                jPanelMenuBarra.add(d24, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 350, 30, -1));
+
+                d25.setBackground(new java.awt.Color(255, 255, 255));
+                d25.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d25.setText("0");
+                jPanelMenuBarra.add(d25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 350, 30, -1));
+
+                d4.setBackground(new java.awt.Color(255, 255, 255));
+                d4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d4.setText("0");
+                jPanelMenuBarra.add(d4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 290, 30, -1));
+
+                d38.setBackground(new java.awt.Color(255, 255, 255));
+                d38.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d38.setText("0");
+                jPanelMenuBarra.add(d38, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 390, 30, -1));
+
+                d26.setBackground(new java.awt.Color(255, 255, 255));
+                d26.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d26.setText("0");
+                jPanelMenuBarra.add(d26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 350, 30, -1));
+
+                d5.setBackground(new java.awt.Color(255, 255, 255));
+                d5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d5.setText("0");
+                jPanelMenuBarra.add(d5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 290, 30, -1));
+
+                d33.setBackground(new java.awt.Color(255, 255, 255));
+                d33.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d33.setText("0");
+                jPanelMenuBarra.add(d33, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 370, 30, -1));
+
+                d21.setBackground(new java.awt.Color(255, 255, 255));
+                d21.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d21.setText("0");
+                jPanelMenuBarra.add(d21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 330, 30, -1));
+
+                jSex.setBackground(new java.awt.Color(255, 255, 255));
+                jSex.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
+                jSex.setForeground(new java.awt.Color(45, 43, 43));
+                jSex.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jSex.setText("Sex");
+                jPanelMenuBarra.add(jSex, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 260, 30, -1));
+
+                d19.setBackground(new java.awt.Color(255, 255, 255));
+                d19.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d19.setText("0");
+                jPanelMenuBarra.add(d19, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 330, 30, -1));
+
+                d35.setBackground(new java.awt.Color(255, 255, 255));
+                d35.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d35.setText("0");
+                jPanelMenuBarra.add(d35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 370, 30, -1));
+
+                d14.setBackground(new java.awt.Color(255, 255, 255));
+                d14.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d14.setText("0");
+                jPanelMenuBarra.add(d14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 310, 30, -1));
+
+                jSab.setBackground(new java.awt.Color(255, 255, 255));
+                jSab.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
+                jSab.setForeground(new java.awt.Color(45, 43, 43));
+                jSab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jSab.setText("Sáb");
+                jPanelMenuBarra.add(jSab, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 260, 30, -1));
+
+                d41.setBackground(new java.awt.Color(255, 255, 255));
+                d41.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d41.setText("0");
+                jPanelMenuBarra.add(d41, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 390, 30, -1));
+
+                d13.setBackground(new java.awt.Color(255, 255, 255));
+                d13.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d13.setText("0");
+                jPanelMenuBarra.add(d13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 310, 30, -1));
+
+                d28.setBackground(new java.awt.Color(255, 255, 255));
+                d28.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d28.setText("0");
+                jPanelMenuBarra.add(d28, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 350, 30, -1));
+
+                d34.setBackground(new java.awt.Color(255, 255, 255));
+                d34.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d34.setText("0");
+                jPanelMenuBarra.add(d34, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 370, 30, -1));
+
+                d27.setBackground(new java.awt.Color(255, 255, 255));
+                d27.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d27.setText("0");
+                jPanelMenuBarra.add(d27, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 350, 30, -1));
+
+                d7.setBackground(new java.awt.Color(255, 255, 255));
+                d7.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d7.setText("0");
+                jPanelMenuBarra.add(d7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 290, 30, -1));
+
+                d42.setBackground(new java.awt.Color(255, 255, 255));
+                d42.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d42.setText("0");
+                jPanelMenuBarra.add(d42, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 390, 30, -1));
+
+                d6.setBackground(new java.awt.Color(255, 255, 255));
+                d6.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d6.setText("0");
+                jPanelMenuBarra.add(d6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 290, 30, -1));
+
+                d12.setBackground(new java.awt.Color(255, 255, 255));
+                d12.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d12.setText("0");
+                jPanelMenuBarra.add(d12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 310, 30, -1));
+
+                d20.setBackground(new java.awt.Color(255, 255, 255));
+                d20.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+                d20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                d20.setText("0");
+                jPanelMenuBarra.add(d20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 330, 30, -1));
+
+                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/abaCalendario.png"))); // NOI18N
+                jPanelMenuBarra.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, -1, 210));
+
+                getContentPane().add(jPanelMenuBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1240, 660));
+
+                jPanelBarraAzul.setBackground(new java.awt.Color(51, 153, 255));
+                jPanelBarraAzul.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+                getContentPane().add(jPanelBarraAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 40));
+
+                pack();
+        }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -986,95 +986,95 @@ public class Orgamico extends javax.swing.JFrame {
     }
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JComboBox<String> SelecionaAno;
-    private static javax.swing.JComboBox<String> SelecionaMes;
-    private javax.swing.JButton calc0;
-    private javax.swing.JButton calc1;
-    private javax.swing.JButton calc2;
-    private javax.swing.JButton calc3;
-    private javax.swing.JButton calc4;
-    private javax.swing.JButton calc5;
-    private javax.swing.JButton calc6;
-    private javax.swing.JButton calc7;
-    private javax.swing.JButton calc8;
-    private javax.swing.JButton calc9;
-    private javax.swing.JButton calcabrepar;
-    private javax.swing.JButton calcapagarultimo;
-    private javax.swing.JButton calcdivide;
-    private javax.swing.JButton calcfechapar;
-    private javax.swing.JButton calcigual;
-    private javax.swing.JButton calclimpar;
-    private javax.swing.JButton calcmultiplica;
-    private javax.swing.JButton calcsoma;
-    private javax.swing.JButton calcsubtrai;
-    private javax.swing.JTextField calculo;
-    private static javax.swing.JLabel d1;
-    private static javax.swing.JLabel d10;
-    private static javax.swing.JLabel d11;
-    private static javax.swing.JLabel d12;
-    private static javax.swing.JLabel d13;
-    private static javax.swing.JLabel d14;
-    private static javax.swing.JLabel d15;
-    private static javax.swing.JLabel d16;
-    private static javax.swing.JLabel d17;
-    private static javax.swing.JLabel d18;
-    private static javax.swing.JLabel d19;
-    private static javax.swing.JLabel d2;
-    private static javax.swing.JLabel d20;
-    private static javax.swing.JLabel d21;
-    private static javax.swing.JLabel d22;
-    private static javax.swing.JLabel d23;
-    private static javax.swing.JLabel d24;
-    private static javax.swing.JLabel d25;
-    private static javax.swing.JLabel d26;
-    private static javax.swing.JLabel d27;
-    private static javax.swing.JLabel d28;
-    private static javax.swing.JLabel d29;
-    private static javax.swing.JLabel d3;
-    private static javax.swing.JLabel d30;
-    private static javax.swing.JLabel d31;
-    private static javax.swing.JLabel d32;
-    private static javax.swing.JLabel d33;
-    private static javax.swing.JLabel d34;
-    private static javax.swing.JLabel d35;
-    private static javax.swing.JLabel d36;
-    private static javax.swing.JLabel d37;
-    private static javax.swing.JLabel d38;
-    private static javax.swing.JLabel d39;
-    private static javax.swing.JLabel d4;
-    private static javax.swing.JLabel d40;
-    private static javax.swing.JLabel d41;
-    private static javax.swing.JLabel d42;
-    private static javax.swing.JLabel d5;
-    private static javax.swing.JLabel d6;
-    private static javax.swing.JLabel d7;
-    private static javax.swing.JLabel d8;
-    private static javax.swing.JLabel d9;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButtonAddMateria;
-    private javax.swing.JButton jButtonCriarAnotacao;
-    private static javax.swing.JLabel jDom;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabelAnotacoes;
-    private javax.swing.JLabel jLabelHora;
-    private javax.swing.JLabel jLabelLembrete;
-    private javax.swing.JLabel jLabelMaterias;
-    public static javax.swing.JList<String> jListAnotacoes;
-    public static javax.swing.JList<Materia> jListMaterias;
-    private javax.swing.JPanel jPanelBarraAzul;
-    private javax.swing.JPanel jPanelMenuBarra;
-    private static javax.swing.JLabel jQua;
-    private static javax.swing.JLabel jQui;
-    private static javax.swing.JLabel jSab;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private static javax.swing.JLabel jSeg;
-    private static javax.swing.JLabel jSex;
-    private static javax.swing.JSpinner jSpinner1;
-    private static javax.swing.JLabel jTer;
-    // End of variables declaration//GEN-END:variables
+        // Variables declaration - do not modify//GEN-BEGIN:variables
+        private static javax.swing.JComboBox<String> SelecionaAno;
+        private static javax.swing.JComboBox<String> SelecionaMes;
+        private javax.swing.JButton calc0;
+        private javax.swing.JButton calc1;
+        private javax.swing.JButton calc2;
+        private javax.swing.JButton calc3;
+        private javax.swing.JButton calc4;
+        private javax.swing.JButton calc5;
+        private javax.swing.JButton calc6;
+        private javax.swing.JButton calc7;
+        private javax.swing.JButton calc8;
+        private javax.swing.JButton calc9;
+        private javax.swing.JButton calcabrepar;
+        private javax.swing.JButton calcapagarultimo;
+        private javax.swing.JButton calcdivide;
+        private javax.swing.JButton calcfechapar;
+        private javax.swing.JButton calcigual;
+        private javax.swing.JButton calclimpar;
+        private javax.swing.JButton calcmultiplica;
+        private javax.swing.JButton calcsoma;
+        private javax.swing.JButton calcsubtrai;
+        private javax.swing.JTextField calculo;
+        private static javax.swing.JLabel d1;
+        private static javax.swing.JLabel d10;
+        private static javax.swing.JLabel d11;
+        private static javax.swing.JLabel d12;
+        private static javax.swing.JLabel d13;
+        private static javax.swing.JLabel d14;
+        private static javax.swing.JLabel d15;
+        private static javax.swing.JLabel d16;
+        private static javax.swing.JLabel d17;
+        private static javax.swing.JLabel d18;
+        private static javax.swing.JLabel d19;
+        private static javax.swing.JLabel d2;
+        private static javax.swing.JLabel d20;
+        private static javax.swing.JLabel d21;
+        private static javax.swing.JLabel d22;
+        private static javax.swing.JLabel d23;
+        private static javax.swing.JLabel d24;
+        private static javax.swing.JLabel d25;
+        private static javax.swing.JLabel d26;
+        private static javax.swing.JLabel d27;
+        private static javax.swing.JLabel d28;
+        private static javax.swing.JLabel d29;
+        private static javax.swing.JLabel d3;
+        private static javax.swing.JLabel d30;
+        private static javax.swing.JLabel d31;
+        private static javax.swing.JLabel d32;
+        private static javax.swing.JLabel d33;
+        private static javax.swing.JLabel d34;
+        private static javax.swing.JLabel d35;
+        private static javax.swing.JLabel d36;
+        private static javax.swing.JLabel d37;
+        private static javax.swing.JLabel d38;
+        private static javax.swing.JLabel d39;
+        private static javax.swing.JLabel d4;
+        private static javax.swing.JLabel d40;
+        private static javax.swing.JLabel d41;
+        private static javax.swing.JLabel d42;
+        private static javax.swing.JLabel d5;
+        private static javax.swing.JLabel d6;
+        private static javax.swing.JLabel d7;
+        private static javax.swing.JLabel d8;
+        private static javax.swing.JLabel d9;
+        private javax.swing.JButton jButton1;
+        private javax.swing.JButton jButtonAddMateria;
+        private javax.swing.JButton jButtonCriarAnotacao;
+        private static javax.swing.JLabel jDom;
+        private javax.swing.JLabel jLabel1;
+        private javax.swing.JLabel jLabel3;
+        private javax.swing.JLabel jLabelAnotacoes;
+        private javax.swing.JLabel jLabelHora;
+        private javax.swing.JLabel jLabelLembrete;
+        private javax.swing.JLabel jLabelMaterias;
+        public static javax.swing.JList<String> jListAnotacoes;
+        public static javax.swing.JList<Materia> jListMaterias;
+        private javax.swing.JPanel jPanelBarraAzul;
+        private javax.swing.JPanel jPanelMenuBarra;
+        private static javax.swing.JLabel jQua;
+        private static javax.swing.JLabel jQui;
+        private static javax.swing.JLabel jSab;
+        private javax.swing.JScrollPane jScrollPane1;
+        private javax.swing.JScrollPane jScrollPane2;
+        private static javax.swing.JLabel jSeg;
+        private static javax.swing.JLabel jSex;
+        private static javax.swing.JSpinner jSpinner1;
+        private static javax.swing.JLabel jTer;
+        // End of variables declaration//GEN-END:variables
     private static javax.swing.JLabel[] jldias;
 
     //        Inicializacao do calendario
