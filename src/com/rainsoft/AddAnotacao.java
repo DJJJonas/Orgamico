@@ -1,6 +1,5 @@
 package com.rainsoft;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -10,11 +9,15 @@ public class AddAnotacao extends javax.swing.JFrame {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
-        //this.setBackground(new Color(0, 0, 0, 0));
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        javax.swing.JButton jButtonAdicionar;
+        javax.swing.JButton jButtonCancelar;
+        javax.swing.JLabel jLabel1;
+        javax.swing.JLabel jLabel2;
+        javax.swing.JScrollPane jScrollPane2;
 
         jLabel1 = new javax.swing.JLabel();
         jButtonCancelar = new javax.swing.JButton();
@@ -39,11 +42,7 @@ public class AddAnotacao extends javax.swing.JFrame {
         jButtonCancelar.setBorder(null);
         jButtonCancelar.setContentAreaFilled(false);
         jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelarActionPerformed(evt);
-            }
-        });
+        jButtonCancelar.addActionListener(this::jButtonCancelarActionPerformed);
         getContentPane().add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 50, 40));
 
         jButtonAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/addAnotacaoBotao.png"))); // NOI18N
@@ -51,11 +50,7 @@ public class AddAnotacao extends javax.swing.JFrame {
         jButtonAdicionar.setBorder(null);
         jButtonAdicionar.setContentAreaFilled(false);
         jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdicionarActionPerformed(evt);
-            }
-        });
+        jButtonAdicionar.addActionListener(this::jButtonAdicionarActionPerformed);
         getContentPane().add(jButtonAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 50, 40));
 
         jScrollPane2.setBorder(null);
@@ -80,17 +75,12 @@ public class AddAnotacao extends javax.swing.JFrame {
 
     private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
         String novaAnotacao = jTextAnotacao.getText();
-        if (novaAnotacao.length() > 4096) novaAnotacao.substring(0, 4095);
+        if (novaAnotacao.length() > 4096) novaAnotacao = novaAnotacao.substring(0, 4095);
         Orgamico.g.addAnotacao(novaAnotacao);
         setVisible(false);
     }//GEN-LAST:event_jButtonAdicionarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAdicionar;
-    private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTextArea jTextAnotacao;
     // End of variables declaration//GEN-END:variables
 }

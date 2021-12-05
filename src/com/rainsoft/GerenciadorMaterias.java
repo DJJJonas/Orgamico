@@ -22,13 +22,13 @@ import org.json.JSONObject;
 public class GerenciadorMaterias {
 
     private final DefaultListModel<Materia> materias;
-    private DefaultListModel<String> anotacoes;
+    private DefaultListModel<String> modelAnotacoes;
     private String json = "{}";
 
     public GerenciadorMaterias() {
         // Inicia uma nova lista vazia de materias
         materias = new DefaultListModel<>();
-        anotacoes = new DefaultListModel<>();
+        modelAnotacoes = new DefaultListModel<>();
         loadMaterias();
     }
 
@@ -62,14 +62,11 @@ public class GerenciadorMaterias {
     // Adiciona uma matéria à lista e ao arquivo JSON
     public void addMateria(Materia materia) {
         // Se a materia não tem nome, ela não será adicionada
-        if (materia.getTitulo().strip() == "") {
+        if (materia.getTitulo().strip().equals("")) {
             return;
         }
         // ADICIONA uma NOVA MATERIA na ultima posição
         materias.add(materias.size(), materia);
-        // // Adiciona ao arquivo JSON
-        // addMateriaJSON(materia);
-        // Salva para o arquivo
         salvarMaterias();
     }
 
@@ -77,7 +74,6 @@ public class GerenciadorMaterias {
     public void removerMateriaIndex(int pos) {
         // REMOVE a MATERIA da posição pos
         materias.remove(pos);
-        // Remove do arquivo JSON;
         removeMateriaJSON(pos);
         // Salva para o arquivo
         salvarMaterias();
@@ -94,10 +90,6 @@ public class GerenciadorMaterias {
         removerMateriaIndex(getMateriaSelecionadaIndex());
     }
 
-    public void removerAnotacaoIndex() {
-
-    }
-
     public int getMateriaSelecionadaIndex() {
         return Orgamico.jListMaterias.getSelectedIndex();
     }
@@ -107,12 +99,12 @@ public class GerenciadorMaterias {
     }
 
     public void setAnotacoes(int index) {
-        this.anotacoes.clear();
-        this.anotacoes.addAll(materias.get(index).getAnotacoes());
+        this.modelAnotacoes.clear();
+        this.modelAnotacoes.addAll(materias.get(index).getAnotacoes());
     }
 
     public DefaultListModel<String> getModelAnotacoes() {
-        return anotacoes;
+        return modelAnotacoes;
     }
 
     // Salva o conteúdo da variavel json para o arquivo materias.json
@@ -206,8 +198,7 @@ public class GerenciadorMaterias {
         json = lerArquivo(MATERIAS_JSON_PATH);
 
         // Cria um objeto JSON que contém todos os dados de matérias
-        JSONObject jsonMaterias = new JSONObject(json);
-        return jsonMaterias;
+        return new JSONObject(json);
     }
 
     private void criarArquivoJSON() {
@@ -242,8 +233,8 @@ public class GerenciadorMaterias {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(file));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        } catch (FileNotFoundException e1) {
+            e1.printStackTrace();
         }
         String st;
 
@@ -283,7 +274,7 @@ public class GerenciadorMaterias {
     // Função que adiciona uma anotação à matéria selecionada
     public void addAnotacao(String anotacao) {
         // Se a anotação estiver vazia, ela não será adicionada
-        if (anotacao.strip() == "") {
+        if (anotacao.strip().equals("")) {
             return;
         }
         // ADICIONA uma NOVA ANOTAÇÃO na ultima posição
@@ -297,7 +288,7 @@ public class GerenciadorMaterias {
     }
     
     // Função que adiciona uma anotação à matéria selecionada
-    public void editarAnotacao(int pos, String anotacao) {
+    public void editarAnotacao(String anotacao) {
         // ADICIONA uma NOVA ANOTAÇÃO na ultima posição
         getMateriaSelecionada().addAnotacao(anotacao);
         // ADICIONA ao arquivo JSON
@@ -313,7 +304,6 @@ public class GerenciadorMaterias {
         JSONObject materiasjson = new JSONObject(json);
         // Adicionar anotação
         materiasjson.getJSONArray("materias").getJSONObject(pos).getJSONArray("anotacoes").put(anotacao);
-        System.out.println("Anotação adicionada: " + anotacao);
         // Atualiza a variavel que contem o conteudo do arquivo json
         // O 4 simboliza a indentação do arquivo (4 espaços)
         json = materiasjson.toString(4);

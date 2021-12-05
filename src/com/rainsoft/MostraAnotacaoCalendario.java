@@ -94,11 +94,9 @@ public class MostraAnotacaoCalendario extends javax.swing.JFrame {
     }//GEN-LAST:event_jFecharActionPerformed
 
     private void jSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalvarActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_jSalvarActionPerformed
 
     private void jDelete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDelete1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_jDelete1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

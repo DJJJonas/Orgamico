@@ -86,11 +86,7 @@ public class EditarLembrete extends javax.swing.JFrame {
         jButtonSalva.setBorder(null);
         jButtonSalva.setContentAreaFilled(false);
         jButtonSalva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonSalva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSalvaActionPerformed(evt);
-            }
-        });
+        jButtonSalva.addActionListener(this::jButtonSalvaActionPerformed);
         jPanel1.add(jButtonSalva, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 50, 50));
 
         jButtonCancela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/remover.png"))); // NOI18N
@@ -98,11 +94,7 @@ public class EditarLembrete extends javax.swing.JFrame {
         jButtonCancela.setBorder(null);
         jButtonCancela.setContentAreaFilled(false);
         jButtonCancela.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonCancela.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelaActionPerformed(evt);
-            }
-        });
+        jButtonCancela.addActionListener(this::jButtonCancelaActionPerformed);
         jPanel1.add(jButtonCancela, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 50, 50));
 
         jButtonFecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/FecharAba.png"))); // NOI18N
@@ -110,11 +102,7 @@ public class EditarLembrete extends javax.swing.JFrame {
         jButtonFecha.setBorder(null);
         jButtonFecha.setContentAreaFilled(false);
         jButtonFecha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonFechaActionPerformed(evt);
-            }
-        });
+        jButtonFecha.addActionListener(this::jButtonFechaActionPerformed);
         jPanel1.add(jButtonFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 40, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/telaPadraoLembrete.png"))); // NOI18N
@@ -147,7 +135,6 @@ public class EditarLembrete extends javax.swing.JFrame {
 
         // "2002-09-10T10:11"
         String formatedDateTime = year+"-"+month+"-"+day+"T"+hour+":"+minute;
-        System.out.println(formatedDateTime);
         
         DateTime datetime = new DateTime(formatedDateTime);
 
@@ -169,43 +156,8 @@ public class EditarLembrete extends javax.swing.JFrame {
         jTextTitulo.setText(lembrete.getTitle());
         DateTime date = lembrete.getDate();
         jFormattedData.setText(date.toString("dd/MM/yyyy"));
-        jFormattedHora.setText(date.toString("hh:mm"));
+        jFormattedHora.setText(date.toString("HH:mm"));
         setVisible(true);
-    }
-    
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EditarLembrete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EditarLembrete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EditarLembrete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EditarLembrete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EditarLembrete().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

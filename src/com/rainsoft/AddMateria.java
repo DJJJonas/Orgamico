@@ -58,9 +58,11 @@ public class AddMateria extends javax.swing.JFrame {
         jTextNomeMat.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextNomeMat.setOpaque(false);
         jTextNomeMat.addFocusListener(new java.awt.event.FocusAdapter() {
+            @Override
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextNomeMatFocusGained(evt);
             }
+            @Override
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jTextNomeMatFocusLost(evt);
             }
@@ -92,14 +94,6 @@ public class AddMateria extends javax.swing.JFrame {
         jButtonCancelar.setBorder(null);
         jButtonCancelar.setContentAreaFilled(false);
         jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButtonCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButtonCancelarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButtonCancelarMouseExited(evt);
-            }
-        });
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
@@ -119,9 +113,11 @@ public class AddMateria extends javax.swing.JFrame {
         jTextDesc.setBorder(null);
         jTextDesc.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextDesc.addFocusListener(new java.awt.event.FocusAdapter() {
+            @Override
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextDescFocusGained(evt);
             }
+            @Override
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jTextDescFocusLost(evt);
             }
@@ -143,14 +139,6 @@ public class AddMateria extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButtonCancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCancelarMouseEntered
-       // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCancelarMouseEntered
-
-    private void jButtonCancelarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCancelarMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCancelarMouseExited
 
     private void jTextNomeMatFocusGained(java.awt.event.FocusEvent evt) {// GEN-FIRST:event_jTextNomeMatFocusGained
         if (jTextNomeMat.getText().equals("Nome da Matéria")) {

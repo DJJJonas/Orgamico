@@ -11,7 +11,7 @@ public final class GerenciaLembretes extends javax.swing.JFrame {
 
     public static final NovoLembrete novoLembrete = new NovoLembrete();
     public static final EditarLembrete editarLembrete = new EditarLembrete();
-    public static final DefaultListModel<Lembrete> lembretesList = new DefaultListModel<Lembrete>();
+    public static final DefaultListModel<Lembrete> lembretesList = new DefaultListModel<>();
     public static final String LEMBRETESJSON_PATH = System.getenv("APPDATA") + "\\OrgamicoData\\lembretes.json";
 
     public GerenciaLembretes() {
@@ -54,7 +54,6 @@ public final class GerenciaLembretes extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jListLembretes = new javax.swing.JList<>();
         jButtonFechar = new javax.swing.JButton();
         jButtonAdicionar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -74,6 +73,7 @@ public final class GerenciaLembretes extends javax.swing.JFrame {
         jListLembretes.setModel(lembretesList);
         jListLembretes.setCellRenderer(new RendererLembretes());
         jListLembretes.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListLembretesMouseClicked(evt);
             }
@@ -119,7 +119,6 @@ public final class GerenciaLembretes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonFecharActionPerformed
 
     private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
-        // TODO add your handling code here:
         novoLembrete.setVisible(true);
     }//GEN-LAST:event_jButtonAdicionarActionPerformed
 
@@ -134,7 +133,7 @@ public final class GerenciaLembretes extends javax.swing.JFrame {
     private javax.swing.JButton jButtonFechar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    public static javax.swing.JList<Lembrete> jListLembretes;
+    public static final javax.swing.JList<Lembrete> jListLembretes = new javax.swing.JList<>();
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
