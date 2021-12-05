@@ -365,7 +365,7 @@ public class Orgamico extends javax.swing.JFrame {
                 });
                 jScrollPane1.setViewportView(jListMaterias);
 
-                jPanelMenuBarra.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 310, 580));
+                jPanelMenuBarra.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 300, 580));
 
                 jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
                 jLabel1.setForeground(new java.awt.Color(73, 73, 73));
