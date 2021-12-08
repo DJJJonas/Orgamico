@@ -103,10 +103,9 @@ public class EditarMateria extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarActionPerformed
-        Materia materiaSelecionada = Orgamico.g.getMateriaSelecionada();
-        materiaSelecionada.setTitulo(jTextFieldTitulo.getText());
-        materiaSelecionada.setDescricao(jTextFieldDescricao.getText());
-        Orgamico.g.salvarMaterias();
+
+        GerenciadorMaterias.editarMateria(jTextFieldTitulo.getText(), jTextFieldDescricao.getText());
+
         setVisible(false);
     }//GEN-LAST:event_jButtonConfirmarActionPerformed
 

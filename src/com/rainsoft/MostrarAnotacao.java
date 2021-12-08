@@ -115,13 +115,13 @@ public class MostrarAnotacao extends javax.swing.JFrame {
     }// GEN-LAST:event_jButtonEditarActionPerformed
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonExcluirActionPerformed
-        Orgamico.g.removeAnotacao(Orgamico.g.getMateriaSelecionadaIndex(), Orgamico.g.getAnotacaoSelecionadaIndex());
+        GerenciadorMaterias.removeAnotacao(GerenciadorMaterias.getMateriaSelecionadaIndex(), GerenciadorMaterias.getAnotacaoSelecionadaIndex());
         // Salva
-        Orgamico.g.salvarMaterias();
+        GerenciadorMaterias.salvarMaterias();
         // Fecha
         setVisible(false);
         // Atualiza a parte das anotações
-        Orgamico.g.setAnotacoes(Orgamico.g.getMateriaSelecionadaIndex());
+        GerenciadorMaterias.setAnotacoes(GerenciadorMaterias.getMateriaSelecionadaIndex());
     }// GEN-LAST:event_jButtonExcluirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,8 +1,8 @@
 package com.rainsoft.renderers;
 
+import com.rainsoft.GerenciadorMaterias;
 import com.rainsoft.Materia;
 import com.rainsoft.MateriaPanel;
-import com.rainsoft.Orgamico;
 import java.awt.Component;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
@@ -14,7 +14,7 @@ public class RendererMaterias extends MateriaPanel implements ListCellRenderer<M
         setIndex(index);
         if (isSelected) {
             setColor(231,133,133);
-            Orgamico.g.setAnotacoes(index);
+            GerenciadorMaterias.setAnotacoes(index);
         }
         else setColor(180, 180, 180);
         return this;

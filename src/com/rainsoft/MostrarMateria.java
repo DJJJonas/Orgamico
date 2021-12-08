@@ -133,8 +133,8 @@ public class MostrarMateria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletarActionPerformed
-        Orgamico.g.removerMateria(materia);
-        Orgamico.g.getModelAnotacoes().clear();
+        GerenciadorMaterias.removerMateria(materia);
+        GerenciadorMaterias.getModelAnotacoes().clear();
         setVisible(false);
     }//GEN-LAST:event_jButtonDeletarActionPerformed
 

@@ -1,23 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.rainsoft;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
-/**
- *
- * @author cicer
- */
 public class AddMateria extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AddMateria
-     */
     public AddMateria() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -26,9 +14,7 @@ public class AddMateria extends javax.swing.JFrame {
         jPanel1.setBackground(new Color(0, 0, 0, 0));
     }
 
-    // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -184,7 +170,7 @@ public class AddMateria extends javax.swing.JFrame {
         if (titulo.startsWith("Nome da Matéria"))
             return;
         descricao = jTextDesc.getText();
-        Orgamico.g.addMateria(new Materia(titulo, descricao));
+        GerenciadorMaterias.addMateria(new Materia(titulo, descricao));
 
         setVisible(false);
     }// GEN-LAST:event_jButtonAdicionarActionPerformed

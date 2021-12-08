@@ -107,7 +107,7 @@ public class EditarAnotacao extends javax.swing.JFrame {
         } finally {
             setVisible(false);
             Orgamico.jListMaterias.updateUI();
-            Orgamico.g.salvarMaterias();
+            GerenciadorMaterias.salvarMaterias();
         }
     }// GEN-LAST:event_jButtonSalvarActionPerformed
 

@@ -1,15 +1,17 @@
 package com.rainsoft;
 
+import java.awt.Color;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import com.fathzer.soft.javaluator.DoubleEvaluator;
+
 import com.rainsoft.calendario.AnotacaoCalendario;
 import com.rainsoft.calendario.JSONCalendario;
 import com.rainsoft.lembretes.GerenciaLembretes;
 import com.rainsoft.renderers.RendererAnotacoes;
 import com.rainsoft.renderers.RendererMaterias;
-import java.awt.Color;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import com.fathzer.soft.javaluator.DoubleEvaluator;
 
 public class Orgamico extends javax.swing.JFrame {
 
@@ -17,7 +19,6 @@ public class Orgamico extends javax.swing.JFrame {
     public static final String MATERIAS_JSON_PATH = ORGAMICODATA_PATH + "\\materias.json";
     public static final String CALENDARIO_JSON_PATH = ORGAMICODATA_PATH + "\\calendario.json";
 
-    public static final GerenciadorMaterias g = new GerenciadorMaterias();
     public static final AddMateria addMateria = new AddMateria();
     public static final MostrarMateria mostrarMateria = new MostrarMateria();
     public static final EditarMateria editarMateria = new EditarMateria();
@@ -36,19 +37,12 @@ public class Orgamico extends javax.swing.JFrame {
     static int diaAltera = 0;
     static int valorselecao = 0;
 
-    // Creates new form Orgamica
     public Orgamico() {
         initComponents();
-        jldias = new javax.swing.JLabel[] { d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17,
-                d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31, d32, d33, d34, d35, d36, d37, d38,
-                d39, d40, d41, d42 };
-        iniciacalendario();
-        organizaCalendario();
-        calendarioEvt();
+        GerenciadorMaterias.loadMaterias();
+        iniciarCalendario();
     }
 
-    // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanelMenuBarra = new javax.swing.JPanel();
@@ -87,54 +81,13 @@ public class Orgamico extends javax.swing.JFrame {
         selecionaAno = new javax.swing.JComboBox<>();
         jSpinner1 = new javax.swing.JSpinner();
         jDom = new javax.swing.JLabel();
-        d8 = new javax.swing.JLabel();
-        d15 = new javax.swing.JLabel();
-        d36 = new javax.swing.JLabel();
-        d9 = new javax.swing.JLabel();
         jSeg = new javax.swing.JLabel();
-        d1 = new javax.swing.JLabel();
-        d2 = new javax.swing.JLabel();
-        d29 = new javax.swing.JLabel();
-        d22 = new javax.swing.JLabel();
-        d37 = new javax.swing.JLabel();
         jTer = new javax.swing.JLabel();
-        d3 = new javax.swing.JLabel();
-        d10 = new javax.swing.JLabel();
-        d16 = new javax.swing.JLabel();
-        d23 = new javax.swing.JLabel();
-        d30 = new javax.swing.JLabel();
-        d17 = new javax.swing.JLabel();
-        d11 = new javax.swing.JLabel();
-        d39 = new javax.swing.JLabel();
-        d32 = new javax.swing.JLabel();
-        d31 = new javax.swing.JLabel();
-        d18 = new javax.swing.JLabel();
-        jQui = new javax.swing.JLabel();
-        d40 = new javax.swing.JLabel();
         jQua = new javax.swing.JLabel();
-        d24 = new javax.swing.JLabel();
-        d25 = new javax.swing.JLabel();
-        d4 = new javax.swing.JLabel();
-        d38 = new javax.swing.JLabel();
-        d26 = new javax.swing.JLabel();
-        d5 = new javax.swing.JLabel();
-        d33 = new javax.swing.JLabel();
-        d21 = new javax.swing.JLabel();
+        jQui = new javax.swing.JLabel();
         jSex = new javax.swing.JLabel();
-        d19 = new javax.swing.JLabel();
-        d35 = new javax.swing.JLabel();
-        d14 = new javax.swing.JLabel();
         jSab = new javax.swing.JLabel();
-        d41 = new javax.swing.JLabel();
-        d13 = new javax.swing.JLabel();
-        d28 = new javax.swing.JLabel();
-        d34 = new javax.swing.JLabel();
-        d27 = new javax.swing.JLabel();
-        d7 = new javax.swing.JLabel();
-        d42 = new javax.swing.JLabel();
-        d6 = new javax.swing.JLabel();
-        d12 = new javax.swing.JLabel();
-        d20 = new javax.swing.JLabel();
+
         jLabel3 = new javax.swing.JLabel();
         jPanelBarraAzul = new javax.swing.JPanel();
 
@@ -356,7 +309,7 @@ public class Orgamico extends javax.swing.JFrame {
         jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jListMaterias.setBackground(new java.awt.Color(249, 249, 249));
-        jListMaterias.setModel(g.getModelMaterias());
+        jListMaterias.setModel(GerenciadorMaterias.getModelMaterias());
         jListMaterias.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jListMaterias.setCellRenderer(new RendererMaterias());
         jListMaterias.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -393,7 +346,7 @@ public class Orgamico extends javax.swing.JFrame {
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         jListAnotacoes.setBackground(new java.awt.Color(249, 249, 249));
-        jListAnotacoes.setModel(g.getModelAnotacoes());
+        jListAnotacoes.setModel(GerenciadorMaterias.getModelAnotacoes());
         jListAnotacoes.setCellRenderer(new RendererAnotacoes());
         jListAnotacoes.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -406,12 +359,10 @@ public class Orgamico extends javax.swing.JFrame {
         jPanelMenuBarra.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 72, 550, 580));
 
         jLabelLembrete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/lembretes.png"))); // NOI18N
-        jLabelLembrete.setToolTipText("");
         jPanelMenuBarra.add(jLabelLembrete, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, -1, -1));
 
         jLabelHora
                 .setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/AbaCalculadora.png"))); // NOI18N
-        jLabelHora.setToolTipText("");
         jPanelMenuBarra.add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 450, -1, -1));
 
         jLabelMaterias.setBackground(new java.awt.Color(0, 0, 0));
@@ -447,72 +398,12 @@ public class Orgamico extends javax.swing.JFrame {
         jDom.setText("Dom");
         jPanelMenuBarra.add(jDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 260, 30, -1));
 
-        d8.setBackground(new java.awt.Color(255, 255, 255));
-        d8.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d8.setForeground(new java.awt.Color(255, 0, 0));
-        d8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d8.setText("0");
-        jPanelMenuBarra.add(d8, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 310, 30, -1));
-
-        d15.setBackground(new java.awt.Color(255, 255, 255));
-        d15.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d15.setForeground(new java.awt.Color(255, 0, 0));
-        d15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d15.setText("0");
-        jPanelMenuBarra.add(d15, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 330, 30, -1));
-
-        d36.setBackground(new java.awt.Color(255, 255, 255));
-        d36.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d36.setForeground(new java.awt.Color(255, 0, 0));
-        d36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d36.setText("0");
-        jPanelMenuBarra.add(d36, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 390, 30, -1));
-
-        d9.setBackground(new java.awt.Color(255, 255, 255));
-        d9.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d9.setText("0");
-        jPanelMenuBarra.add(d9, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 310, 30, -1));
-
         jSeg.setBackground(new java.awt.Color(255, 255, 255));
         jSeg.setFont(new java.awt.Font(arialFont, 0, 13)); // NOI18N
         jSeg.setForeground(new java.awt.Color(45, 43, 43));
         jSeg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jSeg.setText("Seg");
         jPanelMenuBarra.add(jSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 260, 30, -1));
-
-        d1.setBackground(new java.awt.Color(255, 255, 255));
-        d1.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d1.setForeground(new java.awt.Color(255, 0, 0));
-        d1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d1.setText("0");
-        jPanelMenuBarra.add(d1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 290, 30, -1));
-
-        d2.setBackground(new java.awt.Color(255, 255, 255));
-        d2.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d2.setText("0");
-        jPanelMenuBarra.add(d2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 290, 30, -1));
-
-        d29.setBackground(new java.awt.Color(255, 255, 255));
-        d29.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d29.setForeground(new java.awt.Color(255, 0, 0));
-        d29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d29.setText("0");
-        jPanelMenuBarra.add(d29, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 370, 30, -1));
-
-        d22.setBackground(new java.awt.Color(255, 255, 255));
-        d22.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d22.setForeground(new java.awt.Color(255, 0, 0));
-        d22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d22.setText("0");
-        jPanelMenuBarra.add(d22, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 350, 30, -1));
-
-        d37.setBackground(new java.awt.Color(255, 255, 255));
-        d37.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d37.setText("0");
-        jPanelMenuBarra.add(d37, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 390, 30, -1));
 
         jTer.setBackground(new java.awt.Color(255, 255, 255));
         jTer.setFont(new java.awt.Font(arialFont, 0, 13)); // NOI18N
@@ -521,71 +412,12 @@ public class Orgamico extends javax.swing.JFrame {
         jTer.setText("Ter");
         jPanelMenuBarra.add(jTer, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 260, 30, -1));
 
-        d3.setBackground(new java.awt.Color(255, 255, 255));
-        d3.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d3.setText("0");
-        jPanelMenuBarra.add(d3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 290, 30, -1));
-
-        d10.setBackground(new java.awt.Color(255, 255, 255));
-        d10.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d10.setText("0");
-        jPanelMenuBarra.add(d10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 310, 30, -1));
-
-        d16.setBackground(new java.awt.Color(255, 255, 255));
-        d16.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d16.setText("0");
-        jPanelMenuBarra.add(d16, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 330, 30, -1));
-
-        d23.setBackground(new java.awt.Color(255, 255, 255));
-        d23.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d23.setText("0");
-        jPanelMenuBarra.add(d23, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 350, 30, -1));
-
-        d30.setBackground(new java.awt.Color(255, 255, 255));
-        d30.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d30.setText("0");
-        jPanelMenuBarra.add(d30, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 370, 30, -1));
-
-        d17.setBackground(new java.awt.Color(255, 255, 255));
-        d17.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d17.setText("0");
-        jPanelMenuBarra.add(d17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 330, 30, -1));
-
-        d11.setBackground(new java.awt.Color(255, 255, 255));
-        d11.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d11.setText("0");
-        jPanelMenuBarra.add(d11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 310, 30, -1));
-
-        d39.setBackground(new java.awt.Color(255, 255, 255));
-        d39.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d39.setText("0");
-        jPanelMenuBarra.add(d39, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 390, 30, -1));
-
-        d32.setBackground(new java.awt.Color(255, 255, 255));
-        d32.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d32.setText("0");
-        jPanelMenuBarra.add(d32, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 370, 30, -1));
-
-        d31.setBackground(new java.awt.Color(255, 255, 255));
-        d31.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d31.setText("0");
-        jPanelMenuBarra.add(d31, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 370, 30, -1));
-
-        d18.setBackground(new java.awt.Color(255, 255, 255));
-        d18.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d18.setText("0");
-        jPanelMenuBarra.add(d18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 330, 30, -1));
+        jQua.setBackground(new java.awt.Color(255, 255, 255));
+        jQua.setFont(new java.awt.Font(arialFont, 0, 13)); // NOI18N
+        jQua.setForeground(new java.awt.Color(45, 43, 43));
+        jQua.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jQua.setText("Qua");
+        jPanelMenuBarra.add(jQua, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 260, 30, -1));
 
         jQui.setBackground(new java.awt.Color(255, 255, 255));
         jQui.setFont(new java.awt.Font(arialFont, 0, 13)); // NOI18N
@@ -594,91 +426,12 @@ public class Orgamico extends javax.swing.JFrame {
         jQui.setText("Qui");
         jPanelMenuBarra.add(jQui, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 260, 30, -1));
 
-        d40.setBackground(new java.awt.Color(255, 255, 255));
-        d40.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d40.setText("0");
-        jPanelMenuBarra.add(d40, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 390, 30, -1));
-
-        jQua.setBackground(new java.awt.Color(255, 255, 255));
-        jQua.setFont(new java.awt.Font(arialFont, 0, 13)); // NOI18N
-        jQua.setForeground(new java.awt.Color(45, 43, 43));
-        jQua.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jQua.setText("Qua");
-        jPanelMenuBarra.add(jQua, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 260, 30, -1));
-
-        d24.setBackground(new java.awt.Color(255, 255, 255));
-        d24.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d24.setText("0");
-        jPanelMenuBarra.add(d24, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 350, 30, -1));
-
-        d25.setBackground(new java.awt.Color(255, 255, 255));
-        d25.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d25.setText("0");
-        jPanelMenuBarra.add(d25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 350, 30, -1));
-
-        d4.setBackground(new java.awt.Color(255, 255, 255));
-        d4.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d4.setText("0");
-        jPanelMenuBarra.add(d4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 290, 30, -1));
-
-        d38.setBackground(new java.awt.Color(255, 255, 255));
-        d38.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d38.setText("0");
-        jPanelMenuBarra.add(d38, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 390, 30, -1));
-
-        d26.setBackground(new java.awt.Color(255, 255, 255));
-        d26.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d26.setText("0");
-        jPanelMenuBarra.add(d26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 350, 30, -1));
-
-        d5.setBackground(new java.awt.Color(255, 255, 255));
-        d5.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d5.setText("0");
-        jPanelMenuBarra.add(d5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 290, 30, -1));
-
-        d33.setBackground(new java.awt.Color(255, 255, 255));
-        d33.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d33.setText("0");
-        jPanelMenuBarra.add(d33, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 370, 30, -1));
-
-        d21.setBackground(new java.awt.Color(255, 255, 255));
-        d21.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d21.setText("0");
-        jPanelMenuBarra.add(d21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 330, 30, -1));
-
         jSex.setBackground(new java.awt.Color(255, 255, 255));
         jSex.setFont(new java.awt.Font(arialFont, 0, 13)); // NOI18N
         jSex.setForeground(new java.awt.Color(45, 43, 43));
         jSex.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jSex.setText("Sex");
         jPanelMenuBarra.add(jSex, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 260, 30, -1));
-
-        d19.setBackground(new java.awt.Color(255, 255, 255));
-        d19.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d19.setText("0");
-        jPanelMenuBarra.add(d19, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 330, 30, -1));
-
-        d35.setBackground(new java.awt.Color(255, 255, 255));
-        d35.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d35.setText("0");
-        jPanelMenuBarra.add(d35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 370, 30, -1));
-
-        d14.setBackground(new java.awt.Color(255, 255, 255));
-        d14.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d14.setText("0");
-        jPanelMenuBarra.add(d14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 310, 30, -1));
 
         jSab.setBackground(new java.awt.Color(255, 255, 255));
         jSab.setFont(new java.awt.Font(arialFont, 0, 13)); // NOI18N
@@ -687,65 +440,24 @@ public class Orgamico extends javax.swing.JFrame {
         jSab.setText("Sáb");
         jPanelMenuBarra.add(jSab, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 260, 30, -1));
 
-        d41.setBackground(new java.awt.Color(255, 255, 255));
-        d41.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d41.setText("0");
-        jPanelMenuBarra.add(d41, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 390, 30, -1));
+        jldias = new javax.swing.JLabel[42];
+        int diaI = 0;
+        for (int coluna = 0; coluna < 6; coluna++) {
+            for (int linha = 0; linha < 7; linha++) {
+                javax.swing.JLabel dia = new javax.swing.JLabel();
 
-        d13.setBackground(new java.awt.Color(255, 255, 255));
-        d13.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d13.setText("0");
-        jPanelMenuBarra.add(d13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 310, 30, -1));
-
-        d28.setBackground(new java.awt.Color(255, 255, 255));
-        d28.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d28.setText("0");
-        jPanelMenuBarra.add(d28, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 350, 30, -1));
-
-        d34.setBackground(new java.awt.Color(255, 255, 255));
-        d34.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d34.setText("0");
-        jPanelMenuBarra.add(d34, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 370, 30, -1));
-
-        d27.setBackground(new java.awt.Color(255, 255, 255));
-        d27.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d27.setText("0");
-        jPanelMenuBarra.add(d27, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 350, 30, -1));
-
-        d7.setBackground(new java.awt.Color(255, 255, 255));
-        d7.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d7.setText("0");
-        jPanelMenuBarra.add(d7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 290, 30, -1));
-
-        d42.setBackground(new java.awt.Color(255, 255, 255));
-        d42.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d42.setText("0");
-        jPanelMenuBarra.add(d42, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 390, 30, -1));
-
-        d6.setBackground(new java.awt.Color(255, 255, 255));
-        d6.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d6.setText("0");
-        jPanelMenuBarra.add(d6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 290, 30, -1));
-
-        d12.setBackground(new java.awt.Color(255, 255, 255));
-        d12.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d12.setText("0");
-        jPanelMenuBarra.add(d12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 310, 30, -1));
-
-        d20.setBackground(new java.awt.Color(255, 255, 255));
-        d20.setFont(new java.awt.Font(arialFont, 0, 14)); // NOI18N
-        d20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        d20.setText("0");
-        jPanelMenuBarra.add(d20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 330, 30, -1));
+                dia.setBackground(new java.awt.Color(255, 255, 255));
+                dia.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14));
+                dia.setForeground(new java.awt.Color(255, 0, 0));
+                dia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                dia.setText("0");
+                jPanelMenuBarra.add(dia,
+                        new org.netbeans.lib.awtextra.AbsoluteConstraints(930 + (40 * linha), 290 + (20 * coluna), 30,
+                                -1));
+                jldias[diaI] = dia;
+                diaI++;
+            }
+        }
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/abaCalendario.png"))); // NOI18N
         jPanelMenuBarra.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, -1, 210));
@@ -837,8 +549,6 @@ public class Orgamico extends javax.swing.JFrame {
         calculo.setText(calculo.getText().substring(0, calculo.getText().length() - 1));
     }// GEN-LAST:event_calcapagarultimoActionPerformed
 
-    // FUNÇÃO PARA O BOTÃO DE ADICIONAR MATÉRIA
-    // Ao clicar, a tela de nova matéria ficará visível.
     private void jButtonAddMateriaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonAddMateriaActionPerformed
         addMateria.setVisible(true);
     }
@@ -851,14 +561,14 @@ public class Orgamico extends javax.swing.JFrame {
     private void jListMateriasMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jListMateriasMouseClicked
         // Se não houver matérias, não faça nada
         try {
-            g.getMateriaSelecionada();
+            GerenciadorMaterias.getMateriaSelecionada();
         } catch (ArrayIndexOutOfBoundsException e) {
             return;
         }
 
         // Se apertou o botão direito
         if (evt.getButton() == 3) {
-            mostrarMateria.mostrarMateria(g.getMateriaSelecionada());
+            mostrarMateria.mostrarMateria(GerenciadorMaterias.getMateriaSelecionada());
         }
     }
 
@@ -874,7 +584,7 @@ public class Orgamico extends javax.swing.JFrame {
             return;
         }
 
-        mostrarAnotacao.mostrarAnotacao(g.getMateriaSelecionada(), jListAnotacoes.getSelectedIndex());
+        mostrarAnotacao.mostrarAnotacao(GerenciadorMaterias.getMateriaSelecionada(), jListAnotacoes.getSelectedIndex());
 
     }
 
@@ -886,13 +596,8 @@ public class Orgamico extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Orgamico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Orgamico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Orgamico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+                | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Orgamico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         // </editor-fold>
@@ -903,7 +608,6 @@ public class Orgamico extends javax.swing.JFrame {
                 new Orgamico().setVisible(true);
             }
         });
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -930,48 +634,7 @@ public class Orgamico extends javax.swing.JFrame {
     private javax.swing.JButton calcsubtrai;
     private javax.swing.JButton calcsubtrai1;
     private javax.swing.JTextField calculo;
-    private static javax.swing.JLabel d1;
-    private static javax.swing.JLabel d10;
-    private static javax.swing.JLabel d11;
-    private static javax.swing.JLabel d12;
-    private static javax.swing.JLabel d13;
-    private static javax.swing.JLabel d14;
-    private static javax.swing.JLabel d15;
-    private static javax.swing.JLabel d16;
-    private static javax.swing.JLabel d17;
-    private static javax.swing.JLabel d18;
-    private static javax.swing.JLabel d19;
-    private static javax.swing.JLabel d2;
-    private static javax.swing.JLabel d20;
-    private static javax.swing.JLabel d21;
-    private static javax.swing.JLabel d22;
-    private static javax.swing.JLabel d23;
-    private static javax.swing.JLabel d24;
-    private static javax.swing.JLabel d25;
-    private static javax.swing.JLabel d26;
-    private static javax.swing.JLabel d27;
-    private static javax.swing.JLabel d28;
-    private static javax.swing.JLabel d29;
-    private static javax.swing.JLabel d3;
-    private static javax.swing.JLabel d30;
-    private static javax.swing.JLabel d31;
-    private static javax.swing.JLabel d32;
-    private static javax.swing.JLabel d33;
-    private static javax.swing.JLabel d34;
-    private static javax.swing.JLabel d35;
-    private static javax.swing.JLabel d36;
-    private static javax.swing.JLabel d37;
-    private static javax.swing.JLabel d38;
-    private static javax.swing.JLabel d39;
-    private static javax.swing.JLabel d4;
-    private static javax.swing.JLabel d40;
-    private static javax.swing.JLabel d41;
-    private static javax.swing.JLabel d42;
-    private static javax.swing.JLabel d5;
-    private static javax.swing.JLabel d6;
-    private static javax.swing.JLabel d7;
-    private static javax.swing.JLabel d8;
-    private static javax.swing.JLabel d9;
+
     private javax.swing.JButton jButtonAddMateria;
     private javax.swing.JButton jButtonCriarAnotacao;
     private javax.swing.JButton jButtonGerenciarLembrete;
@@ -999,7 +662,7 @@ public class Orgamico extends javax.swing.JFrame {
     private static javax.swing.JLabel[] jldias;
 
     // Inicializacao do calendario
-    public void iniciacalendario() {
+    public void iniciarCalendario() {
         // {Jonas}: Cria o arquivo JSON caso não exista
         JSONCalendario.criarJSONCalendario();
 
@@ -1019,12 +682,11 @@ public class Orgamico extends javax.swing.JFrame {
         selecionaAno.setSelectedItem(anoFixo);
         selecionaMes.setSelectedIndex(mesFixo - 1);
 
+        organizaCalendario();
+        calendarioEvt();
     }
 
     // Organização dos dias do Calendário
-    /**
-     *
-     */
     public static void organizaCalendario() {
 
         for (javax.swing.JLabel l : jldias)

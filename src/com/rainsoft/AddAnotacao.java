@@ -4,14 +4,15 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 public class AddAnotacao extends javax.swing.JFrame {
-    
+
     public AddAnotacao() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         javax.swing.JButton jButtonAdicionar;
         javax.swing.JButton jButtonCancelar;
@@ -37,7 +38,8 @@ public class AddAnotacao extends javax.swing.JFrame {
         jLabel1.setText("Adicionar Anotação");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 200, 40));
 
-        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/CancelAnotacao.png"))); // NOI18N
+        jButtonCancelar
+                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/CancelAnotacao.png"))); // NOI18N
         jButtonCancelar.setToolTipText("Cancelar");
         jButtonCancelar.setBorder(null);
         jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -45,7 +47,8 @@ public class AddAnotacao extends javax.swing.JFrame {
         jButtonCancelar.addActionListener(this::jButtonCancelarActionPerformed);
         getContentPane().add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 50, 40));
 
-        jButtonAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/addAnotacaoBotao.png"))); // NOI18N
+        jButtonAdicionar.setIcon(
+                new javax.swing.ImageIcon(getClass().getResource("/com/rainsoft/images/addAnotacaoBotao.png"))); // NOI18N
         jButtonAdicionar.setToolTipText("Adicionar");
         jButtonAdicionar.setBorder(null);
         jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -69,16 +72,20 @@ public class AddAnotacao extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonCancelarActionPerformed
         setVisible(false);
-    }//GEN-LAST:event_jButtonCancelarActionPerformed
+    }// GEN-LAST:event_jButtonCancelarActionPerformed
 
-    private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
+    private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonAdicionarActionPerformed
+
         String novaAnotacao = jTextAnotacao.getText();
-        if (novaAnotacao.length() > 4096) novaAnotacao = novaAnotacao.substring(0, 4095);
-        Orgamico.g.addAnotacao(novaAnotacao);
+        if (novaAnotacao.length() > 4096)
+            novaAnotacao = novaAnotacao.substring(0, 4095);
+
+        GerenciadorMaterias.addAnotacao(novaAnotacao);
+
         setVisible(false);
-    }//GEN-LAST:event_jButtonAdicionarActionPerformed
+    }// GEN-LAST:event_jButtonAdicionarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextArea jTextAnotacao;

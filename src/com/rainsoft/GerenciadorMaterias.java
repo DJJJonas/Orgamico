@@ -4,9 +4,9 @@ import static com.rainsoft.Orgamico.MATERIAS_JSON_PATH;
 import static com.rainsoft.Orgamico.ORGAMICODATA_PATH;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,20 +20,16 @@ import org.json.JSONObject;
 
 public class GerenciadorMaterias {
 
-    private final DefaultListModel<Materia> materias;
-    private DefaultListModel<String> modelAnotacoes;
-    private String json = "{}";
+    private static final DefaultListModel<Materia> materias = new DefaultListModel<>();
+    private static DefaultListModel<String> modelAnotacoes = new DefaultListModel<>();
+    private static String json = "{}";
 
-    public GerenciadorMaterias() {
-        // Inicia uma nova lista vazia de materias
-        materias = new DefaultListModel<>();
-        modelAnotacoes = new DefaultListModel<>();
-        loadMaterias();
+    private GerenciadorMaterias(){
     }
 
     // Função chamada na função loadMaterias()
     // Adiciona todas as matérias do arquivo json as materias do programa
-    private void adicionarMateriasALista(JSONObject jsonMaterias) {
+    private static void adicionarMateriasALista(JSONObject jsonMaterias) {
         JSONArray materiasjson = jsonMaterias.getJSONArray("materias");
         // Loop de materias contidas no .json
         for (int i = 0; i < materiasjson.length(); i++) {
@@ -59,7 +55,7 @@ public class GerenciadorMaterias {
     }
 
     // Adiciona uma matéria à lista e ao arquivo JSON
-    public void addMateria(Materia materia) {
+    public static void addMateria(Materia materia) {
         // Se a materia não tem nome, ela não será adicionada
         if (materia.getTitulo().strip().equals("")) {
             return;
@@ -70,7 +66,7 @@ public class GerenciadorMaterias {
     }
 
     // Funções que remove a materia da posição especificada matéria
-    public void removerMateriaIndex(int pos) {
+    public static void removerMateriaIndex(int pos) {
         // REMOVE a MATERIA da posição pos
         materias.remove(pos);
         removeMateriaJSON(pos);
@@ -78,36 +74,35 @@ public class GerenciadorMaterias {
         salvarMaterias();
     }
 
-    public void removerMateria(Materia materia) {
+    public static void removerMateria(Materia materia) {
         for (int i = 0; i < materias.size(); i++) {
             if (materias.get(i) == materia)
                 removerMateriaIndex(i);
         }
     }
 
-    public void removerMateriaSelecionada() {
+    public static void removerMateriaSelecionada() {
         removerMateriaIndex(getMateriaSelecionadaIndex());
     }
 
-    public int getMateriaSelecionadaIndex() {
+    public static int getMateriaSelecionadaIndex() {
         return Orgamico.jListMaterias.getSelectedIndex();
     }
 
-    public int getAnotacaoSelecionadaIndex() {
+    public static int getAnotacaoSelecionadaIndex() {
         return Orgamico.jListAnotacoes.getSelectedIndex();
     }
 
-    public void setAnotacoes(int index) {
-        this.modelAnotacoes.clear();
-        this.modelAnotacoes.addAll(materias.get(index).getAnotacoes());
+    public static void setAnotacoes(int index) {
+        modelAnotacoes.clear();
+        modelAnotacoes.addAll(materias.get(index).getAnotacoes());
     }
 
-    public DefaultListModel<String> getModelAnotacoes() {
+    public static DefaultListModel<String> getModelAnotacoes() {
         return modelAnotacoes;
     }
 
-    // Salva o conteúdo da variavel json para o arquivo materias.json
-    public void salvarMaterias() {
+    public static void salvarMaterias() {
         File jsonFile = new File(MATERIAS_JSON_PATH);
         json = "{\"materias\":[]}";
 
@@ -124,7 +119,7 @@ public class GerenciadorMaterias {
         escreverArquivo(jsonFile, json);
     }
 
-    private void addMateriaJSON(Materia materia) {
+    private static void addMateriaJSON(Materia materia) {
         // Lista de materias
         JSONObject materiasjson = new JSONObject(json);
         // Cria uma nova materia no formato JSON
@@ -136,7 +131,7 @@ public class GerenciadorMaterias {
         json = materiasjson.toString(4);
     }
 
-    private void removeMateriaJSON(int pos) {
+    private static void removeMateriaJSON(int pos) {
         // Lista de materias
         JSONObject materiasjson = new JSONObject(json);
         // Remove a matéria da posição pos
@@ -146,13 +141,13 @@ public class GerenciadorMaterias {
         json = materiasjson.toString(4);
     }
 
-    public void removeAnotacao(int mpos, int pos) {
+    public static void removeAnotacao(int mpos, int pos) {
         Materia materia = materias.get(mpos);
-        materia.removeAnotacao(Orgamico.g.getAnotacaoSelecionadaIndex());
+        materia.removeAnotacao(getAnotacaoSelecionadaIndex());
         removeAnotacaoJSON(mpos, pos);
     }
 
-    public void removeAnotacaoJSON(int mpos, int pos) {
+    public static void removeAnotacaoJSON(int mpos, int pos) {
         // Lista de materias
         JSONObject materiasjson = new JSONObject(json);
         // Remove a anotação da matéria na posição
@@ -162,7 +157,7 @@ public class GerenciadorMaterias {
         json = materiasjson.toString(4);
     }
 
-    private JSONObject criarMateriaJSONObject(String titulo, String descricao) {
+    private static JSONObject criarMateriaJSONObject(String titulo, String descricao) {
         JSONObject materiaobj = new JSONObject();
         materiaobj.put("titulo", titulo);
         materiaobj.put("descricao", descricao);
@@ -171,7 +166,7 @@ public class GerenciadorMaterias {
         return materiaobj;
     }
 
-    private ArrayList<String> extrairAnotacoesJSON(JSONObject materia) {
+    private static ArrayList<String> extrairAnotacoesJSON(JSONObject materia) {
         ArrayList<String> anotacoes = new ArrayList<>();
         JSONArray anotacoesjson = materia.getJSONArray("anotacoes");
 
@@ -182,12 +177,12 @@ public class GerenciadorMaterias {
         return anotacoes;
     }
 
-    private void loadMaterias() {
+    public static void loadMaterias() {
         JSONObject jsonMaterias = getMateriasJSON();
         adicionarMateriasALista(jsonMaterias);
     }
 
-    private JSONObject getMateriasJSON() {
+    private static JSONObject getMateriasJSON() {
         File jsonFile = new File(MATERIAS_JSON_PATH);
         // Se o arquivo materias.json não existir, crie um
         if (!jsonFile.exists()) {
@@ -200,7 +195,7 @@ public class GerenciadorMaterias {
         return new JSONObject(json);
     }
 
-    private void criarArquivoJSON() {
+    private static void criarArquivoJSON() {
         // Cria um objeto
         File jsonFile = new File(MATERIAS_JSON_PATH);
         // Cria todo o caminho de pastas que conterá o arquivo .json
@@ -215,7 +210,7 @@ public class GerenciadorMaterias {
         escreverArquivo(jsonFile, "{\n    \"materias\":[\n    ]\n}\n");
     }
 
-    private void escreverArquivo(File jsonFile, String texto) {
+    private static void escreverArquivo(File jsonFile, String texto) {
         try (FileWriter writer = new FileWriter(jsonFile) // Objeto escritor
         ) {
             // Adiciona um lista vazia de matérias ao arquivo
@@ -225,8 +220,7 @@ public class GerenciadorMaterias {
         }
     }
 
-    // Retorna o texto de um arquivo
-    private String lerArquivo(String path) {
+    private static String lerArquivo(String path) {
         String content = "";
         File file = new File(path);
         BufferedReader br = null;
@@ -246,15 +240,15 @@ public class GerenciadorMaterias {
         return content;
     }
 
-    public Materia getMateriaSelecionada() {
+    public static Materia getMateriaSelecionada() {
         return materias.get(getMateriaSelecionadaIndex());
     }
 
-    public ListModel<Materia> getModelMaterias() {
+    public static ListModel<Materia> getModelMaterias() {
         return materias;
     }
 
-    public void nextMateria() {
+    public static void nextMateria() {
         int index = Orgamico.jListMaterias.getSelectedIndex() + 1;
         if (index < materias.size()) {
             Orgamico.jListMaterias.setSelectedIndex(index);
@@ -262,7 +256,7 @@ public class GerenciadorMaterias {
         }
     }
 
-    public void lastMateria() {
+    public static void lastMateria() {
         int index = Orgamico.jListMaterias.getSelectedIndex() - 1;
         if (index >= 0) {
             Orgamico.jListMaterias.setSelectedIndex(index);
@@ -270,8 +264,7 @@ public class GerenciadorMaterias {
         }
     }
 
-    // Função que adiciona uma anotação à matéria selecionada
-    public void addAnotacao(String anotacao) {
+    public static void addAnotacao(String anotacao) {
         // Se a anotação estiver vazia, ela não será adicionada
         if (anotacao.strip().equals("")) {
             return;
@@ -281,13 +274,12 @@ public class GerenciadorMaterias {
         // ADICIONA ao arquivo JSON
         addAnotacaoJSON(getMateriaSelecionadaIndex(), anotacao);
         // Atualiza todas as anotações
-        Orgamico.g.setAnotacoes(getMateriaSelecionadaIndex());
+        setAnotacoes(getMateriaSelecionadaIndex());
         // Salva para o arquivo
         salvarMaterias();
     }
     
-    // Função que adiciona uma anotação à matéria selecionada
-    public void editarAnotacao(String anotacao) {
+    public static void editarAnotacao(String anotacao) {
         // ADICIONA uma NOVA ANOTAÇÃO na ultima posição
         getMateriaSelecionada().addAnotacao(anotacao);
         // ADICIONA ao arquivo JSON
@@ -295,10 +287,10 @@ public class GerenciadorMaterias {
         // Salva para o arquivo
         salvarMaterias();
         // Atualiza todas as anotações
-        Orgamico.g.setAnotacoes(getMateriaSelecionadaIndex());
+        setAnotacoes(getMateriaSelecionadaIndex());
     }
 
-    private void addAnotacaoJSON(int pos, String anotacao) {
+    private static void addAnotacaoJSON(int pos, String anotacao) {
         // Lista de materias
         JSONObject materiasjson = new JSONObject(json);
         // Adicionar anotação
@@ -306,5 +298,12 @@ public class GerenciadorMaterias {
         // Atualiza a variavel que contem o conteudo do arquivo json
         // O 4 simboliza a indentação do arquivo (4 espaços)
         json = materiasjson.toString(4);
+    }
+
+    public static void editarMateria(String titulo, String descricao) {
+        Materia materiaSelecionada = GerenciadorMaterias.getMateriaSelecionada();
+        materiaSelecionada.setTitulo(titulo);
+        materiaSelecionada.setDescricao(descricao);
+        salvarMaterias();
     }
 }
