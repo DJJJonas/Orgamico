@@ -144,7 +144,7 @@ public class NovoLembrete extends javax.swing.JFrame {
                 jButtonAdd.setToolTipText("Adicionar");
                 jButtonAdd.setBorder(null);
                 jButtonAdd.setContentAreaFilled(false);
-                jButtonAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                jButtonAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
                 jButtonAdd.addActionListener(this::jButtonAddActionPerformed);
                 getContentPane().add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 50, 50));
 
@@ -153,7 +153,7 @@ public class NovoLembrete extends javax.swing.JFrame {
                 jButtonCancelar.setToolTipText("Cancelar");
                 jButtonCancelar.setBorder(null);
                 jButtonCancelar.setContentAreaFilled(false);
-                jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
                 jButtonCancelar.addActionListener(this::jButtonCancelarActionPerformed);
                 getContentPane().add(jButtonCancelar,
                                 new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 50, -1));

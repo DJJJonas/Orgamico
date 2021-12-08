@@ -4,16 +4,15 @@ import static com.rainsoft.Orgamico.MATERIAS_JSON_PATH;
 import static com.rainsoft.Orgamico.ORGAMICODATA_PATH;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.ListModel;
 
 import org.json.JSONArray;
@@ -210,7 +209,7 @@ public class GerenciadorMaterias {
             // Cria um arquivo na pasta
             jsonFile.createNewFile();
         } catch (IOException ex) {
-            Logger.getLogger(GerenciadorMaterias.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Não foi possível criar o arquivo JSON", "Erro", JOptionPane.ERROR_MESSAGE);
         }
         // Adiciona um lista vazia de matérias ao arquivo
         escreverArquivo(jsonFile, "{\n    \"materias\":[\n    ]\n}\n");
@@ -222,7 +221,7 @@ public class GerenciadorMaterias {
             // Adiciona um lista vazia de matérias ao arquivo
             writer.write(texto);
         } catch (IOException ex) {
-            Logger.getLogger(GerenciadorMaterias.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Não foi possível salvar", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -251,7 +250,7 @@ public class GerenciadorMaterias {
         return materias.get(getMateriaSelecionadaIndex());
     }
 
-    public ListModel<Materia> getMaterias() {
+    public ListModel<Materia> getModelMaterias() {
         return materias;
     }
 

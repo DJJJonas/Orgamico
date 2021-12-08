@@ -16,15 +16,16 @@ public class Orgamico extends javax.swing.JFrame {
     public static final String ORGAMICODATA_PATH = System.getenv("APPDATA") + "\\OrgamicoData";
     public static final String MATERIAS_JSON_PATH = ORGAMICODATA_PATH + "\\materias.json";
     public static final String CALENDARIO_JSON_PATH = ORGAMICODATA_PATH + "\\calendario.json";
+
     public static final GerenciadorMaterias g = new GerenciadorMaterias();
-    public static final AddMateria addMateriaPanel = new AddMateria();
+    public static final AddMateria addMateria = new AddMateria();
     public static final MostrarMateria mostrarMateria = new MostrarMateria();
     public static final EditarMateria editarMateria = new EditarMateria();
     public static final AddAnotacao addAnotacao = new AddAnotacao();
     public static final EditarAnotacao editarAnotacao = new EditarAnotacao();
     public static final MostrarAnotacao mostrarAnotacao = new MostrarAnotacao();
-    public static final GerenciaLembretes gerenciar = new GerenciaLembretes();
-    public static final AnotacaoCalendario anotacaocalendario = new AnotacaoCalendario();
+    public static final GerenciaLembretes gerenciaLembretes = new GerenciaLembretes();
+    public static final AnotacaoCalendario anotacaoCalendario = new AnotacaoCalendario();
 
     // Declaração das Variáveis do Calendário
     static int anoFixo = 0;
@@ -355,7 +356,7 @@ public class Orgamico extends javax.swing.JFrame {
         jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jListMaterias.setBackground(new java.awt.Color(249, 249, 249));
-        jListMaterias.setModel(g.getMaterias());
+        jListMaterias.setModel(g.getModelMaterias());
         jListMaterias.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jListMaterias.setCellRenderer(new RendererMaterias());
         jListMaterias.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -759,7 +760,7 @@ public class Orgamico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGerenciarLembreteActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonGerenciarLembreteActionPerformed
-        gerenciar.setVisible(true);
+        gerenciaLembretes.setVisible(true);
     }// GEN-LAST:event_jButtonGerenciarLembreteActionPerformed
 
     private static void selecionaMesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_SelecionaMesActionPerformed
@@ -839,7 +840,7 @@ public class Orgamico extends javax.swing.JFrame {
     // FUNÇÃO PARA O BOTÃO DE ADICIONAR MATÉRIA
     // Ao clicar, a tela de nova matéria ficará visível.
     private void jButtonAddMateriaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonAddMateriaActionPerformed
-        addMateriaPanel.setVisible(true);
+        addMateria.setVisible(true);
     }
 
     private void jButtonCriarAnotacaoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonCriarAnotacaoActionPerformed
@@ -1012,51 +1013,12 @@ public class Orgamico extends javax.swing.JFrame {
 
         // Identificar o ano
         int anoMaximo = anoFixo + 50;
-        for (int i = 2000; i < anoMaximo; i++) {
-            selecionaAno.addItem(String.valueOf(i));
-        }
-        selecionaAno.setSelectedItem(anoFixo);
+        for (int i = 2000; i < anoMaximo; i++)
+            selecionaAno.addItem("" + i);
 
-        switch (mesFixo) {
-            case 1:
-                selecionaMes.setSelectedIndex(0);
-                break;
-            case 2:
-                selecionaMes.setSelectedIndex(1);
-                break;
-            case 3:
-                selecionaMes.setSelectedIndex(2);
-                break;
-            case 4:
-                selecionaMes.setSelectedIndex(3);
-                break;
-            case 5:
-                selecionaMes.setSelectedIndex(4);
-                break;
-            case 6:
-                selecionaMes.setSelectedIndex(5);
-                break;
-            case 7:
-                selecionaMes.setSelectedIndex(6);
-                break;
-            case 8:
-                selecionaMes.setSelectedIndex(7);
-                break;
-            case 9:
-                selecionaMes.setSelectedIndex(8);
-                break;
-            case 10:
-                selecionaMes.setSelectedIndex(9);
-                break;
-            case 11:
-                selecionaMes.setSelectedIndex(10);
-                break;
-            case 12:
-                selecionaMes.setSelectedIndex(11);
-                break;
-            default:
-                break;
-        }
+        selecionaAno.setSelectedItem(anoFixo);
+        selecionaMes.setSelectedIndex(mesFixo - 1);
+
     }
 
     // Organização dos dias do Calendário
@@ -1064,10 +1026,10 @@ public class Orgamico extends javax.swing.JFrame {
      *
      */
     public static void organizaCalendario() {
-        
+
         for (javax.swing.JLabel l : jldias)
             l.setText("");
-        
+
         diaAltera = diaFixo;
         mesAltera = selecionaMes.getSelectedIndex();
         anoAltera = Integer.parseInt(selecionaAno.getSelectedItem().toString());
@@ -1080,7 +1042,7 @@ public class Orgamico extends javax.swing.JFrame {
             if (resultado == 0) {
                 totalDiaMes = 29; // o ano é bissexto
             } else {
-                totalDiaMes = 28; // o ano não é bissexto 
+                totalDiaMes = 28; // o ano não é bissexto
             }
         } else if (mesFixo == 3) {
             totalDiaMes = 31;
@@ -1104,7 +1066,7 @@ public class Orgamico extends javax.swing.JFrame {
             totalDiaMes = 31;
         }
 
-//              Mostrar em qual dia da Semana será o dia 1 do mês
+        // Mostrar em qual dia da Semana será o dia 1 do mês
         Calendar c = Calendar.getInstance();
         c.set(anoAltera, mesAltera, 1);
         int setaDia = 0;
@@ -1112,392 +1074,25 @@ public class Orgamico extends javax.swing.JFrame {
         int semana = c.get(Calendar.DAY_OF_WEEK);
         setaDia = semana;
 
-//        setar os dias da semana
+        // setar os dias da semana
         for (int i = 1; i <= totalDiaMes; i++) {
-            switch (setaDia) {
-                case 1:
-                    d1.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d1.setForeground(Color.green);
-                    } else {
-                        d1.setForeground(Color.red);
-                    }
-                    break;
+            javax.swing.JLabel l = jldias[setaDia - 1];
+            l.setText("" + i);
 
-                case 2:
-                    d2.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d2.setForeground(Color.red);
-                    } else {
-                        d2.setForeground(Color.black);
-                    }
-                    break;
+            if (setaDia % 7 == 1) // Se for domingo
+                l.setForeground(Color.red);
+            else
+                l.setForeground(Color.black);
 
-                case 3:
-                    d3.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d3.setForeground(Color.red);
-                    } else {
-                        d3.setForeground(Color.black);
-                    }
-                    break;
+            if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo)
+                l.setForeground(Color.green);
 
-                case 4:
-                    d4.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d4.setForeground(Color.red);
-                    } else {
-                        d4.setForeground(Color.black);
-                    }
-                    break;
-
-                case 5:
-                    d5.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d5.setForeground(Color.red);
-                    } else {
-                        d5.setForeground(Color.black);
-                    }
-                    break;
-
-                case 6:
-                    d6.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d6.setForeground(Color.red);
-                    } else {
-                        d6.setForeground(Color.black);
-                    }
-                    break;
-
-                case 7:
-                    d7.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d7.setForeground(Color.red);
-                    } else {
-                        d7.setForeground(Color.black);
-                    }
-                    break;
-
-                case 8:
-                    d8.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d8.setForeground(Color.green);
-                    } else {
-                        d8.setForeground(Color.red);
-                    }
-                    break;
-
-                case 9:
-                    d9.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d9.setForeground(Color.red);
-                    } else {
-                        d9.setForeground(Color.black);
-                    }
-                    break;
-
-                case 10:
-                    d10.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d10.setForeground(Color.red);
-                    } else {
-                        d10.setForeground(Color.black);
-                    }
-                    break;
-
-                case 11:
-                    d11.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d11.setForeground(Color.red);
-                    } else {
-                        d11.setForeground(Color.black);
-                    }
-                    break;
-
-                case 12:
-                    d12.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d12.setForeground(Color.red);
-                    } else {
-                        d12.setForeground(Color.black);
-                    }
-                    break;
-
-                case 13:
-                    d13.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d13.setForeground(Color.red);
-                    } else {
-                        d13.setForeground(Color.black);
-                    }
-                    break;
-
-                case 14:
-                    d14.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d14.setForeground(Color.red);
-                    } else {
-                        d14.setForeground(Color.black);
-                    }
-                    break;
-
-                case 15:
-                    d15.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d15.setForeground(Color.green);
-                    } else {
-                        d15.setForeground(Color.red);
-                    }
-                    break;
-
-                case 16:
-                    d16.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d16.setForeground(Color.red);
-                    } else {
-                        d16.setForeground(Color.black);
-                    }
-                    break;
-
-                case 17:
-                    d17.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d17.setForeground(Color.red);
-                    } else {
-                        d17.setForeground(Color.black);
-                    }
-                    break;
-
-                case 18:
-                    d18.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d18.setForeground(Color.red);
-                    } else {
-                        d18.setForeground(Color.black);
-                    }
-                    break;
-
-                case 19:
-                    d19.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d19.setForeground(Color.red);
-                    } else {
-                        d19.setForeground(Color.black);
-                    }
-                    break;
-
-                case 20:
-                    d20.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d20.setForeground(Color.red);
-                    } else {
-                        d20.setForeground(Color.black);
-                    }
-                    break;
-                case 21:
-                    d21.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d21.setForeground(Color.red);
-                    } else {
-                        d21.setForeground(Color.black);
-                    }
-                    break;
-
-                case 22:
-                    d22.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d22.setForeground(Color.green);
-                    } else {
-                        d22.setForeground(Color.red);
-                    }
-                    break;
-
-                case 23:
-                    d23.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d23.setForeground(Color.red);
-                    } else {
-                        d23.setForeground(Color.black);
-                    }
-                    break;
-
-                case 24:
-                    d24.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d24.setForeground(Color.red);
-                    } else {
-                        d24.setForeground(Color.black);
-                    }
-                    break;
-
-                case 25:
-                    d25.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d25.setForeground(Color.red);
-                    } else {
-                        d25.setForeground(Color.black);
-                    }
-                    break;
-
-                case 26:
-                    d26.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d26.setForeground(Color.red);
-                    } else {
-                        d26.setForeground(Color.black);
-                    }
-                    break;
-
-                case 27:
-                    d27.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d27.setForeground(Color.red);
-                    } else {
-                        d27.setForeground(Color.black);
-                    }
-                    break;
-
-                case 28:
-                    d28.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d28.setForeground(Color.red);
-                    } else {
-                        d28.setForeground(Color.black);
-                    }
-                    break;
-
-                case 29:
-                    d29.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d29.setForeground(Color.green);
-                    } else {
-                        d29.setForeground(Color.red);
-                    }
-                    break;
-
-                case 30:
-                    d30.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d30.setForeground(Color.red);
-                    } else {
-                        d30.setForeground(Color.black);
-                    }
-                    break;
-                case 31:
-                    d31.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d31.setForeground(Color.red);
-                    } else {
-                        d31.setForeground(Color.black);
-                    }
-                    break;
-
-                case 32:
-                    d32.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d32.setForeground(Color.red);
-                    } else {
-                        d32.setForeground(Color.black);
-                    }
-                    break;
-
-                case 33:
-                    d33.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d33.setForeground(Color.red);
-                    } else {
-                        d33.setForeground(Color.black);
-                    }
-                    break;
-
-                case 34:
-                    d34.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d34.setForeground(Color.red);
-                    } else {
-                        d34.setForeground(Color.black);
-                    }
-                    break;
-
-                case 35:
-                    d35.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d35.setForeground(Color.red);
-                    } else {
-                        d35.setForeground(Color.black);
-                    }
-                    break;
-
-                case 36:
-                    d36.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d36.setForeground(Color.green);
-                    } else {
-                        d36.setForeground(Color.red);
-                    }
-                    break;
-
-                case 37:
-                    d37.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d37.setForeground(Color.red);
-                    } else {
-                        d37.setForeground(Color.black);
-                    }
-                    break;
-
-                case 38:
-                    d38.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d38.setForeground(Color.red);
-                    } else {
-                        d38.setForeground(Color.black);
-                    }
-                    break;
-
-                case 39:
-                    d39.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d39.setForeground(Color.red);
-                    } else {
-                        d39.setForeground(Color.black);
-                    }
-                    break;
-
-                case 40:
-                    d40.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d40.setForeground(Color.red);
-                    } else {
-                        d40.setForeground(Color.black);
-                    }
-                    break;
-
-                case 41:
-                    d41.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d41.setForeground(Color.red);
-                    } else {
-                        d41.setForeground(Color.black);
-                    }
-                    break;
-
-                case 42:
-                    d42.setText("" + i);
-                    if (i == diaFixo && mesAltera == mesFixo - 1 && anoAltera == anoFixo) {
-                        d42.setForeground(Color.red);
-                    } else {
-                        d42.setForeground(Color.black);
-                    }
-                    break;
-
-            }
             setaDia++;
         }
-       
+
         for (javax.swing.JLabel l : jldias)
             l.setOpaque(!"".equals(l.getText()));
-            
+
         checarDias();
     }
 
@@ -1511,12 +1106,12 @@ public class Orgamico extends javax.swing.JFrame {
                         l.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
                     }
                 }
-    
+
                 @Override
                 public void mouseExited(java.awt.event.MouseEvent evt) {
                     l.setBorder(null);
                 }
-    
+
                 @Override
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
                     String dia = l.getText();
@@ -1525,7 +1120,7 @@ public class Orgamico extends javax.swing.JFrame {
                     }
                     String mes = (String) selecionaMes.getSelectedItem();
                     String ano = String.valueOf(selecionaAno.getSelectedItem());
-                    anotacaocalendario.visualizarAnotacao(dia, mes, ano);
+                    anotacaoCalendario.visualizarAnotacao(dia, mes, ano);
                 }
             });
         }

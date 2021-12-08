@@ -1,5 +1,6 @@
 package com.rainsoft.lembretes;
 
+import static com.rainsoft.Orgamico.ORGAMICODATA_PATH;
 import com.rainsoft.renderers.RendererLembretes;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -12,7 +13,7 @@ public final class GerenciaLembretes extends javax.swing.JFrame {
     public static final NovoLembrete novoLembrete = new NovoLembrete();
     public static final EditarLembrete editarLembrete = new EditarLembrete();
     public static final DefaultListModel<Lembrete> lembretesList = new DefaultListModel<>();
-    public static final String LEMBRETESJSON_PATH = System.getenv("APPDATA") + "\\OrgamicoData\\lembretes.json";
+    public static final String LEMBRETESJSON_PATH = ORGAMICODATA_PATH + "\\lembretes.json";
 
     public GerenciaLembretes() {
         initComponents();

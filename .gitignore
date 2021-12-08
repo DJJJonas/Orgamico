@@ -1,2 +1,3 @@
 /dist/
 .vscode/settings.json
+*.jar
