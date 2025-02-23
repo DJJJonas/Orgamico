@@ -1,8 +1,3 @@
-```diff
-- pt: Esse projeto não receberá mais atualizações -
-- en: This project will no longer receive updates -
-```
-
 <h1 align="center">
   <br>
   <a href="https://github.com/DJJJonas/orgamico"><img src="./src/com/rainsoft/images/icon.png" alt="Orgamico" width="200"></a>
